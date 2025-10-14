@@ -3,12 +3,12 @@ import { Center, Group, Menu, type GroupProps } from '@mantine/core';
 import classes from '../styles/HeaderMenu.module.css';
 
 const links = [
-  { link: '/registration', label: 'Registration' },
+  { link: '/registration', label: 'Registration', registration: true },
   {
     link: '#1',
     label: 'Applications',
     links: [
-      { link: '/applications/dealers', label: 'Documentation' },
+      { link: '/applications/dealers', label: 'Dealers' },
       { link: '/applications/volunteers', label: 'Volunteers' },
     ],
   },
@@ -38,12 +38,27 @@ const links = [
 export function HeaderMenu(props: GroupProps) {
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
-      <Menu.Item key={item.link}>{item.label}</Menu.Item>
+      <Menu.Item
+        key={item.link}
+        styles={{
+          itemLabel: {
+            fontSize: 'var(--mantine-font-size-lg)',
+            fontWeight: 500,
+          },
+        }}
+      >
+        {item.label}
+      </Menu.Item>
     ));
 
     if (menuItems) {
       return (
-        <Menu key={link.label} trigger="hover" transitionProps={{ exitDuration: 0 }} withinPortal>
+        <Menu
+          key={link.label}
+          trigger="click-hover"
+          transitionProps={{ exitDuration: 0 }}
+          withinPortal
+        >
           <Menu.Target>
             <a
               href={link.link}
@@ -56,7 +71,7 @@ export function HeaderMenu(props: GroupProps) {
               </Center>
             </a>
           </Menu.Target>
-          <Menu.Dropdown>{menuItems}</Menu.Dropdown>
+          <Menu.Dropdown miw={200}>{menuItems}</Menu.Dropdown>
         </Menu>
       );
     }
@@ -67,6 +82,7 @@ export function HeaderMenu(props: GroupProps) {
         href={link.link}
         className={classes.link}
         onClick={(event) => event.preventDefault()}
+        data-registration={link.registration ? 'true' : undefined}
       >
         {link.label}
       </a>
@@ -74,7 +90,7 @@ export function HeaderMenu(props: GroupProps) {
   });
 
   return (
-    <Group gap={5} visibleFrom="sm" {...props}>
+    <Group gap={5} h="100%" visibleFrom="sm" {...props}>
       {items}
     </Group>
   );
