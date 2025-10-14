@@ -5,7 +5,7 @@ import { Appshell } from '../components/Appshell';
 const RootLayout = () => (
   <Appshell>
     <Outlet />
-    <TanStackRouterDevtools />
+    <TanStackRouterDevtools position="bottom-right" />
   </Appshell>
 );
 
