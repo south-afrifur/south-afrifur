@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import { createRouter, RouterProvider } from '@tanstack/react-router';
 import ReactDOM from 'react-dom/client';
-import { MantineProvider } from '@mantine/core';
+import { createTheme, MantineProvider, type MantineColorsTuple } from '@mantine/core';
 // Import the generated route tree
 import { routeTree } from './routeTree.gen';
 
@@ -17,13 +17,32 @@ declare module '@tanstack/react-router' {
   }
 }
 
+const grayBlue: MantineColorsTuple = [
+  '#f2f4f8',
+  '#e3e5e9',
+  '#c3c9d4',
+  '#a0acc0',
+  '#8393af',
+  '#7083a4',
+  '#667ba1',
+  '#55698d',
+  '#4a5e7e',
+  '#0f141c',
+];
+
+const theme = createTheme({
+  colors: {
+    grayBlue,
+  },
+});
+
 // Render the app
 const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <MantineProvider defaultColorScheme="dark">
+      <MantineProvider defaultColorScheme="dark" theme={theme}>
         <RouterProvider router={router} />
       </MantineProvider>
     </StrictMode>
