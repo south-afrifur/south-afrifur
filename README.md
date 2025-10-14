@@ -1,75 +1,48 @@
-# React + TypeScript + Vite
+# 🦁 South Afrifur Furry Convention — Main Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the official **South Afrifur Convention (SAFC)** website repository!  
+This is the **frontend** codebase that powers the public-facing site for South Africa’s annual furry convention, celebrating creativity, community, and anthropomorphics.
 
-Currently, two official plugins are available:
+## 🧭 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The SAFC main site serves as an information hub for attendees, volunteers, and exhibitors.  
+It provides details such as registration, applications, venue details, FAQ's, rules and in hopefully future blog/news posts.
 
-## React Compiler
+This project is built with:
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- ⚛️ **React** - component-based UI framework
+- ⚡ **Vite** - ultra-fast bundler and dev server
+- 🧭 **TanStack Router** - modern type-safe routing for React
+- 🔍 **TanStack Query** - efficient data fetching and caching layer
+- 🎨 **Mantine** - flexible, accessible UI component library
 
-Note: This will impact Vite dev & build performances.
+## 🏗️ Project Structure
 
-## Expanding the ESLint configuration
+TODO
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ⚙️ Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+TODO
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Clone the Repository
+
+```bash
+gh repo clone south-afrifur/south-afrifur
+cd south-afrifur
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn
 ```
+
+### 3. Run dev environment
+
+```bash
+yarn run dev
+```
+
+TODO: add deployement options
