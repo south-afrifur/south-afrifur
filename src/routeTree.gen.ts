@@ -9,12 +9,21 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as AboutRouteImport } from './routes/about'
+import { Route as RulesRouteRouteImport } from './routes/rules/route'
+import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as RulesIndexRouteImport } from './routes/rules/index'
+import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
+import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
 
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
+const RulesRouteRoute = RulesRouteRouteImport.update({
+  id: '/rules',
+  path: '/rules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRouteRoute = PrivacyRouteRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -22,40 +31,88 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const RulesIndexRoute = RulesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => RulesRouteRoute,
+} as any)
+const RulesMediaRouteRoute = RulesMediaRouteRouteImport.update({
+  id: '/media',
+  path: '/media',
+  getParentRoute: () => RulesRouteRoute,
+} as any)
+const AboutSafcRouteRoute = AboutSafcRouteRouteImport.update({
+  id: '/about/safc',
+  path: '/about/safc',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/privacy': typeof PrivacyRouteRoute
+  '/rules': typeof RulesRouteRouteWithChildren
+  '/about/safc': typeof AboutSafcRouteRoute
+  '/rules/media': typeof RulesMediaRouteRoute
+  '/rules/': typeof RulesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/privacy': typeof PrivacyRouteRoute
+  '/about/safc': typeof AboutSafcRouteRoute
+  '/rules/media': typeof RulesMediaRouteRoute
+  '/rules': typeof RulesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/about': typeof AboutRoute
+  '/privacy': typeof PrivacyRouteRoute
+  '/rules': typeof RulesRouteRouteWithChildren
+  '/about/safc': typeof AboutSafcRouteRoute
+  '/rules/media': typeof RulesMediaRouteRoute
+  '/rules/': typeof RulesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about'
+  fullPaths:
+    | '/'
+    | '/privacy'
+    | '/rules'
+    | '/about/safc'
+    | '/rules/media'
+    | '/rules/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about'
-  id: '__root__' | '/' | '/about'
+  to: '/' | '/privacy' | '/about/safc' | '/rules/media' | '/rules'
+  id:
+    | '__root__'
+    | '/'
+    | '/privacy'
+    | '/rules'
+    | '/about/safc'
+    | '/rules/media'
+    | '/rules/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  AboutRoute: typeof AboutRoute
+  PrivacyRouteRoute: typeof PrivacyRouteRoute
+  RulesRouteRoute: typeof RulesRouteRouteWithChildren
+  AboutSafcRouteRoute: typeof AboutSafcRouteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
+    '/rules': {
+      id: '/rules'
+      path: '/rules'
+      fullPath: '/rules'
+      preLoaderRoute: typeof RulesRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -65,12 +122,49 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/rules/': {
+      id: '/rules/'
+      path: '/'
+      fullPath: '/rules/'
+      preLoaderRoute: typeof RulesIndexRouteImport
+      parentRoute: typeof RulesRouteRoute
+    }
+    '/rules/media': {
+      id: '/rules/media'
+      path: '/media'
+      fullPath: '/rules/media'
+      preLoaderRoute: typeof RulesMediaRouteRouteImport
+      parentRoute: typeof RulesRouteRoute
+    }
+    '/about/safc': {
+      id: '/about/safc'
+      path: '/about/safc'
+      fullPath: '/about/safc'
+      preLoaderRoute: typeof AboutSafcRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
+interface RulesRouteRouteChildren {
+  RulesMediaRouteRoute: typeof RulesMediaRouteRoute
+  RulesIndexRoute: typeof RulesIndexRoute
+}
+
+const RulesRouteRouteChildren: RulesRouteRouteChildren = {
+  RulesMediaRouteRoute: RulesMediaRouteRoute,
+  RulesIndexRoute: RulesIndexRoute,
+}
+
+const RulesRouteRouteWithChildren = RulesRouteRoute._addFileChildren(
+  RulesRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  AboutRoute: AboutRoute,
+  PrivacyRouteRoute: PrivacyRouteRoute,
+  RulesRouteRoute: RulesRouteRouteWithChildren,
+  AboutSafcRouteRoute: AboutSafcRouteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

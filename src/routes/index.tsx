@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Box, Center, Grid, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Center, Grid, Image, Stack, Text, Title } from '@mantine/core';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
 
@@ -9,7 +9,7 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <Stack w="100%" gap={70} bg="#122131" pb={150}>
+    <Stack w="100%" gap={70}>
       <div className={classes.hero}>
         <Center h="100%">
           <Image src="/safc-symbol.webp" alt="Hero Image" w={300} />
@@ -36,33 +36,72 @@ function Index() {
           </Text>
         </Stack>
       </Center>
-      <Grid mx={300} gutter={100} mt="xl">
-        <Grid.Col span={4}>
+      <Grid
+        mx={{
+          xs: 100,
+          sm: 50,
+          md: 70,
+          xl: 200,
+        }}
+        gutter={{
+          xs: 20,
+          sm: 30,
+          md: 50,
+        }}
+        mt="xl"
+      >
+        <Grid.Col
+          span={{
+            xs: 12,
+            sm: 12,
+            md: 4,
+          }}
+          mb={80}
+        >
           <InfoCard
-            title="Venue and Accommodation"
+            title="Accommodation"
             description="Stay where the action is! Our venue features on-site lodging, dining, and everything you need for a comfortable, unforgettable con experience."
             imageSrc="/venue.jpg"
-            imageProps={{ style: { objectPosition: '0px -100px', objectFit: 'cover' } }}
+            imageProps={{ style: { objectPosition: 'top', objectFit: 'cover' } }}
+            link="/accommodation"
           />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col
+          span={{
+            xs: 12,
+            sm: 12,
+            md: 4,
+          }}
+          mb={80}
+        >
           <InfoCard
             title="Registration!"
             description="Get your badge and join the fun! Find out how to register, what’s included with your pass, and how to make the most of your South Afrifur experience."
             imageSrc="/reg.jpg"
             imageProps={{
-              style: { objectPosition: '0px -100px', objectFit: 'cover' },
+              style: { objectPosition: 'top', objectFit: 'cover' },
+            }}
+            link="/"
+            anchorProps={{
+              target: '_blank',
             }}
           />
         </Grid.Col>
-        <Grid.Col span={4}>
+        <Grid.Col
+          span={{
+            xs: 12,
+            sm: 12,
+            md: 4,
+          }}
+        >
           <InfoCard
             title="First Furry Convention?"
             description="New to the fandom or attending your first con? Don't worry, we've got tips, guides, and friendly advice to help you feel right at home from day one."
             imageSrc="/nervous.jpg"
             imageProps={{
-              style: { objectPosition: '0px -100px', objectFit: 'cover' },
+              style: { objectPosition: 'top', objectFit: 'cover' },
             }}
+            link="/tips"
           />
         </Grid.Col>
       </Grid>
