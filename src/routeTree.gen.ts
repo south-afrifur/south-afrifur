@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
+import { Route as FaqRouteRouteImport } from './routes/faq/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
@@ -24,6 +25,11 @@ const RulesRouteRoute = RulesRouteRouteImport.update({
 const PrivacyRouteRoute = PrivacyRouteRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRouteRoute = FaqRouteRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -49,6 +55,7 @@ const AboutSafcRouteRoute = AboutSafcRouteRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
   '/about/safc': typeof AboutSafcRouteRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/about/safc': typeof AboutSafcRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
@@ -65,6 +73,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
   '/about/safc': typeof AboutSafcRouteRoute
@@ -75,16 +84,18 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/faq'
     | '/privacy'
     | '/rules'
     | '/about/safc'
     | '/rules/media'
     | '/rules/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/about/safc' | '/rules/media' | '/rules'
+  to: '/' | '/faq' | '/privacy' | '/about/safc' | '/rules/media' | '/rules'
   id:
     | '__root__'
     | '/'
+    | '/faq'
     | '/privacy'
     | '/rules'
     | '/about/safc'
@@ -94,6 +105,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FaqRouteRoute: typeof FaqRouteRoute
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
   AboutSafcRouteRoute: typeof AboutSafcRouteRoute
@@ -113,6 +125,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -162,6 +181,7 @@ const RulesRouteRouteWithChildren = RulesRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FaqRouteRoute: FaqRouteRoute,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
   AboutSafcRouteRoute: AboutSafcRouteRoute,
