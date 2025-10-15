@@ -7,7 +7,8 @@
   font-weight: 500;
   align-content: center;
   @mixin hover {
-    background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    background-color: darken(var(--mantine-color-blue-7), 0.6);
   }
   @media (min-width: $mantine-breakpoint-md) {
     padding: 8px 12px;
@@ -27,13 +28,37 @@
   background-clip: text;
   font-weight: 600;
   @mixin hover {
-    background-image: none;
+    background: linear-gradient(
+      to top,
+      darken(var(--mantine-color-blue-7), 0.6),
+      darken(var(--mantine-color-blue-3), 0.6)
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 0.7s ease infinite;
     background-clip: initial;
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-    background-color: darken(var(--mantine-color-blue-7), 0.6);
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 80%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   }
 }
 
 .linkLabel {
   margin-right: 5px;
+}
+
+.menuItem {
+  @mixin hover {
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    background-color: darken(var(--mantine-color-blue-7), 0.6);
+  }
 }

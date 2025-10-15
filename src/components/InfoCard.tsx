@@ -1,4 +1,5 @@
-import { Anchor, Card, Group, Image, Text, type ImageProps } from '@mantine/core';
+import { Card, Group, Image, Text, type ImageProps } from '@mantine/core';
+import { RouterAnchor, type RouterAnchorProps } from './RouterAnchor';
 import classes from '../styles/InfoCard.module.css';
 
 type InfoCardProps = {
@@ -6,18 +7,20 @@ type InfoCardProps = {
   title?: string;
   description?: string;
   imageProps?: ImageProps;
+  link?: string;
+  anchorProps?: RouterAnchorProps;
 };
 
 export function InfoCard(props: InfoCardProps) {
-  const { imageSrc, title, description } = props;
+  const { imageSrc, title, description, link, anchorProps } = props;
 
   return (
     <Card withBorder radius="md" p="md" className={classes.card} bg="grayBlue.9">
       <Card.Section h={70}>
         <Group justify="center" h="100%">
-          <Anchor fz="lg" fw={500} underline="always">
+          <RouterAnchor to={link as any} fz="lg" fw={500} underline="always" {...anchorProps}>
             {title}
-          </Anchor>
+          </RouterAnchor>
         </Group>
       </Card.Section>
       <Card.Section>

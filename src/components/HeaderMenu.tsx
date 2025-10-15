@@ -1,45 +1,17 @@
 import { IconChevronDown } from '@tabler/icons-react';
 import { Center, Group, Menu, type GroupProps } from '@mantine/core';
+import { links } from '../utils/header-links';
+import { RouterAnchor } from './RouterAnchor';
 import classes from '../styles/HeaderMenu.module.css';
-
-const links = [
-  { link: '/registration', label: 'Registration', registration: true },
-  {
-    link: '#1',
-    label: 'Applications',
-    links: [
-      { link: '/applications/dealers', label: 'Dealers' },
-      { link: '/applications/volunteers', label: 'Volunteers' },
-    ],
-  },
-  {
-    link: '#2',
-    label: 'About',
-    links: [
-      { link: '/about/safc', label: 'SAFC' },
-      { link: '/about/pastevents', label: 'Past Events' },
-      { link: '/about/charity', label: 'Charity' },
-    ],
-  },
-  {
-    link: '#3',
-    label: 'Rules & FAQ',
-    links: [
-      { link: '/rules', label: 'Rules and guidelines' },
-      { link: '/faq', label: 'FAQ' },
-    ],
-  },
-  {
-    link: '/contact',
-    label: 'Contact',
-  },
-];
 
 export function HeaderMenu(props: GroupProps) {
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
       <Menu.Item
+        className={classes.menuItem}
         key={item.link}
+        component={RouterAnchor}
+        to={item.link}
         styles={{
           itemLabel: {
             fontSize: 'var(--mantine-font-size-lg)',
@@ -60,32 +32,38 @@ export function HeaderMenu(props: GroupProps) {
           withinPortal
         >
           <Menu.Target>
-            <a
-              href={link.link}
-              className={classes.link}
-              onClick={(event) => event.preventDefault()}
-            >
+            <RouterAnchor to={link.link} className={classes.link}>
               <Center>
                 <span className={classes.linkLabel}>{link.label}</span>
                 <IconChevronDown size={14} stroke={1.5} />
               </Center>
-            </a>
+            </RouterAnchor>
           </Menu.Target>
-          <Menu.Dropdown miw={200}>{menuItems}</Menu.Dropdown>
+          <Menu.Dropdown miw={200} bg="grayBlue.9">
+            {menuItems}
+          </Menu.Dropdown>
         </Menu>
       );
     }
 
     return (
-      <a
+      <RouterAnchor
         key={link.label}
-        href={link.link}
         className={classes.link}
-        onClick={(event) => event.preventDefault()}
         data-registration={link.registration ? 'true' : undefined}
+        to={link.link}
+        onClick={(e) => {
+          if (link.registration === true) {
+            e.preventDefault();
+            window.open(
+              'https://www.eventbrite.com/e/south-afrifur-2024-tickets-848368861557',
+              '_blank'
+            );
+          }
+        }}
       >
         {link.label}
-      </a>
+      </RouterAnchor>
     );
   });
 

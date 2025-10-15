@@ -1,88 +1,66 @@
-import { forwardRef } from 'react';
-import {
-  IconBrandBluesky,
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandTiktok,
-  IconBrandX,
-} from '@tabler/icons-react';
-import { createLink, type LinkProps } from '@tanstack/react-router';
+import { forwardRef, useEffect } from 'react';
+import { createLink, useRouterState, type LinkProps } from '@tanstack/react-router';
 import {
   ActionIcon,
   Anchor,
   AppShell,
   Burger,
-  Flex,
   Group,
   Image,
+  Stack,
   useMatches,
   type AnchorProps,
+  type ImageProps,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { footerLinks } from '../utils/footer-links';
+import { socialLinks } from '../utils/social-links';
 import { HeaderMenu } from './HeaderMenu';
-
-const footerLinks = [
-  {
-    label: 'Convention Conduct',
-    link: '/rules',
-  },
-  {
-    label: 'Privacy Policy',
-    link: '/privacy',
-  },
-  {
-    label: 'Click me',
-    link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
-  },
-];
-
-const socialMediaLinks = [
-  {
-    icon: <IconBrandX size={18} />,
-    link: 'https://x.com/southafrifur',
-    color: 'white',
-  },
-  {
-    icon: <IconBrandInstagram size={18} />,
-    link: 'https://www.instagram.com/southafrifur/',
-    color: '#E4405F',
-  },
-  {
-    icon: <IconBrandFacebook size={18} />,
-    link: 'https://www.facebook.com/southafrifur',
-    color: '#1877F2',
-  },
-  {
-    icon: <IconBrandTiktok size={18} />,
-    link: 'https://www.tiktok.com/@southafrifur',
-    color: '#69C9D0',
-  },
-  {
-    icon: <IconBrandBluesky size={18} />,
-    link: 'https://bsky.app/profile/southafrifur.bsky.social',
-    color: '#1185FE',
-  },
-];
+import { MobileFooter } from './MobileFooter';
+import { MobileNavbar } from './MobileNavbar';
+import { RouterAnchor } from './RouterAnchor';
 
 const LogoLink = createLink(
-  forwardRef((props: LinkProps & AnchorProps, ref) => {
+  forwardRef((props: LinkProps & AnchorProps & { logoProps?: ImageProps }, ref) => {
     return (
       <Anchor {...props} ref={ref as any}>
-        <Image src="/safc-white.png" alt="Logo" w={200} />
+        <Image src="/safc-white.png" alt="Logo" w={200} {...props.logoProps} />
       </Anchor>
     );
   })
 );
 
 const Appshell = ({ children }: { children: React.ReactNode }) => {
-  const [opened, { toggle }] = useDisclosure();
+  const [opened, { toggle, close }] = useDisclosure();
   const footerCollapsed = useMatches({
     base: true,
     md: false,
   });
+
+  const { status } = useRouterState();
+
+  const isDesktop = useMatches({
+    md: true,
+  });
+
+  useEffect(() => {
+    if (status === 'pending' || isDesktop) {
+      close();
+    }
+  }, [status, isDesktop]);
+
+  useEffect(() => {
+    document.body.style.overflow = opened ? 'hidden' : 'auto';
+  }, [opened]);
+
   return (
     <AppShell
-      header={{ height: 120 }}
+      header={{
+        height: {
+          base: 90,
+          md: 120,
+        },
+      }}
       footer={{ height: 60, collapsed: footerCollapsed }}
       navbar={{
         width: 300,
@@ -119,6 +97,9 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
           <LogoLink
             to="/"
             flex={1}
+            logoProps={{
+              w: 150,
+            }}
             style={{
               marginRight: '44px',
               display: 'flex',
@@ -129,28 +110,40 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md" hiddenFrom="md">
-        Navbar
+        <MobileNavbar />
       </AppShell.Navbar>
-      <AppShell.Main component={Flex}>{children}</AppShell.Main>
+      <AppShell.Main
+        id="main"
+        bg="#122131"
+        component={Stack}
+        pb={{
+          md: 100,
+        }}
+        style={{
+          gap: 0,
+        }}
+      >
+        {children}
+        <MobileFooter hiddenFrom="md" mt={100} pt={40} pb={60} />
+      </AppShell.Main>
       <AppShell.Aside p="md">Aside</AppShell.Aside>
       <AppShell.Footer p="xs" bg="grayBlue.9">
         <Group h="100%" justify="space-between">
-          <Group>
+          <Group ml="xl">
             {footerLinks.map((link, index) => (
-              <Anchor
+              <RouterAnchor
+                to={link.link}
                 key={index}
-                href={link.link}
-                target="_blank"
                 rel="noopener noreferrer"
                 size="sm"
                 c="gray.5"
               >
                 {link.label}
-              </Anchor>
+              </RouterAnchor>
             ))}
           </Group>
           <Group gap="xs" h="100%">
-            {socialMediaLinks.map((link, index) => (
+            {socialLinks.map((link, index) => (
               <ActionIcon
                 key={index}
                 variant="transparent"
