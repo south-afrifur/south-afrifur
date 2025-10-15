@@ -27,13 +27,22 @@ function RouteComponent() {
             What would you like to know?
           </Text>
         </Stack>
-        <Container mt={30} maw={700}>
+        <Container
+          mt={30}
+          w={{
+            base: '100%',
+            sm: 600,
+            md: 800,
+            lg: 900,
+            xl: 1000,
+          }}
+        >
           <Accordion
             chevronPosition="right"
             variant="separated"
             w="100%"
             styles={{
-              item: { border: 'none' },
+              item: { border: 'none', width: '100%' },
             }}
           >
             <Accordion.Item value="rules" bg="transparent">
