@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Divider, Group, Image, Stack, Text, Title } from '@mantine/core';
+import { Center, Divider, Image, Stack, Text, Title } from '@mantine/core';
 
 export const Route = createFileRoute('/about/safc')({
   component: RouteComponent,

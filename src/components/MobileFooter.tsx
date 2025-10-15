@@ -1,4 +1,4 @@
-import { ActionIcon, Anchor, Box, Group, Stack, type StackProps } from '@mantine/core';
+import { ActionIcon, Anchor, Group, Stack, type StackProps } from '@mantine/core';
 import { footerLinks } from '../utils/footer-links';
 import { socialLinks } from '../utils/social-links';
 

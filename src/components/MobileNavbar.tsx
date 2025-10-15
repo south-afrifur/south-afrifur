@@ -2,7 +2,6 @@ import { IconChevronDown } from '@tabler/icons-react';
 import { useNavigate } from '@tanstack/react-router';
 import {
   Box,
-  Button,
   Center,
   Collapse,
   Divider,
