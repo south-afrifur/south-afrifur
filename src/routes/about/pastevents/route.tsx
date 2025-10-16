@@ -11,24 +11,24 @@ const pastEventData = {
     title: 'SAFC 2025',
     mediaComponent: <Image src="/safc2025cosmo.webp" h="100%" />,
     descriptionLines: [
-      `Our 2025 theme, Underwater Odyssey, transformed Valverde into an aquatic wonderland, complete with rippling lights, floating jellyfish decorations and immersive oceanic experiences. With our excellent volunteer crew, as always, we hosted a fantastic event with 99 resident attendees, and 58 day or weekend visitors.`,
-      `This year we used Pine Valley as a full overflow venue, and introducing and standardized transport shuttle. The continued growth of the convention is a testament to the dedication of our team and the enthusiasm of our community.`,
-      `We raised R28,000 with our charity drive, which was donated to the Two Oceans Aquarium Foundation. The funds went towards adopting four adorable rescued turtle hatchlings, lovingly named by a mix of our community votes and mascot names: Zakhile, Plakkie, Khorneflakes and Indaba.`,
+      `Our 2025 theme, Underwater Odyssey, transformed Valverde into an aquatic wonderland, complete with rippling lights, floating jellyfish decorations, and immersive oceanic experiences. With our excellent volunteer crew, as always, we hosted a fantastic event with 99 resident attendees and 58 day or weekend visitors.`,
+      `This year, we used Pine Valley as a full overflow venue and introduced a standardized transport shuttle. The continued growth of the convention is a testament to the dedication of our team and the enthusiasm of our community.`,
+      `We raised R28,000 through our charity drive, which was donated to the Two Oceans Aquarium Foundation. The funds went towards adopting four adorable rescued turtle hatchlings, lovingly named through a mix of community votes and mascot names: Zakhile, Plakkie, Khorneflakes, and Indaba.`,
     ],
   },
   2024: {
     title: 'SAFC 2024',
     descriptionLines: [
-      `The circus came to town in 2024 with the theme "Midnight's Edge". Presented as a vibrant daytime carnival which transformed into a spooky nighttime amusement park after sunset. For the first time, SAFC expanded beyond our main venue of Valverde Eco Hotel, welcoming a spill-over venue at Pine Valley to accommodate our increasing number of attendees.`,
-      `The charity drive this year decided to focus closer to home, with R18,020 raised and donated directly to the Valverde staff, who have supported us tirelessly over the years to make our convention a success. We are incredibly grateful for their dedication and hard work.`,
+      `The circus came to town in 2024 with the theme “Midnight’s Edge.” It was presented as a vibrant daytime carnival that transformed into a spooky nighttime amusement park after sunset. For the first time, SAFC expanded beyond our main venue, Valverde Eco Hotel, welcoming a spillover venue at Pine Valley to accommodate our growing number of attendees.`,
+      `The charity drive this year focused closer to home, raising R18,020, which was donated directly to the Valverde staff, who have supported us tirelessly over the years to make our convention a success. We are incredibly grateful for their dedication and hard work.`,
     ],
     mediaComponent: <Image src="/2024.jpg" h="100%" />,
   },
   2023: {
     title: 'SAFC 2023',
     descriptionLines: [
-      `The 2023 convention saw the return to Valverde Eco Hotel, with a spellbinding weekend themed "Magic Unleashed". The venue was transformed into a glowing woodland wonderland, with lights twinkling through the trees and enchanting decorations creating a truly magical atmosphere. After the challenges of rebuilding in 2022, this fifth convention marked a turning point filled with creativity, laughter and community.`,
-      `From late night chats under the fairy lights to the magic-themed fursuit parade, every moment was infused with wonder. Together our attendees raised an amazing R20,000 for Imagine Animal Dreams.`,
+      `The 2023 convention saw a return to Valverde Eco Hotel with a spellbinding weekend themed “Magic Unleashed.” The venue was transformed into a glowing woodland wonderland, with lights twinkling through the trees and enchanting decorations creating a truly magical atmosphere. After the challenges of rebuilding in 2022, this fifth convention marked a turning point filled with creativity, laughter, and community.`,
+      `From late-night chats under the fairy lights to the magic-themed fursuit parade, every moment was infused with wonder. Together, our attendees raised an incredible R20,000 for Imagine Animal Dreams.`,
     ],
     mediaComponent: <Image src="/2023.jpg" h="100%" />,
   },
