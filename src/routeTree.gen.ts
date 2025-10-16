@@ -12,10 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
 import { Route as FaqRouteRouteImport } from './routes/faq/route'
+import { Route as ContactRouteRouteImport } from './routes/contact/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
+import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
+import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 
 const RulesRouteRoute = RulesRouteRouteImport.update({
   id: '/rules',
@@ -30,6 +33,11 @@ const PrivacyRouteRoute = PrivacyRouteRouteImport.update({
 const FaqRouteRoute = FaqRouteRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRouteRoute = ContactRouteRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -52,63 +60,97 @@ const AboutSafcRouteRoute = AboutSafcRouteRouteImport.update({
   path: '/about/safc',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutPasteventsRouteRoute = AboutPasteventsRouteRouteImport.update({
+  id: '/about/pastevents',
+  path: '/about/pastevents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutSafcIndexRoute = AboutSafcIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutSafcRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
+  '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
   '/rules/': typeof RulesIndexRoute
+  '/about/safc/': typeof AboutSafcIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/rules': typeof RulesIndexRoute
+  '/about/safc': typeof AboutSafcIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
+  '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
   '/rules/': typeof RulesIndexRoute
+  '/about/safc/': typeof AboutSafcIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/faq'
     | '/privacy'
     | '/rules'
+    | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
     | '/rules/'
+    | '/about/safc/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/faq' | '/privacy' | '/about/safc' | '/rules/media' | '/rules'
+  to:
+    | '/'
+    | '/contact'
+    | '/faq'
+    | '/privacy'
+    | '/about/pastevents'
+    | '/rules/media'
+    | '/rules'
+    | '/about/safc'
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/faq'
     | '/privacy'
     | '/rules'
+    | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
     | '/rules/'
+    | '/about/safc/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRouteRoute: typeof ContactRouteRoute
   FaqRouteRoute: typeof FaqRouteRoute
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
-  AboutSafcRouteRoute: typeof AboutSafcRouteRoute
+  AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
+  AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -132,6 +174,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -162,6 +211,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutSafcRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/pastevents': {
+      id: '/about/pastevents'
+      path: '/about/pastevents'
+      fullPath: '/about/pastevents'
+      preLoaderRoute: typeof AboutPasteventsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/safc/': {
+      id: '/about/safc/'
+      path: '/'
+      fullPath: '/about/safc/'
+      preLoaderRoute: typeof AboutSafcIndexRouteImport
+      parentRoute: typeof AboutSafcRouteRoute
+    }
   }
 }
 
@@ -179,12 +242,26 @@ const RulesRouteRouteWithChildren = RulesRouteRoute._addFileChildren(
   RulesRouteRouteChildren,
 )
 
+interface AboutSafcRouteRouteChildren {
+  AboutSafcIndexRoute: typeof AboutSafcIndexRoute
+}
+
+const AboutSafcRouteRouteChildren: AboutSafcRouteRouteChildren = {
+  AboutSafcIndexRoute: AboutSafcIndexRoute,
+}
+
+const AboutSafcRouteRouteWithChildren = AboutSafcRouteRoute._addFileChildren(
+  AboutSafcRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRouteRoute: ContactRouteRoute,
   FaqRouteRoute: FaqRouteRoute,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
-  AboutSafcRouteRoute: AboutSafcRouteRoute,
+  AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
+  AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
