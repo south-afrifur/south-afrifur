@@ -59,11 +59,14 @@ function Index() {
           mb={80}
         >
           <InfoCard
-            title="Accommodation"
+            title="Venue"
             description="Stay where the action is! Our venue features on-site lodging, dining, and everything you need for a comfortable, unforgettable con experience."
             imageSrc="/venue.jpg"
             imageProps={{ style: { objectPosition: 'top', objectFit: 'cover' } }}
-            link="/accommodation"
+            link="https://valverde.co.za/"
+            anchorProps={{
+              target: '_blank',
+            }}
           />
         </Grid.Col>
         <Grid.Col
