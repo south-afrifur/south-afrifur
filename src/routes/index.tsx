@@ -77,7 +77,7 @@ function Index() {
           <InfoCard
             title="Registration!"
             description="Get your badge and join the fun! Find out how to register, what’s included with your pass, and how to make the most of your South Afrifur experience."
-            imageSrc="/reg.jpg"
+            imageSrc="/reg.webp"
             imageProps={{
               style: { objectPosition: 'top', objectFit: 'cover' },
             }}
@@ -97,7 +97,7 @@ function Index() {
           <InfoCard
             title="First Furry Convention?"
             description="New to the fandom or attending your first con? Don't worry, we've got tips, guides, and friendly advice to help you feel right at home from day one."
-            imageSrc="/nervous.jpg"
+            imageSrc="/nervous.webp"
             imageProps={{
               style: { objectPosition: 'top', objectFit: 'cover' },
             }}
