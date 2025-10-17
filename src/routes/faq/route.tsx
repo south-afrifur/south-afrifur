@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Accordion, Center, Container, Stack, Text, Title } from '@mantine/core';
+import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/faq')({
   component: RouteComponent,
@@ -53,8 +54,9 @@ function RouteComponent() {
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
-                  The rules can be found under the "Rules" tab on the main navigation bar. Please
-                  make sure to read them carefully before attending the event.
+                  The <RouterAnchor to="/rules">rules and guidelines</RouterAnchor> can be found
+                  under the "Rules" tab on the main navigation bar. Please make sure to read them
+                  carefully before attending the event.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
@@ -114,10 +116,13 @@ function RouteComponent() {
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
-                  We collect some private information (legal name, phone number, etc.) purely for
-                  administrative purposes and in case of emergency. As for banking or credit card
-                  details, our payment provider, YOCO, is a trusted and fully compliant payment
-                  platform, and your payment details will not be kept on our personal records.
+                  SAFC, it's admin, Hotel Admin, and YOCO do not share any information, outside of
+                  that consented in writing by you, due to basic respect for our Attendees and to be
+                  in line with the POPI Act.
+                </Text>
+                <Text mt="md">
+                  For more information on our Privacy Policy, please visit the{' '}
+                  <RouterAnchor to="/privacy">Privacy Policy page</RouterAnchor>.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
