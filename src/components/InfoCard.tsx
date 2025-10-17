@@ -1,15 +1,4 @@
-import { IconCamera } from '@tabler/icons-react';
-import {
-  alpha,
-  Card,
-  Group,
-  Image,
-  Paper,
-  Text,
-  ThemeIcon,
-  type ImageProps,
-  type TextProps,
-} from '@mantine/core';
+import { Card, Group, Image, Text, type ImageProps, type TextProps } from '@mantine/core';
 import { AttributionBox } from './AttributionBox';
 import { RouterAnchor, type RouterAnchorProps } from './RouterAnchor';
 import classes from '../styles/InfoCard.module.css';

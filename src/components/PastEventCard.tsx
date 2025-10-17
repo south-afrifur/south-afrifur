@@ -1,4 +1,4 @@
-import { Divider, Flex, Grid, Group, Text, Title } from '@mantine/core';
+import { Divider, Grid, Text, Title } from '@mantine/core';
 import { AttributionBox } from './AttributionBox';
 import classes from '../styles/PastEventCard.module.css';
 
