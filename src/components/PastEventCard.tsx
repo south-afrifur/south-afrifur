@@ -8,6 +8,7 @@ type PastEventCardProps = {
   descriptionLines?: string[];
   mediaAuthor?: string;
   statistics?: { label: string; value: string }[];
+  subTitle?: string;
 };
 
 export function PastEventCard(props: PastEventCardProps) {
@@ -33,16 +34,23 @@ export function PastEventCard(props: PastEventCardProps) {
     <div className={classes.wrapper}>
       <div className={classes.body}>
         <Title className={classes.title}>{props.title}</Title>
+        {props.subTitle && (
+          <Title order={4} className={classes.subTitle} mt={-15}>
+            {props.subTitle}
+          </Title>
+        )}
         {props.descriptionLines?.map((line, index) => (
           <Text key={index} fw={500} fz="md" mb={30}>
             {line}
           </Text>
         ))}
-        <Divider mb={15} />
         {!!items && (
-          <Grid pb={0} mb={0} justify="space-between">
-            {items}
-          </Grid>
+          <>
+            <Divider mb={15} />
+            <Grid pb={0} mb={0} justify="space-between">
+              {items}
+            </Grid>
+          </>
         )}
       </div>
       <div className={classes.mediaComponent}>
