@@ -18,6 +18,7 @@ import { Route as RulesIndexRouteImport } from './routes/rules/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
 import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
+import { Route as AboutCharityRouteRouteImport } from './routes/about/charity/route'
 import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 
 const RulesRouteRoute = RulesRouteRouteImport.update({
@@ -65,6 +66,11 @@ const AboutPasteventsRouteRoute = AboutPasteventsRouteRouteImport.update({
   path: '/about/pastevents',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutCharityRouteRoute = AboutCharityRouteRouteImport.update({
+  id: '/about/charity',
+  path: '/about/charity',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutSafcIndexRoute = AboutSafcIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
+  '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/rules': typeof RulesIndexRoute
@@ -100,6 +108,7 @@ export interface FileRoutesById {
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
@@ -114,6 +123,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/privacy'
     | '/rules'
+    | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/privacy'
+    | '/about/charity'
     | '/about/pastevents'
     | '/rules/media'
     | '/rules'
@@ -136,6 +147,7 @@ export interface FileRouteTypes {
     | '/faq'
     | '/privacy'
     | '/rules'
+    | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
@@ -149,6 +161,7 @@ export interface RootRouteChildren {
   FaqRouteRoute: typeof FaqRouteRoute
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
+  AboutCharityRouteRoute: typeof AboutCharityRouteRoute
   AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
   AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
 }
@@ -218,6 +231,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutPasteventsRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/charity': {
+      id: '/about/charity'
+      path: '/about/charity'
+      fullPath: '/about/charity'
+      preLoaderRoute: typeof AboutCharityRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/safc/': {
       id: '/about/safc/'
       path: '/'
@@ -260,6 +280,7 @@ const rootRouteChildren: RootRouteChildren = {
   FaqRouteRoute: FaqRouteRoute,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
+  AboutCharityRouteRoute: AboutCharityRouteRoute,
   AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
   AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,
 }

@@ -13,6 +13,7 @@ const links = [
     links: [
       { link: '/applications/dealers', label: 'Dealers' },
       { link: '/applications/volunteers', label: 'Volunteers' },
+      { link: '/applications/panelists', label: 'Panelists' },
     ],
   },
   {
