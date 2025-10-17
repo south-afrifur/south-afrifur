@@ -29,7 +29,6 @@
     "@tiptap/pm": "^3.7.0",
     "@tiptap/react": "^3.7.0",
     "@tiptap/starter-kit": "^3.7.0",
-    "bsky-embed": "^0.2.6",
     "dayjs": "^1.11.18",
     "embla-carousel": "8.5.2",
     "embla-carousel-react": "8.5.2",

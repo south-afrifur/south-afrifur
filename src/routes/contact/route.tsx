@@ -1,19 +1,7 @@
 import { IconBrandDiscordFilled, IconBrandTelegram, IconBrandX } from '@tabler/icons-react';
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  Center,
-  Container,
-  Grid,
-  Paper,
-  ScrollArea,
-  Stack,
-  Text,
-  ThemeIcon,
-  Title,
-} from '@mantine/core';
+import { Center, Container, Grid, Stack, Text, ThemeIcon, Title } from '@mantine/core';
 import { ContactCard } from '../../components/ContactCard';
-
-import 'bsky-embed/dist/bsky-embed.es.js';
 
 export const Route = createFileRoute('/contact')({
   component: RouteComponent,
@@ -94,22 +82,6 @@ function RouteComponent() {
                   </ThemeIcon>
                 }
               />
-            </Grid.Col>
-
-            <Grid.Col span={12}>
-              <Paper bg="grayBlue.9" withBorder mt={'xl'}>
-                <ScrollArea h={800}>
-                  {/* @ts-ignore */}
-                  <bsky-embed
-                    username="did:plc:bituwwgvzmodeulxw4fj3lx5"
-                    mode="dark"
-                    limit="5"
-                    link-target="_blank"
-                    link-image="true"
-                    load-more="true"
-                  />
-                </ScrollArea>
-              </Paper>
             </Grid.Col>
           </Grid>
         </Container>
