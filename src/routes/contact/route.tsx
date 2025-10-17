@@ -49,6 +49,7 @@ function RouteComponent() {
               <ContactCard
                 title="The official SAFC Discord"
                 description="Join us on our Discord server! This is the main point of contact for all staff members and con attendees, and we will be making all major announcements on this platform as well."
+                link="https://discord.gg/sgzdu5T"
                 icon={
                   <ThemeIcon size={60} variant="transparent" color="gray">
                     <IconBrandDiscordFilled size={'100%'} />
@@ -67,6 +68,7 @@ function RouteComponent() {
               <ContactCard
                 title="Join the Telegram group"
                 description="Furries are all over Telegram, so why not join us there! Talk to participants, con staff, artists and content creators that might be joining us at the convention!"
+                link="https://t.me/+p9JMDIwXZ_8wMmQ0"
                 icon={
                   <ThemeIcon size={60} variant="transparent">
                     <IconBrandTelegram size={'100%'} />
@@ -85,6 +87,7 @@ function RouteComponent() {
               <ContactCard
                 title="Follow us on X"
                 description="We will be making announcements on X about convention information, and events on our Discord, so be sure to follow us on both to stay up to date with the latest news."
+                link="https://x.com/SouthAfriFurCon"
                 icon={
                   <ThemeIcon size={60} variant="transparent" color="gray">
                     <IconBrandX size={'100%'} />

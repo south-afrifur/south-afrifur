@@ -88,6 +88,7 @@ function Index() {
             anchorProps={{
               target: '_blank',
             }}
+            author="@Man_Of_Talent"
           />
         </Grid.Col>
         <Grid.Col
@@ -105,6 +106,7 @@ function Index() {
               style: { objectPosition: 'top', objectFit: 'cover' },
             }}
             link="/tips"
+            author="@Man_Of_Talent"
           />
         </Grid.Col>
       </Grid>

@@ -10,6 +10,25 @@ const pastEventData = {
   2025: {
     title: 'SAFC 2025',
     mediaComponent: <Image src="/safc2025cosmo.webp" h="100%" />,
+    mediaAuthor: '@Man_Of_Talent',
+    statistics: [
+      {
+        label: 'Theme',
+        value: 'Underwater Odyssey',
+      },
+      {
+        label: 'Charity Raised',
+        value: 'R28,000',
+      },
+      {
+        label: 'Resident Attendees',
+        value: '99',
+      },
+      {
+        label: 'Day/Weekend Visitors',
+        value: '58',
+      },
+    ],
     descriptionLines: [
       `Our 2025 theme, Underwater Odyssey, transformed Valverde into an aquatic wonderland, complete with rippling lights, floating jellyfish decorations, and immersive oceanic experiences. With our excellent volunteer crew, as always, we hosted a fantastic event with 99 resident attendees and 58 day or weekend visitors.`,
       `This year, we used Pine Valley as a full overflow venue and introduced a standardized transport shuttle. The continued growth of the convention is a testament to the dedication of our team and the enthusiasm of our community.`,
@@ -22,6 +41,24 @@ const pastEventData = {
       `The circus came to town in 2024 with the theme “Midnight’s Edge.” It was presented as a vibrant daytime carnival that transformed into a spooky nighttime amusement park after sunset. For the first time, SAFC expanded beyond our main venue, Valverde Eco Hotel, welcoming a spillover venue at Pine Valley to accommodate our growing number of attendees.`,
       `The charity drive this year focused closer to home, raising R18,020, which was donated directly to the Valverde staff, who have supported us tirelessly over the years to make our convention a success. We are incredibly grateful for their dedication and hard work.`,
     ],
+    statistics: [
+      {
+        label: 'Theme',
+        value: 'Midnight’s Edge',
+      },
+      {
+        label: 'Charity Raised',
+        value: 'R18,020',
+      },
+      {
+        label: 'Resident Attendees',
+        value: '78',
+      },
+      {
+        label: 'Day/Weekend Visitors',
+        value: '45',
+      },
+    ],
     mediaComponent: <Image src="/2024.jpg" h="100%" />,
   },
   2023: {
@@ -31,6 +68,25 @@ const pastEventData = {
       `From late-night chats under the fairy lights to the magic-themed fursuit parade, every moment was infused with wonder. Together, our attendees raised an incredible R20,000 for Imagine Animal Dreams.`,
     ],
     mediaComponent: <Image src="/2023.jpg" h="100%" />,
+    mediaAuthor: '@Scarlet_Jack',
+    statistics: [
+      {
+        label: 'Theme',
+        value: 'Magic Unleashed',
+      },
+      {
+        label: 'Charity Raised',
+        value: 'R20,000',
+      },
+      {
+        label: 'Resident Attendees',
+        value: '60',
+      },
+      {
+        label: 'Day/Weekend Visitors',
+        value: '41',
+      },
+    ],
   },
   2022: {
     title: 'SAFC 2022',
