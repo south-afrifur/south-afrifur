@@ -5,6 +5,7 @@ type ContactCardProps = {
   title: string;
   description: string;
   icon: React.ReactNode;
+  link: string;
 };
 
 export function ContactCard(props: ContactCardProps) {
@@ -21,7 +22,14 @@ export function ContactCard(props: ContactCardProps) {
         {props.description}
       </Text>
       <Card.Section className={classes.footer}>
-        <Button variant="gradient" w="100%" gradient={{ from: 'cyan.7', to: 'blue.6' }}>
+        <Button
+          component="a"
+          variant="gradient"
+          w="100%"
+          gradient={{ from: 'cyan.7', to: 'blue.6' }}
+          href={props.link}
+          target="_blank"
+        >
           Join
         </Button>
       </Card.Section>

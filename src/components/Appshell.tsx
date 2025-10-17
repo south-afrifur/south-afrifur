@@ -153,6 +153,7 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 color={link.color}
+                disabled={link.disabled}
               >
                 {link.icon}
               </ActionIcon>
