@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
+import { Route as LearnRouteRouteImport } from './routes/learn/route'
 import { Route as FaqRouteRouteImport } from './routes/faq/route'
 import { Route as ContactRouteRouteImport } from './routes/contact/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
+import { Route as LearnIndexRouteImport } from './routes/learn/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
 import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
@@ -29,6 +31,11 @@ const RulesRouteRoute = RulesRouteRouteImport.update({
 const PrivacyRouteRoute = PrivacyRouteRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LearnRouteRoute = LearnRouteRouteImport.update({
+  id: '/learn',
+  path: '/learn',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRouteRoute = FaqRouteRouteImport.update({
@@ -50,6 +57,11 @@ const RulesIndexRoute = RulesIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => RulesRouteRoute,
+} as any)
+const LearnIndexRoute = LearnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LearnRouteRoute,
 } as any)
 const RulesMediaRouteRoute = RulesMediaRouteRouteImport.update({
   id: '/media',
@@ -81,12 +93,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
+  '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
   '/about/safc/': typeof AboutSafcIndexRoute
 }
@@ -98,6 +112,7 @@ export interface FileRoutesByTo {
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn': typeof LearnIndexRoute
   '/rules': typeof RulesIndexRoute
   '/about/safc': typeof AboutSafcIndexRoute
 }
@@ -106,12 +121,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
+  '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
   '/about/safc/': typeof AboutSafcIndexRoute
 }
@@ -121,12 +138,14 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
+    | '/learn'
     | '/privacy'
     | '/rules'
     | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
+    | '/learn/'
     | '/rules/'
     | '/about/safc/'
   fileRoutesByTo: FileRoutesByTo
@@ -138,6 +157,7 @@ export interface FileRouteTypes {
     | '/about/charity'
     | '/about/pastevents'
     | '/rules/media'
+    | '/learn'
     | '/rules'
     | '/about/safc'
   id:
@@ -145,12 +165,14 @@ export interface FileRouteTypes {
     | '/'
     | '/contact'
     | '/faq'
+    | '/learn'
     | '/privacy'
     | '/rules'
     | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
+    | '/learn/'
     | '/rules/'
     | '/about/safc/'
   fileRoutesById: FileRoutesById
@@ -159,6 +181,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRouteRoute: typeof ContactRouteRoute
   FaqRouteRoute: typeof FaqRouteRoute
+  LearnRouteRoute: typeof LearnRouteRouteWithChildren
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
   AboutCharityRouteRoute: typeof AboutCharityRouteRoute
@@ -180,6 +203,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -209,6 +239,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/rules/'
       preLoaderRoute: typeof RulesIndexRouteImport
       parentRoute: typeof RulesRouteRoute
+    }
+    '/learn/': {
+      id: '/learn/'
+      path: '/'
+      fullPath: '/learn/'
+      preLoaderRoute: typeof LearnIndexRouteImport
+      parentRoute: typeof LearnRouteRoute
     }
     '/rules/media': {
       id: '/rules/media'
@@ -248,6 +285,18 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface LearnRouteRouteChildren {
+  LearnIndexRoute: typeof LearnIndexRoute
+}
+
+const LearnRouteRouteChildren: LearnRouteRouteChildren = {
+  LearnIndexRoute: LearnIndexRoute,
+}
+
+const LearnRouteRouteWithChildren = LearnRouteRoute._addFileChildren(
+  LearnRouteRouteChildren,
+)
+
 interface RulesRouteRouteChildren {
   RulesMediaRouteRoute: typeof RulesMediaRouteRoute
   RulesIndexRoute: typeof RulesIndexRoute
@@ -278,6 +327,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRouteRoute: ContactRouteRoute,
   FaqRouteRoute: FaqRouteRoute,
+  LearnRouteRoute: LearnRouteRouteWithChildren,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
   AboutCharityRouteRoute: AboutCharityRouteRoute,

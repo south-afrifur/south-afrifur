@@ -34,6 +34,7 @@ const links = [
       { link: '/rules', label: 'Rules and guidelines' },
       { link: '/faq', label: 'FAQ' },
       { link: '/rules/media', label: 'Media & Content Creators' },
+      { link: '/learn', label: 'Learn More' },
     ],
   },
   {
