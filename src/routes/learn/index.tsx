@@ -79,7 +79,6 @@ function RouteComponent() {
                     </List.Item>
                   </List>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -121,7 +120,6 @@ function RouteComponent() {
                     </List.Item>
                   </List>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -147,7 +145,6 @@ function RouteComponent() {
                     accommodation options available in the immediate area.
                   </Text>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -163,7 +160,6 @@ function RouteComponent() {
                     perhaps you’ll find someone there who shares your interests.
                   </Text>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -239,7 +235,6 @@ function RouteComponent() {
                     </List.Item>
                   </List>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -260,7 +255,6 @@ function RouteComponent() {
                     people.
                   </Text>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
@@ -293,7 +287,6 @@ function RouteComponent() {
                     about the furry subculture.
                   </Text>
                 </Stack>
-                <Image src="/learn/what-to-expect.webp" alt="What to expect" />
               </Group>
             </Stack>
           </Container>

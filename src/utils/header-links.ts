@@ -10,11 +10,12 @@ const links = [
     link: '#1',
     label: 'Applications',
     icon: IconClipboardCheckFilled,
-    links: [
-      { link: '/applications/dealers', label: 'Dealers' },
-      { link: '/applications/volunteers', label: 'Volunteers' },
-      { link: '/applications/panelists', label: 'Panelists' },
-    ],
+    applications: true,
+    // links: [
+    //   { link: '/applications/dealers', label: 'Dealers' },
+    //   { link: '/applications/volunteers', label: 'Volunteers' },
+    //   { link: '/applications/panelists', label: 'Panelists' },
+    // ],
   },
   {
     link: '#2',

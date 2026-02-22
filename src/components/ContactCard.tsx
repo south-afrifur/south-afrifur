@@ -10,7 +10,7 @@ type ContactCardProps = {
 
 export function ContactCard(props: ContactCardProps) {
   return (
-    <Card padding="lg" radius="md" className={classes.card} bg="grayBlue.9">
+    <Card padding="lg" radius="md" className={classes.card} bg="noir.9">
       <Card.Section my="sm">
         <Center>{props.icon}</Center>
       </Card.Section>
@@ -29,6 +29,8 @@ export function ContactCard(props: ContactCardProps) {
           gradient={{ from: 'cyan.7', to: 'blue.6' }}
           href={props.link}
           target="_blank"
+          bg="#ffecb3"
+          c="noir.9"
         >
           Join
         </Button>

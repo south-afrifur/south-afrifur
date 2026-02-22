@@ -12,14 +12,13 @@ import {
   ThemeIcon,
   Title,
   UnstyledButton,
-  useMantineTheme,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { notifications } from '@mantine/notifications';
 import { links } from '../utils/header-links';
 import classes from '../styles/MobileNavbar.module.css';
 
 const MobileNavbar = () => {
-  const theme = useMantineTheme();
   const navigate = useNavigate();
 
   const GroupButton = ({ link, links }: { link: any; links?: any[] }) => {
@@ -56,7 +55,27 @@ const MobileNavbar = () => {
           onClick={
             links
               ? toggleLinks
-              : () => {
+              : (e) => {
+                  if (link.registration === true) {
+                    e.preventDefault();
+                    notifications.show({
+                      title: 'Registration opens soon!',
+                      message: 'Stay tuned for updates on our registration opening date.',
+                      color: '#ffecb3',
+                      position: 'top-center',
+                    });
+                    return;
+                  }
+                  if (link.applications === true) {
+                    e.preventDefault();
+                    notifications.show({
+                      title: 'Applications opening soon!',
+                      message: 'Stay tuned for updates on our applications opening date.',
+                      color: '#ffecb3',
+                      position: 'top-center',
+                    });
+                    return;
+                  }
                   navigate({ to: link.link });
                 }
           }
@@ -66,7 +85,7 @@ const MobileNavbar = () => {
             <Box component="span" mr={5}>
               {link.label}
             </Box>
-            {links && <IconChevronDown size={16} color={theme.colors.blue[6]} />}
+            {links && <IconChevronDown size={16} color="#ffecb3" />}
           </Center>
         </UnstyledButton>
         {links && <Collapse in={linksOpened}>{LinkComponents}</Collapse>}
@@ -79,7 +98,7 @@ const MobileNavbar = () => {
   return (
     <Stack h="100%">
       <Center flex={0}>
-        <Title order={4} c="blue.2">
+        <Title order={4} c="#ffecb3">
           Navigation
         </Title>
       </Center>

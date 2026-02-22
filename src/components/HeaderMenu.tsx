@@ -1,5 +1,6 @@
 import { IconChevronDown } from '@tabler/icons-react';
 import { Center, Group, Menu, type GroupProps } from '@mantine/core';
+import { notifications } from '@mantine/notifications';
 import { links } from '../utils/header-links';
 import { RouterAnchor } from './RouterAnchor';
 import classes from '../styles/HeaderMenu.module.css';
@@ -39,7 +40,7 @@ export function HeaderMenu(props: GroupProps) {
               </Center>
             </RouterAnchor>
           </Menu.Target>
-          <Menu.Dropdown miw={200} bg="grayBlue.9">
+          <Menu.Dropdown miw={200} bg="noir.9">
             {menuItems}
           </Menu.Dropdown>
         </Menu>
@@ -54,11 +55,28 @@ export function HeaderMenu(props: GroupProps) {
         to={link.link}
         onClick={(e) => {
           if (link.registration === true) {
+            notifications.show({
+              title: 'Registration opens soon!',
+              message: 'Stay tuned for updates on our registration opening date.',
+              color: '#ffecb3',
+              position: 'top-center',
+            });
+
             e.preventDefault();
-            window.open(
-              'https://www.eventbrite.com/e/south-afrifur-2024-tickets-848368861557',
-              '_blank'
-            );
+            // window.open(
+            //   'https://www.eventbrite.com/e/south-afrifur-2024-tickets-848368861557',
+            //   '_blank'
+            // );
+          }
+
+          if (link.applications) {
+            notifications.show({
+              title: 'Applications opening soon!',
+              message: 'Stay tuned for updates on our applications opening date.',
+              color: '#ffecb3',
+              position: 'top-center',
+            });
+            e.preventDefault();
           }
         }}
       >

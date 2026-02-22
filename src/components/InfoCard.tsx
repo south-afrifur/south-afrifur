@@ -18,7 +18,7 @@ export function InfoCard(props: InfoCardProps) {
   const { imageSrc, title, description, link, anchorProps, author, authorTextProps } = props;
 
   return (
-    <Card radius="md" p="md" className={classes.card} bg="grayBlue.9">
+    <Card radius="md" p="md" className={classes.card} bg="noir.9" withBorder shadow="xs">
       <Card.Section h={70}>
         <Group justify="center" h="100%">
           <RouterAnchor to={link as any} fz="lg" fw={500} underline="always" {...anchorProps}>

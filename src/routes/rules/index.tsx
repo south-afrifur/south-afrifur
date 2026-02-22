@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Center, Container, Divider, List, Stack, Text, Title } from '@mantine/core';
+import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/rules/')({
   component: RouteComponent,
@@ -29,10 +30,11 @@ function RouteComponent() {
             developed these rules to ensure that everyone has as much fun as possible while staying
             safe and friendly. If you are a member of the media interested in filming,
             photographing, or otherwise capturing our event for publication, please see our{' '}
-            <a href="/rules/media">Media Rules page</a> for guidelines.
+            <RouterAnchor to="/rules/media">Media Rules page</RouterAnchor> for guidelines.
           </Text>
           <Text ta="center" size="lg">
-            For more information about our Privacy Policy - <a href="/privacy">Click here</a>
+            For more information about our Privacy Policy -{' '}
+            <RouterAnchor to="/privacy">Click here</RouterAnchor>
           </Text>
 
           <Divider my="xl" mb="lg" w="80%" />

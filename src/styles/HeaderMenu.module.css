@@ -2,13 +2,13 @@
   height: 100%;
   display: block;
   text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4));
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-4)) !important;
   font-size: var(--mantine-font-size-lg);
   font-weight: 500;
   align-content: center;
   @mixin hover {
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-    background-color: darken(var(--mantine-color-blue-7), 0.6);
+    background-color: darken(var(--mantine-color-noir-6), 0.6);
   }
   @media (min-width: $mantine-breakpoint-md) {
     padding: 8px 12px;
@@ -19,12 +19,8 @@
 }
 
 .link[data-registration='true'] {
-  background-image: linear-gradient(
-    to right,
-    var(--mantine-color-cyan-3),
-    var(--mantine-color-blue-6)
-  );
-  color: transparent;
+  background-image: linear-gradient(to right, #ffecb3, #cfc6a9);
+  color: transparent !important;
   background-clip: text;
   font-weight: 600;
   @mixin hover {
@@ -36,7 +32,7 @@
     background-size: 400% 400%;
     animation: gradientAnimation 0.7s ease infinite;
     background-clip: initial;
-    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)) !important;
 
     @keyframes gradientAnimation {
       0% {
@@ -57,8 +53,9 @@
 }
 
 .menuItem {
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)) !important;
   @mixin hover {
-    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-    background-color: darken(var(--mantine-color-blue-7), 0.6);
+    color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)) !important;
+    background-color: var(--mantine-color-gray-9);
   }
 }

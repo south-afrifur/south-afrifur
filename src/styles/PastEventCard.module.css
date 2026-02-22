@@ -3,7 +3,7 @@
   align-items: stretch;
   padding: calc(var(--mantine-spacing-xl) * 2);
   border-radius: var(--mantine-radius-md);
-  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-grayBlue-9));
+  background-color: light-dark(var(--mantine-color-white), var(--mantine-color-noir-9));
 
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
