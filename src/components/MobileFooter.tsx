@@ -8,6 +8,7 @@ const MobileFooter = (props: StackProps) => {
       <Group gap="xs" h="100%">
         {socialLinks.map((link, index) => (
           <ActionIcon
+            disabled={link.disabled}
             key={index}
             variant="transparent"
             component="a"

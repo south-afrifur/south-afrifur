@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Center, Grid, Image, Stack, Text, Title } from '@mantine/core';
+import { notifications } from '@mantine/notifications';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
 
@@ -59,11 +60,15 @@ function Index() {
           mb={80}
         >
           <InfoCard
-            title="Accommodation"
+            title="Venue"
             description="Stay where the action is! Our venue features on-site lodging, dining, and everything you need for a comfortable, unforgettable con experience."
             imageSrc="/venue.jpg"
             imageProps={{ style: { objectPosition: 'top', objectFit: 'cover' } }}
-            link="/accommodation"
+            anchorProps={{
+              onClick: (e) => {
+                e.preventDefault();
+              },
+            }}
           />
         </Grid.Col>
         <Grid.Col
@@ -75,16 +80,14 @@ function Index() {
           mb={80}
         >
           <InfoCard
-            title="Registration!"
-            description="Get your badge and join the fun! Find out how to register, what’s included with your pass, and how to make the most of your South Afrifur experience."
-            imageSrc="/reg.jpg"
+            title="SAFC 2026: Claw and Order"
+            description="Step into a world of shadowy streets, smoky lounges, and whispered secrets. This year's noir detective theme invites you to don your trench coat, flash your badge, and uncover the mystery lurking beneath the city lights."
+            imageSrc="/desktop.webp"
             imageProps={{
-              style: { objectPosition: 'top', objectFit: 'cover' },
+              style: { objectPosition: 'bottom', objectFit: 'cover' },
             }}
-            link="/"
-            anchorProps={{
-              target: '_blank',
-            }}
+            link="/theme"
+            // author="@Man_Of_Talent"
           />
         </Grid.Col>
         <Grid.Col
@@ -95,13 +98,26 @@ function Index() {
           }}
         >
           <InfoCard
-            title="First Furry Convention?"
-            description="New to the fandom or attending your first con? Don't worry, we've got tips, guides, and friendly advice to help you feel right at home from day one."
-            imageSrc="/nervous.jpg"
+            title="Registration!"
+            description="Get your badge and join the fun! Find out how to register, what’s included with your pass, and how to make the most of your South Afrifur experience."
+            imageSrc="/reg.webp"
             imageProps={{
               style: { objectPosition: 'top', objectFit: 'cover' },
             }}
-            link="/tips"
+            link="/"
+            anchorProps={{
+              target: '_blank',
+              onClick: (e) => {
+                notifications.show({
+                  title: 'Registration opens soon!',
+                  message: 'Stay tuned for updates on our registration opening date.',
+                  color: '#ffecb3',
+                  position: 'top-center',
+                });
+                e.preventDefault();
+              },
+            }}
+            author="@Man_Of_Talent"
           />
         </Grid.Col>
       </Grid>

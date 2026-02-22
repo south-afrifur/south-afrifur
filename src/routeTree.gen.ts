@@ -11,11 +11,17 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
+import { Route as LearnRouteRouteImport } from './routes/learn/route'
 import { Route as FaqRouteRouteImport } from './routes/faq/route'
+import { Route as ContactRouteRouteImport } from './routes/contact/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
+import { Route as LearnIndexRouteImport } from './routes/learn/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
+import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
+import { Route as AboutCharityRouteRouteImport } from './routes/about/charity/route'
+import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 
 const RulesRouteRoute = RulesRouteRouteImport.update({
   id: '/rules',
@@ -27,9 +33,19 @@ const PrivacyRouteRoute = PrivacyRouteRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LearnRouteRoute = LearnRouteRouteImport.update({
+  id: '/learn',
+  path: '/learn',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqRouteRoute = FaqRouteRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRouteRoute = ContactRouteRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -42,6 +58,11 @@ const RulesIndexRoute = RulesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => RulesRouteRoute,
 } as any)
+const LearnIndexRoute = LearnIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LearnRouteRoute,
+} as any)
 const RulesMediaRouteRoute = RulesMediaRouteRouteImport.update({
   id: '/media',
   path: '/media',
@@ -52,63 +73,120 @@ const AboutSafcRouteRoute = AboutSafcRouteRouteImport.update({
   path: '/about/safc',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutPasteventsRouteRoute = AboutPasteventsRouteRouteImport.update({
+  id: '/about/pastevents',
+  path: '/about/pastevents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutCharityRouteRoute = AboutCharityRouteRouteImport.update({
+  id: '/about/charity',
+  path: '/about/charity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutSafcIndexRoute = AboutSafcIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AboutSafcRouteRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
+  '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/charity': typeof AboutCharityRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
+  '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
+  '/about/safc/': typeof AboutSafcIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/charity': typeof AboutCharityRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn': typeof LearnIndexRoute
   '/rules': typeof RulesIndexRoute
+  '/about/safc': typeof AboutSafcIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
+  '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
-  '/about/safc': typeof AboutSafcRouteRoute
+  '/about/charity': typeof AboutCharityRouteRoute
+  '/about/pastevents': typeof AboutPasteventsRouteRoute
+  '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
+  '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
+  '/about/safc/': typeof AboutSafcIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/contact'
     | '/faq'
+    | '/learn'
     | '/privacy'
     | '/rules'
+    | '/about/charity'
+    | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
+    | '/learn/'
     | '/rules/'
+    | '/about/safc/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/faq' | '/privacy' | '/about/safc' | '/rules/media' | '/rules'
+  to:
+    | '/'
+    | '/contact'
+    | '/faq'
+    | '/privacy'
+    | '/about/charity'
+    | '/about/pastevents'
+    | '/rules/media'
+    | '/learn'
+    | '/rules'
+    | '/about/safc'
   id:
     | '__root__'
     | '/'
+    | '/contact'
     | '/faq'
+    | '/learn'
     | '/privacy'
     | '/rules'
+    | '/about/charity'
+    | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
+    | '/learn/'
     | '/rules/'
+    | '/about/safc/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContactRouteRoute: typeof ContactRouteRoute
   FaqRouteRoute: typeof FaqRouteRoute
+  LearnRouteRoute: typeof LearnRouteRouteWithChildren
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
-  AboutSafcRouteRoute: typeof AboutSafcRouteRoute
+  AboutCharityRouteRoute: typeof AboutCharityRouteRoute
+  AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
+  AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -127,11 +205,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/learn': {
+      id: '/learn'
+      path: '/learn'
+      fullPath: '/learn'
+      preLoaderRoute: typeof LearnRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faq': {
       id: '/faq'
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -148,6 +240,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RulesIndexRouteImport
       parentRoute: typeof RulesRouteRoute
     }
+    '/learn/': {
+      id: '/learn/'
+      path: '/'
+      fullPath: '/learn/'
+      preLoaderRoute: typeof LearnIndexRouteImport
+      parentRoute: typeof LearnRouteRoute
+    }
     '/rules/media': {
       id: '/rules/media'
       path: '/media'
@@ -162,8 +261,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutSafcRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/pastevents': {
+      id: '/about/pastevents'
+      path: '/about/pastevents'
+      fullPath: '/about/pastevents'
+      preLoaderRoute: typeof AboutPasteventsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/charity': {
+      id: '/about/charity'
+      path: '/about/charity'
+      fullPath: '/about/charity'
+      preLoaderRoute: typeof AboutCharityRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/safc/': {
+      id: '/about/safc/'
+      path: '/'
+      fullPath: '/about/safc/'
+      preLoaderRoute: typeof AboutSafcIndexRouteImport
+      parentRoute: typeof AboutSafcRouteRoute
+    }
   }
 }
+
+interface LearnRouteRouteChildren {
+  LearnIndexRoute: typeof LearnIndexRoute
+}
+
+const LearnRouteRouteChildren: LearnRouteRouteChildren = {
+  LearnIndexRoute: LearnIndexRoute,
+}
+
+const LearnRouteRouteWithChildren = LearnRouteRoute._addFileChildren(
+  LearnRouteRouteChildren,
+)
 
 interface RulesRouteRouteChildren {
   RulesMediaRouteRoute: typeof RulesMediaRouteRoute
@@ -179,12 +311,28 @@ const RulesRouteRouteWithChildren = RulesRouteRoute._addFileChildren(
   RulesRouteRouteChildren,
 )
 
+interface AboutSafcRouteRouteChildren {
+  AboutSafcIndexRoute: typeof AboutSafcIndexRoute
+}
+
+const AboutSafcRouteRouteChildren: AboutSafcRouteRouteChildren = {
+  AboutSafcIndexRoute: AboutSafcIndexRoute,
+}
+
+const AboutSafcRouteRouteWithChildren = AboutSafcRouteRoute._addFileChildren(
+  AboutSafcRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContactRouteRoute: ContactRouteRoute,
   FaqRouteRoute: FaqRouteRoute,
+  LearnRouteRoute: LearnRouteRouteWithChildren,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
-  AboutSafcRouteRoute: AboutSafcRouteRoute,
+  AboutCharityRouteRoute: AboutCharityRouteRoute,
+  AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
+  AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

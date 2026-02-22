@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Center, Container, Divider, List, Stack, Text, Title } from '@mantine/core';
+import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/privacy')({
   component: RouteComponent,

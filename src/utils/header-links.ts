@@ -10,10 +10,12 @@ const links = [
     link: '#1',
     label: 'Applications',
     icon: IconClipboardCheckFilled,
-    links: [
-      { link: '/applications/dealers', label: 'Dealers' },
-      { link: '/applications/volunteers', label: 'Volunteers' },
-    ],
+    applications: true,
+    // links: [
+    //   { link: '/applications/dealers', label: 'Dealers' },
+    //   { link: '/applications/volunteers', label: 'Volunteers' },
+    //   { link: '/applications/panelists', label: 'Panelists' },
+    // ],
   },
   {
     link: '#2',
@@ -33,6 +35,7 @@ const links = [
       { link: '/rules', label: 'Rules and guidelines' },
       { link: '/faq', label: 'FAQ' },
       { link: '/rules/media', label: 'Media & Content Creators' },
+      { link: '/learn', label: 'Learn More' },
     ],
   },
   {

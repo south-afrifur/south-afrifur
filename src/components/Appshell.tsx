@@ -73,7 +73,7 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
         collapsed: { desktop: true, mobile: true },
       }}
     >
-      <AppShell.Header withBorder={false} bg="grayBlue.9">
+      <AppShell.Header bg="noir.9">
         <Group
           h="100%"
           px="md"
@@ -114,20 +114,17 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
       </AppShell.Navbar>
       <AppShell.Main
         id="main"
-        bg="#122131"
+        bg="noir.8"
         component={Stack}
         pb={{
           md: 100,
-        }}
-        style={{
-          gap: 0,
         }}
       >
         {children}
         <MobileFooter hiddenFrom="md" mt={100} pt={40} pb={60} />
       </AppShell.Main>
-      <AppShell.Aside p="md">Aside</AppShell.Aside>
-      <AppShell.Footer p="xs" bg="grayBlue.9">
+      <AppShell.Aside p="md"></AppShell.Aside>
+      <AppShell.Footer p="xs" bg="noir.9">
         <Group h="100%" justify="space-between">
           <Group ml="xl">
             {footerLinks.map((link, index) => (
@@ -153,6 +150,7 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 color={link.color}
+                disabled={link.disabled}
               >
                 {link.icon}
               </ActionIcon>
