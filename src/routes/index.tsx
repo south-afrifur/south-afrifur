@@ -62,13 +62,9 @@ function Index() {
           <InfoCard
             title="Venue"
             description="Stay where the action is! Our venue features on-site lodging, dining, and everything you need for a comfortable, unforgettable con experience."
-            imageSrc="/venue.jpg"
-            imageProps={{ style: { objectPosition: 'top', objectFit: 'cover' } }}
-            anchorProps={{
-              onClick: (e) => {
-                e.preventDefault();
-              },
-            }}
+            imageSrc="/venue.webp"
+            imageProps={{ style: { objectPosition: 'center', objectFit: 'cover' } }}
+            link="https://shumbavalleylodge.co.za/"
           />
         </Grid.Col>
         <Grid.Col
