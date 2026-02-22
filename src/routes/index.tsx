@@ -65,6 +65,9 @@ function Index() {
             imageSrc="/venue.webp"
             imageProps={{ style: { objectPosition: 'center', objectFit: 'cover' } }}
             link="https://shumbavalleylodge.co.za/"
+            anchorProps={{
+              target: '_blank',
+            }}
           />
         </Grid.Col>
         <Grid.Col

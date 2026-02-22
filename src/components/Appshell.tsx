@@ -151,6 +151,11 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 rel="noopener noreferrer"
                 color={link.color}
                 disabled={link.disabled}
+                onClick={(e) => {
+                  if (link.disabled) {
+                    e.preventDefault();
+                  }
+                }}
               >
                 {link.icon}
               </ActionIcon>
