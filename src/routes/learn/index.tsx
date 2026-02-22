@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Container, Divider, Group, Image, List, Stack, Text, Title } from '@mantine/core';
+import { Center, Container, Group, List, Stack, Text, Title } from '@mantine/core';
 
 export const Route = createFileRoute('/learn/')({
   component: RouteComponent,
