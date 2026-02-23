@@ -133,7 +133,7 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 key={index}
                 rel="noopener noreferrer"
                 size="sm"
-                c="gray.5"
+                c={link.troll ? 'gray.9' : 'gray.5'}
               >
                 {link.label}
               </RouterAnchor>
