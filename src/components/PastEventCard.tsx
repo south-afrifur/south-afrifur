@@ -33,7 +33,9 @@ export function PastEventCard(props: PastEventCardProps) {
   return (
     <div className={classes.wrapper}>
       <div className={classes.body}>
-        <Title className={classes.title}>{props.title}</Title>
+        <Title className={classes.title} c="#ffecb3">
+          {props.title}
+        </Title>
         {props.subTitle && (
           <Title order={4} className={classes.subTitle} mt={-15}>
             {props.subTitle}

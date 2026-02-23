@@ -28,7 +28,7 @@ function Index() {
           align="center"
           gap={40}
         >
-          <Title c="gray.1">Welcome to SAFC!</Title>
+          <Title c="#ffecb3">Welcome to SAFC!</Title>
           <Text size="lg" ta="center" c="gray.3" fw={500}>
             A celebration of creativity, self-expression and community. Bringing together artists,
             makers and fans who share a love for anthropomorphic characters in all their forms.

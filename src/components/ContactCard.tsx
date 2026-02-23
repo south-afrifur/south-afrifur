@@ -16,7 +16,9 @@ export function ContactCard(props: ContactCardProps) {
       </Card.Section>
 
       <Group justify="center" mt="lg">
-        <Title className={classes.title}>{props.title}</Title>
+        <Title className={classes.title} c="#ffecb3">
+          {props.title}
+        </Title>
       </Group>
       <Text mt="lg" mb="md" c="dimmed" fz="sm">
         {props.description}

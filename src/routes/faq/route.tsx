@@ -21,7 +21,7 @@ function RouteComponent() {
         gap={40}
       >
         <Stack>
-          <Title c="gray.1" ta="center">
+          <Title c="#ffecb3" ta="center">
             Frequently Asked Questions
           </Title>
           <Text size="lg" ta="center" c="gray.5" fw={500}>
@@ -48,7 +48,7 @@ function RouteComponent() {
           >
             <Accordion.Item value="rules" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Where are the rules?
                 </Title>
               </Accordion.Control>
@@ -62,7 +62,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="attendeesoldout" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   It says that attendee level is sold out!
                 </Title>
               </Accordion.Control>
@@ -76,7 +76,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="paymentsecure" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I secure my ticket with a partial payment?
                 </Title>
               </Accordion.Control>
@@ -93,7 +93,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="roomwithpartner" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I room with my partner/friend?
                 </Title>
               </Accordion.Control>
@@ -110,7 +110,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="securedetails" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Are my private details secure?
                 </Title>
               </Accordion.Control>
@@ -128,7 +128,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="larp" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I bring my cosplay props or LARPing equipment?
                 </Title>
               </Accordion.Control>
@@ -143,7 +143,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="fursuit-handlers" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Do fursuiters really need handlers?
                 </Title>
               </Accordion.Control>
@@ -160,7 +160,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="upgrade-ticket" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I upgrade my ticket last-minute?
                 </Title>
               </Accordion.Control>
@@ -176,7 +176,7 @@ function RouteComponent() {
             </Accordion.Item>
             <Accordion.Item value="custom-badges" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Will there be custom badges?
                 </Title>
               </Accordion.Control>

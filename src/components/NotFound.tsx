@@ -7,7 +7,7 @@ const NotFound = () => {
         404
       </Title>
       <Container maw={600} flex={0}>
-        <Title ta="center" order={3}>
+        <Title ta="center" order={3} c="#ffecb3">
           We couldn't find what you're looking for, but it's probably in here somewhere!
         </Title>
       </Container>

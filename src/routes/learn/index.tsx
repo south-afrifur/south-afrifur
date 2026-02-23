@@ -24,7 +24,7 @@ function RouteComponent() {
             <Stack mb={50}>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     What To Expect
                   </Title>
                   <Text c="gray.3" size="md">
@@ -82,7 +82,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     Traveling & Budgeting
                   </Title>
                   <Text c="gray.3" size="md">
@@ -123,7 +123,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     Hotel & Accommodation
                   </Title>
                   <Text c="gray.3" size="md">
@@ -148,7 +148,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     First Time At Con
                   </Title>
                   <Text c="gray.3" size="md">
@@ -163,7 +163,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     Things To Pack
                   </Title>
                   <Title c="gray.3" size="md">
@@ -238,7 +238,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     Guide For Kids & Parents
                   </Title>
                   <Text c="gray.3" size="md">
@@ -258,7 +258,7 @@ function RouteComponent() {
               </Group>
               <Group wrap="nowrap">
                 <Stack mb={50}>
-                  <Title c="gray.1" order={2} style={{ alignSelf: 'center' }} mb="md">
+                  <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     What is a furry?
                   </Title>
                   <Text c="gray.3" size="md">
