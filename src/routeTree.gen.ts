@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ThemeRouteRouteImport } from './routes/theme/route'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
 import { Route as LearnRouteRouteImport } from './routes/learn/route'
@@ -23,6 +24,11 @@ import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pasteve
 import { Route as AboutCharityRouteRouteImport } from './routes/about/charity/route'
 import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 
+const ThemeRouteRoute = ThemeRouteRouteImport.update({
+  id: '/theme',
+  path: '/theme',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RulesRouteRoute = RulesRouteRouteImport.update({
   id: '/rules',
   path: '/rules',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
@@ -109,6 +116,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
+  '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
@@ -124,6 +132,7 @@ export interface FileRoutesById {
   '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
@@ -141,6 +150,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/privacy'
     | '/rules'
+    | '/theme'
     | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
@@ -154,6 +164,7 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/privacy'
+    | '/theme'
     | '/about/charity'
     | '/about/pastevents'
     | '/rules/media'
@@ -168,6 +179,7 @@ export interface FileRouteTypes {
     | '/learn'
     | '/privacy'
     | '/rules'
+    | '/theme'
     | '/about/charity'
     | '/about/pastevents'
     | '/about/safc'
@@ -184,6 +196,7 @@ export interface RootRouteChildren {
   LearnRouteRoute: typeof LearnRouteRouteWithChildren
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
+  ThemeRouteRoute: typeof ThemeRouteRoute
   AboutCharityRouteRoute: typeof AboutCharityRouteRoute
   AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
   AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
@@ -191,6 +204,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/theme': {
+      id: '/theme'
+      path: '/theme'
+      fullPath: '/theme'
+      preLoaderRoute: typeof ThemeRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/rules': {
       id: '/rules'
       path: '/rules'
@@ -330,6 +350,7 @@ const rootRouteChildren: RootRouteChildren = {
   LearnRouteRoute: LearnRouteRouteWithChildren,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
+  ThemeRouteRoute: ThemeRouteRoute,
   AboutCharityRouteRoute: AboutCharityRouteRoute,
   AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
   AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,

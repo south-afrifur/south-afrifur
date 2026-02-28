@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Grid, Image, Stack, Text, Title } from '@mantine/core';
+import { Center, Grid, Stack, Text, Title } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
@@ -11,11 +11,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <Stack w="100%" gap={70}>
-      <div className={classes.hero}>
-        <Center h="100%">
-          <Image src="/safc-symbol.webp" alt="Hero Image" w={300} />
-        </Center>
-      </div>
+      <div className={classes.hero}></div>
       <Center>
         <Stack
           maw={{
@@ -86,7 +82,6 @@ function Index() {
               style: { objectPosition: 'bottom', objectFit: 'cover' },
             }}
             link="/theme"
-            // author="@Man_Of_Talent"
           />
         </Grid.Col>
         <Grid.Col
