@@ -20,7 +20,7 @@ function RouteComponent() {
           align="center"
           gap={40}
         >
-          <Title c="gray.1">About Us</Title>
+          <Title c="#ffecb3">About Us</Title>
           <Text size="lg" ta="center" c="gray.5" fw={500}>
             A brief history
           </Text>

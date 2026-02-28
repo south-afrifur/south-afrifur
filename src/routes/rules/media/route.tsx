@@ -20,7 +20,7 @@ function RouteComponent() {
           align="center"
           gap={40}
         >
-          <Title c="gray.1" order={2}>
+          <Title c="#ffecb3" order={2}>
             Media & Content Creators
           </Title>
 
@@ -36,7 +36,7 @@ function RouteComponent() {
           <Divider my="xl" mb="lg" w="80%" />
           <Container>
             <Stack mb={50}>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Accreditation & Approval
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -52,7 +52,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Consent & Respect
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -71,7 +71,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Restricted Areas
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -88,7 +88,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 After Dark (AD) Programming
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -103,7 +103,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Respect for Minors & Families
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -118,7 +118,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Publication & Use of Media
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -135,7 +135,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Enforcement
               </Title>
               <List type="ordered" spacing={'xs'}>

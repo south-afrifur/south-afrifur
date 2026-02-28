@@ -11,7 +11,7 @@ function RouteComponent() {
   return (
     <Center mt={'xl'}>
       <Stack w="100%" gap={70} align="center">
-        <Title c="gray.1" ta="center">
+        <Title c="#ffecb3" ta="center">
           Join our community!
         </Title>
         <Text size="lg" ta="center" c="gray.5" fw={500} maw={500}>

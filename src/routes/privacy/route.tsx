@@ -20,7 +20,7 @@ function RouteComponent() {
         gap={40}
       >
         <Stack>
-          <Title c="gray.1">Privacy Policy</Title>
+          <Title c="#ffecb3">Privacy Policy</Title>
           <Text size="lg" ta="center" c="gray.5" fw={500}>
             Last updated: 4 April 2025
           </Text>
@@ -35,7 +35,7 @@ function RouteComponent() {
         <Divider my="xl" mb="lg" w="80%" />
         <Container>
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               1. Information We Collect
             </Title>
             <Text>
@@ -56,7 +56,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               2. How We Use Your Information
             </Title>
             <Text>
@@ -80,7 +80,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               3. Data Storage and Security
             </Title>
             <List>
@@ -96,7 +96,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               4. Data Retention
             </Title>
             <Text>
@@ -108,7 +108,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               5. Payment Information
             </Title>
             <Text>
@@ -122,7 +122,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               6. Compliance with POPIA
             </Title>
             <Text>
@@ -147,7 +147,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               7. Your Rights
             </Title>
             <Text>Under POPIA, you have the right to:</Text>
@@ -167,7 +167,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               8. Changes to This Policy
             </Title>
             <Text>
@@ -178,7 +178,7 @@ function RouteComponent() {
           </Stack>
           <Divider my="xl" mb="lg" w="100%" />
           <Stack mb={50}>
-            <Title c="gray.1" order={3}>
+            <Title c="#ffecb3" order={3}>
               9. Contact Us
             </Title>
             <Text>

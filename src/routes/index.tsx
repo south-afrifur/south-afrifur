@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Grid, Image, Stack, Text, Title } from '@mantine/core';
+import { Center, Grid, Stack, Text, Title } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
@@ -11,11 +11,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <Stack w="100%" gap={70}>
-      <div className={classes.hero}>
-        <Center h="100%">
-          <Image src="/safc-symbol.webp" alt="Hero Image" w={300} />
-        </Center>
-      </div>
+      <div className={classes.hero}></div>
       <Center>
         <Stack
           maw={{
@@ -28,7 +24,7 @@ function Index() {
           align="center"
           gap={40}
         >
-          <Title c="gray.1">Welcome to SAFC!</Title>
+          <Title c="#ffecb3">Welcome to SAFC!</Title>
           <Text size="lg" ta="center" c="gray.3" fw={500}>
             A celebration of creativity, self-expression and community. Bringing together artists,
             makers and fans who share a love for anthropomorphic characters in all their forms.
@@ -62,12 +58,11 @@ function Index() {
           <InfoCard
             title="Venue"
             description="Stay where the action is! Our venue features on-site lodging, dining, and everything you need for a comfortable, unforgettable con experience."
-            imageSrc="/venue.jpg"
-            imageProps={{ style: { objectPosition: 'top', objectFit: 'cover' } }}
+            imageSrc="/venue.webp"
+            imageProps={{ style: { objectPosition: 'center', objectFit: 'cover' } }}
+            link="https://shumbavalleylodge.co.za/"
             anchorProps={{
-              onClick: (e) => {
-                e.preventDefault();
-              },
+              target: '_blank',
             }}
           />
         </Grid.Col>
@@ -87,7 +82,6 @@ function Index() {
               style: { objectPosition: 'bottom', objectFit: 'cover' },
             }}
             link="/theme"
-            // author="@Man_Of_Talent"
           />
         </Grid.Col>
         <Grid.Col

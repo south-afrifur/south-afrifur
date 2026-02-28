@@ -10,5 +10,6 @@ export const footerLinks = [
   {
     label: 'Click me',
     link: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    troll: true,
   },
 ];

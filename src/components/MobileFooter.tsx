@@ -29,7 +29,7 @@ const MobileFooter = (props: StackProps) => {
           target="_blank"
           rel="noopener noreferrer"
           size="sm"
-          c="gray.5"
+          c={item.troll ? 'gray.9' : 'gray.5'}
         >
           {item.label}
         </Anchor>

@@ -21,7 +21,7 @@ function RouteComponent() {
         gap={40}
       >
         <Stack>
-          <Title c="gray.1" ta="center">
+          <Title c="#ffecb3" ta="center">
             Frequently Asked Questions
           </Title>
           <Text size="lg" ta="center" c="gray.5" fw={500}>
@@ -48,7 +48,7 @@ function RouteComponent() {
           >
             <Accordion.Item value="rules" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Where are the rules?
                 </Title>
               </Accordion.Control>
@@ -60,23 +60,29 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-            <Accordion.Item value="attendeesoldout" bg="transparent">
+
+            <Accordion.Item value="sales" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
-                  It says that attendee level is sold out!
+                <Title c="#ffecb3" order={4} mb="sm">
+                  When will tickets go on sale?
                 </Title>
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
-                  The attendee level tickets will go on sale on 20 April. Tickets of all levels will
-                  be available until we can no longer accommodate more guests staying at the venue.
-                  When space is no longer available, this information will be announced.
+                  A round of early-bird tickets will go on sale on the 6th of March 2026. These
+                  early-bird tickets will be Sponsor, Super Sponsor and Mythic sponsor tickets only,
+                  as well as 2 single-room supplements. The full range of tickets, including
+                  Attendee and Weekend Visitor tickets, will be available from the 20th of March
+                  2026, when tickets of all levels will be available until we can no longer
+                  accommodate more guests staying at the venue. When space is no longer available,
+                  this information will be announced via our channels.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-            <Accordion.Item value="paymentsecure" bg="transparent">
+
+            <Accordion.Item value="partialpayment" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I secure my ticket with a partial payment?
                 </Title>
               </Accordion.Control>
@@ -91,26 +97,28 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
             <Accordion.Item value="roomwithpartner" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I room with my partner/friend?
                 </Title>
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
                   When you purchase your ticket, you can enter details on who you want to room with.
-                  For the most part, rooms accommodate 3 or 4 people, so it will be inevitable that
-                  you might encounter some new faces. However, we will honor rooming requests as
-                  much as possible when specified, even across ticket tiers. If you have any special
-                  rooming requirements (such as accessibility for impaired movement, cold storage
-                  for medication, etc.), please make sure to specify this information as well.
+                  At Shumba Valley, the majority of the available rooms are suited for 2 people. If
+                  you're looking to room with more than one person, we have a very limited amount of
+                  group booking options available. If you have any special rooming requirements
+                  (such as accessibility for impaired movement, cold storage for medication, etc.),
+                  please make sure to specify this information as well.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
             <Accordion.Item value="securedetails" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Are my private details secure?
                 </Title>
               </Accordion.Control>
@@ -126,9 +134,32 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
+            <Accordion.Item value="personalinfo" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  Why do you need all this personal information?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  Some personal details are required to secure your booking. We will need your full
+                  legal name, ID number and phone numbers for emergency contacts, so we have someone
+                  to call when you need to receive emergency care or to be admitted to a hospital.
+                  It’s also important that your emergency contact knows your medical history and
+                  insurance details. It is crucial to the safety of our attendees, and these details
+                  will only be accessed in case of an emergency.
+                </Text>
+                <Text mt="md">
+                  For more information on our Privacy Policy, please visit the{' '}
+                  <RouterAnchor to="/privacy">Privacy Policy page</RouterAnchor>.
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
+
             <Accordion.Item value="larp" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I bring my cosplay props or LARPing equipment?
                 </Title>
               </Accordion.Control>
@@ -141,10 +172,11 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
             <Accordion.Item value="fursuit-handlers" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
-                  Do fursuiters really need handlers?
+                <Title c="#ffecb3" order={4} mb="sm">
+                  Do fursuiters really need a handler?
                 </Title>
               </Accordion.Control>
               <Accordion.Panel>
@@ -158,25 +190,30 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
             <Accordion.Item value="upgrade-ticket" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Can I upgrade my ticket last-minute?
                 </Title>
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
-                  We do not allow for upgrading of tickets at this time. We have custom merchandise
-                  that is offered as gifts to sponsors, and getting these completed before the con
-                  is important to us. Especially with loadshedding, we need a lot of lead time on
-                  these products. We want to ensure that everyone who helps out the con by
-                  sponsoring us, gets the rewards they were promised.
+                  Ticket upgrades are not handled automatically. If you wish to upgrade a ticket,
+                  please reach out to us at admin@south-afrifur.co.za or via one of our digital
+                  channels. There will be a hard cut-off to finalize your ticket level (roughly the
+                  start of June 2026), after which no more upgrades will be accepted. Our custom
+                  merchandise that is offered as gifts to sponsors requires a lot of lead time, and
+                  getting these completed before the con is important to us. We want to ensure that
+                  everyone who helps out the con by sponsoring us, gets the rewards they were
+                  promised.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
+
             <Accordion.Item value="custom-badges" bg="transparent">
               <Accordion.Control>
-                <Title order={4} mb="sm">
+                <Title c="#ffecb3" order={4} mb="sm">
                   Will there be custom badges?
                 </Title>
               </Accordion.Control>

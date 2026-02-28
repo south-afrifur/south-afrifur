@@ -133,7 +133,7 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 key={index}
                 rel="noopener noreferrer"
                 size="sm"
-                c="gray.5"
+                c={link.troll ? 'gray.9' : 'gray.5'}
               >
                 {link.label}
               </RouterAnchor>
@@ -151,6 +151,11 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
                 rel="noopener noreferrer"
                 color={link.color}
                 disabled={link.disabled}
+                onClick={(e) => {
+                  if (link.disabled) {
+                    e.preventDefault();
+                  }
+                }}
               >
                 {link.icon}
               </ActionIcon>

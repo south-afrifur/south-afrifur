@@ -21,7 +21,7 @@ function RouteComponent() {
           align="center"
           gap={40}
         >
-          <Title c="gray.1" order={2}>
+          <Title c="#ffecb3" order={2}>
             Our Policy
           </Title>
 
@@ -38,12 +38,12 @@ function RouteComponent() {
           </Text>
 
           <Divider my="xl" mb="lg" w="80%" />
-          <Title c="gray.1" order={1} mb="xs">
+          <Title c="#ffecb3" order={1} mb="xs">
             SAFC RULES
           </Title>
           <Container>
             <Stack mb={50}>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 General Conduct
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -94,7 +94,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Alcohol and Drugs
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -123,7 +123,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Minors
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -144,7 +144,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Medical Emergencies
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -156,7 +156,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Harassment, Hate Speech, and Symbols
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -182,7 +182,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Registration and Badges
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -204,7 +204,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Dress Code
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -229,7 +229,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Weapons
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -242,7 +242,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Fursuiters
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -268,7 +268,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Music
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -282,7 +282,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Photography and Audiovisual Recording
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -318,7 +318,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Policy Revisions
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -355,7 +355,7 @@ function RouteComponent() {
             </Stack>
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
-              <Title c="gray.1" order={3}>
+              <Title c="#ffecb3" order={3}>
                 Fursuit Lounge Rules
               </Title>
               <List type="ordered" spacing={'xs'}>
