@@ -24,7 +24,13 @@ function RouteComponent() {
           <Title c="#ffecb3" order={2}>
             Our Theme
           </Title>
-          <Image src="/banner.png" alt="Banner" mah={700} fit="contain" />
+
+          <Image
+            src="/banner_wide.png"
+            alt="Banner"
+            mah={{ base: 300, sm: 500, md: 500, lg: 700, xl: 700 }}
+            fit="contain"
+          />
           <Text ta="center" size="xl" fw={500}>
             “I didn’t even look up as the beaten manilla folder slid across my desk. I stood up,
             picked it up from the floor and opened it. Another dead-end case, so cold you’d think it

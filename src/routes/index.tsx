@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Grid, Stack, Text, Title } from '@mantine/core';
+import { Box, Center, Grid, Stack, Text, Title } from '@mantine/core';
 import { notifications } from '@mantine/notifications';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
@@ -11,7 +11,7 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <Stack w="100%" gap={70}>
-      <div className={classes.hero}></div>
+      <Box className={classes.hero} h={{ base: 300, sm: 500, md: 500, lg: 700, xl: 700 }}></Box>
       <Center>
         <Stack
           maw={{
