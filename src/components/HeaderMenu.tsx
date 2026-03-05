@@ -55,18 +55,8 @@ export function HeaderMenu(props: GroupProps) {
         to={link.link}
         onClick={(e) => {
           if (link.registration === true) {
-            notifications.show({
-              title: 'Registration opens soon!',
-              message: 'Stay tuned for updates on our registration opening date.',
-              color: '#ffecb3',
-              position: 'top-center',
-            });
-
+            window.open('https://portal.south-afrifur.co.za', '_blank');
             e.preventDefault();
-            // window.open(
-            //   'https://www.eventbrite.com/e/south-afrifur-2024-tickets-848368861557',
-            //   '_blank'
-            // );
           }
 
           if (link.applications) {
