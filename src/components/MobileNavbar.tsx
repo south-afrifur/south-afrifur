@@ -57,13 +57,9 @@ const MobileNavbar = () => {
               ? toggleLinks
               : (e) => {
                   if (link.registration === true) {
-                    e.preventDefault();
-                    notifications.show({
-                      title: 'Registration opens soon!',
-                      message: 'Stay tuned for updates on our registration opening date.',
-                      color: '#ffecb3',
-                      position: 'top-center',
-                    });
+                    if (link.registration === true) {
+                      window.open('https://portal.south-afrifur.co.za', '_blank');
+                    }
                     return;
                   }
                   if (link.applications === true) {
