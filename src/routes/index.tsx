@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Box, Center, Grid, Stack, Text, Title } from '@mantine/core';
-import { notifications } from '@mantine/notifications';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
 
