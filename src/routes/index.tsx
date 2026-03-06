@@ -102,12 +102,7 @@ function Index() {
             anchorProps={{
               target: '_blank',
               onClick: (e) => {
-                notifications.show({
-                  title: 'Registration opens soon!',
-                  message: 'Stay tuned for updates on our registration opening date.',
-                  color: '#ffecb3',
-                  position: 'top-center',
-                });
+                window.open('https://portal.south-afrifur.co.za', '_blank');
                 e.preventDefault();
               },
             }}
