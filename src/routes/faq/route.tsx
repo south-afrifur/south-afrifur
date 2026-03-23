@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Accordion, Center, Container, Stack, Text, Title } from '@mantine/core';
+import { Accordion, Anchor, Center, Container, List, Stack, Text, Title } from '@mantine/core';
 import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/faq')({
@@ -46,6 +46,121 @@ function RouteComponent() {
               item: { border: 'none', width: '100%' },
             }}
           >
+            <Accordion.Item value="when" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  When is the convention?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  SAFC 2026 is being held from Friday 7th to Monday 10th August 2026. With Monday
+                  being a public holiday in South Africa, that weekend is long weekend!
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="venue" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  Where is the convention being held?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  SAFC 2026 is hosted at Shumba Valley Lodge, a short distance from Lanseria
+                  Airport. Visit Shumba Valleys website here:{' '}
+                  <Anchor
+                    href="https://shumbavalleylodge.co.za/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    https://shumbavalleylodge.co.za/
+                  </Anchor>
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="howmuch" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  How much are tickets?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  The SAFC convention offers accommodation and catering for its attendees for the
+                  duration of the weekend. The basic Attendee ticket will secure your entrance to
+                  the convention and some basic accreditation, but if you feel like helping out the
+                  convention while getting some exclusive swag in return, you can opt for a Sponsor,
+                  Super Sponsor or, if you're feeling incredibly generous, a Mythic Sponsor ticket.
+                </Text>
+                <Text>
+                  <p>
+                    A few add-ons to customize your stay is also available at our store (
+                    <Anchor
+                      href="https://portal.south-afrifur.co.za/shop/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      https://portal.south-afrifur.co.za/shop/
+                    </Anchor>
+                    ) If you would like to see what SAFC has to offer without needing accommodation,
+                    you can purchase our Weekend Pass ticket.
+                  </p>
+                </Text>
+                <List>
+                  <List.Item>Weekend Pass: R850</List.Item>
+                  <List.Item>Attendee ticket: R4,250</List.Item>
+                  <List.Item>Sponsor ticket: R5,500</List.Item>
+                  <List.Item>Super Sponsor ticket: R6,750</List.Item>
+                  <List.Item>Mythic Sponsor ticket: R12,000</List.Item>
+                </List>
+              </Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="morethanone" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  Can I buy more than one ticket?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  Yes, one person can buy more than one ticket for themselves and others, however,
+                  it is vitally important that the information requested when purchasing the ticket
+                  be entered as correctly as possible for each individual attendee. We require
+                  information such as ID number, emergency contact details and warnings about food
+                  allergies or dietary restrictions for each person attending the convention.
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="arrivaltime" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  When do we need to arrive at and leave the venue?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  Registration and hotel check-in opens at 14:00 on Friday 7th August. If you will
+                  be arriving much later, please ask reception to contact one of the admins to check
+                  you in, or you can message one of the admins via our Telegram channels. Attendees
+                  who are staying at the venue are required to check out at 10:00 on Monday 10th
+                  August, per venue regulations. Breakfast is included for Monday.
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
+            <Accordion.Item value="shuttleservice" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  Are there shuttle services available?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  Shumba Valley Lodge offers a shuttle service to and from Lanseria Airport. These
+                  shuttles need to be arranged directly with the hotel.
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
             <Accordion.Item value="rules" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -60,7 +175,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="sales" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -79,7 +193,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="partialpayment" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -97,7 +210,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="roomwithpartner" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -115,7 +227,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="securedetails" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -134,7 +245,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="personalinfo" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -156,7 +266,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="larp" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -172,7 +281,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="fursuit-handlers" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -190,7 +298,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="upgrade-ticket" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
@@ -210,7 +317,6 @@ function RouteComponent() {
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
-
             <Accordion.Item value="custom-badges" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
