@@ -4,18 +4,46 @@ import {
   IconHelpCircleFilled,
 } from '@tabler/icons-react';
 
-const links = [
+type Links = {
+  link: string;
+  label: string;
+  icon?: any;
+  registration?: boolean;
+  application?: boolean;
+  links?: Links[];
+  disabled?: string;
+};
+
+const links: Links[] = [
   { link: '/registration', label: 'Registration', registration: true },
   {
     link: '#1',
     label: 'Applications',
     icon: IconClipboardCheckFilled,
-    applications: true,
-    // links: [
-    //   { link: '/applications/dealers', label: 'Dealers' },
-    //   { link: '/applications/volunteers', label: 'Volunteers' },
-    //   { link: '/applications/panelists', label: 'Panelists' },
-    // ],
+    links: [
+      {
+        link: 'https://forms.gle/aHnVzEjyEbzms4wV7',
+        label: 'Panelists',
+        application: true,
+      },
+      {
+        link: 'https://forms.gle/LUxsGac764tnDKvS7',
+        label: 'Volunteers (Awoo Crew)',
+        application: true,
+      },
+      {
+        link: 'https://forms.gle/juUeERn8MLZmyyAK7',
+        label: 'Digital Volunteers (DigiWoo Crew)',
+        application: true,
+      },
+
+      {
+        link: '/applications/dealers',
+        label: "Dealer's Den",
+        disabled: 'Coming Soon',
+        application: true,
+      },
+    ],
   },
   {
     link: '#2',

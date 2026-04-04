@@ -1,9 +1,10 @@
 .hero {
   position: relative;
   width: 100%;
-  background-image: url('/banner_wide.png');
+  background-image: url('/banner_wide_date.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   margin-top: var(--mantine-spacing-xl);
+  background-origin: content-box;
 }

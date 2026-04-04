@@ -1,6 +1,5 @@
 import { IconChevronDown } from '@tabler/icons-react';
 import { Center, Group, Menu, type GroupProps } from '@mantine/core';
-import { notifications } from '@mantine/notifications';
 import { links } from '../utils/header-links';
 import { RouterAnchor } from './RouterAnchor';
 import classes from '../styles/HeaderMenu.module.css';
@@ -9,6 +8,17 @@ export function HeaderMenu(props: GroupProps) {
   const items = links.map((link) => {
     const menuItems = link.links?.map((item) => (
       <Menu.Item
+        disabled={!!item.disabled}
+        onClick={(e) => {
+          if (!!item.disabled) {
+            e.preventDefault();
+            return;
+          }
+          if (item.application) {
+            window.open(item.link, '_blank');
+            e.preventDefault();
+          }
+        }}
         className={classes.menuItem}
         key={item.link}
         component={RouterAnchor}
@@ -20,7 +30,7 @@ export function HeaderMenu(props: GroupProps) {
           },
         }}
       >
-        {item.label}
+        {`${item.label} ${item.disabled ? `(${item.disabled})` : ''}`}
       </Menu.Item>
     ));
 
@@ -56,16 +66,6 @@ export function HeaderMenu(props: GroupProps) {
         onClick={(e) => {
           if (link.registration === true) {
             window.open('https://portal.south-afrifur.co.za', '_blank');
-            e.preventDefault();
-          }
-
-          if (link.applications) {
-            notifications.show({
-              title: 'Applications opening soon!',
-              message: 'Stay tuned for updates on our applications opening date.',
-              color: '#ffecb3',
-              position: 'top-center',
-            });
             e.preventDefault();
           }
         }}

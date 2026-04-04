@@ -26,7 +26,7 @@ function RouteComponent() {
           </Title>
 
           <Image
-            src="/banner_wide.png"
+            src="/banner_wide_date.png"
             alt="Banner"
             mah={{ base: 300, sm: 500, md: 500, lg: 700, xl: 700 }}
             fit="contain"
