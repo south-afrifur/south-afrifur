@@ -10,7 +10,11 @@ export const Route = createFileRoute('/')({
 function Index() {
   return (
     <Stack w="100%" gap={70}>
-      <Box className={classes.hero} h={{ base: 300, sm: 500, md: 500, lg: 700, xl: 700 }}></Box>
+      <Box
+        className={classes.hero}
+        h={{ base: 300, sm: 500, md: 500, lg: 700, xl: 700 }}
+        p="xs"
+      ></Box>
       <Center>
         <Stack
           maw={{

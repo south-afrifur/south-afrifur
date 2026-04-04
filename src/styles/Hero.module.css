@@ -6,4 +6,5 @@
   background-repeat: no-repeat;
   background-position: center;
   margin-top: var(--mantine-spacing-xl);
+  background-origin: content-box;
 }
