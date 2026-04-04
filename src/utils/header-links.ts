@@ -22,24 +22,25 @@ const links: Links[] = [
     icon: IconClipboardCheckFilled,
     links: [
       {
-        link: '/applications/dealers',
-        label: "Dealer's Den",
-        disabled: 'Coming Soon',
+        link: 'https://forms.gle/aHnVzEjyEbzms4wV7',
+        label: 'Panelists',
         application: true,
       },
       {
-        link: 'https://docs.google.com/forms/d/1dSr6ihgD0WWWH-FMPCP975PWb2Tfa8Kwr2zbJX4N9zM/edit',
+        link: 'https://forms.gle/LUxsGac764tnDKvS7',
         label: 'Volunteers (Awoo Crew)',
         application: true,
       },
       {
-        link: 'https://docs.google.com/forms/d/1RgBF5qMto3nGz8YurdX-ZvGQcpAQ4yEkFUCTYRpSLzM/edit',
+        link: 'https://forms.gle/juUeERn8MLZmyyAK7',
         label: 'Digital Volunteers (DigiWoo Crew)',
         application: true,
       },
+
       {
-        link: 'https://docs.google.com/forms/d/1jzt8ndWRSLRusPT13mn-lm3i_QHMlqx0fajsAxaZGvg/edit',
-        label: 'Panelists',
+        link: '/applications/dealers',
+        label: "Dealer's Den",
+        disabled: 'Coming Soon',
         application: true,
       },
     ],
