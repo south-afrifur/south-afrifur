@@ -60,7 +60,7 @@ const MobileNavbar = () => {
           onClick={
             links
               ? toggleLinks
-              : (e) => {
+              : () => {
                   if (link.registration === true) {
                     window.open('https://portal.south-afrifur.co.za', '_blank');
                     return;
