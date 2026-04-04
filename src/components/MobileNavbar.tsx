@@ -14,7 +14,6 @@ import {
   UnstyledButton,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { notifications } from '@mantine/notifications';
 import { links } from '../utils/header-links';
 import classes from '../styles/MobileNavbar.module.css';
 
@@ -29,7 +28,13 @@ const MobileNavbar = () => {
         <UnstyledButton
           className={classes.subLink}
           key={item.label}
+          disabled={!!item.disabled}
           onClick={() => {
+            if (item.application === true) {
+              if (item.disabled) return;
+              window.open(item.link, '_blank');
+              return;
+            }
             navigate({ to: item.link });
           }}
         >
@@ -41,7 +46,7 @@ const MobileNavbar = () => {
             )}
             <div>
               <Text size="sm" fw={500}>
-                {item.label}
+                {`${item.label} ${item.disabled ? `(${item.disabled})` : ''}`}
               </Text>
             </div>
           </Group>
@@ -57,21 +62,10 @@ const MobileNavbar = () => {
               ? toggleLinks
               : (e) => {
                   if (link.registration === true) {
-                    if (link.registration === true) {
-                      window.open('https://portal.south-afrifur.co.za', '_blank');
-                    }
+                    window.open('https://portal.south-afrifur.co.za', '_blank');
                     return;
                   }
-                  if (link.applications === true) {
-                    e.preventDefault();
-                    notifications.show({
-                      title: 'Applications opening soon!',
-                      message: 'Stay tuned for updates on our applications opening date.',
-                      color: '#ffecb3',
-                      position: 'top-center',
-                    });
-                    return;
-                  }
+
                   navigate({ to: link.link });
                 }
           }
