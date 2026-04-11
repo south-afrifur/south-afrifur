@@ -27,6 +27,11 @@ const links: Links[] = [
         application: true,
       },
       {
+        link: 'https://forms.gle/hCpd4nMBhmjn2785A',
+        label: "Dealers' Den",
+        application: true,
+      },
+      {
         link: 'https://forms.gle/LUxsGac764tnDKvS7',
         label: 'Volunteers (Awoo Crew)',
         application: true,
@@ -36,11 +41,9 @@ const links: Links[] = [
         label: 'Digital Volunteers (DigiWoo Crew)',
         application: true,
       },
-
       {
-        link: '/applications/dealers',
-        label: "Dealer's Den",
-        disabled: 'Coming Soon',
+        link: 'https://forms.gle/mwdXbTSCG1odv2wt7',
+        label: 'Media Crew',
         application: true,
       },
     ],
