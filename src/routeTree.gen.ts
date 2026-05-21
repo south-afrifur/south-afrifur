@@ -21,6 +21,7 @@ import { Route as LearnIndexRouteImport } from './routes/learn/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
 import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
+import { Route as AboutInternationalguestsRouteRouteImport } from './routes/about/internationalguests/route'
 import { Route as AboutCharityRouteRouteImport } from './routes/about/charity/route'
 import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 
@@ -84,6 +85,12 @@ const AboutPasteventsRouteRoute = AboutPasteventsRouteRouteImport.update({
   path: '/about/pastevents',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutInternationalguestsRouteRoute =
+  AboutInternationalguestsRouteRouteImport.update({
+    id: '/about/internationalguests',
+    path: '/about/internationalguests',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AboutCharityRouteRoute = AboutCharityRouteRouteImport.update({
   id: '/about/charity',
   path: '/about/charity',
@@ -104,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/rules': typeof RulesRouteRouteWithChildren
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
+  '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
@@ -118,6 +126,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRouteRoute
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
+  '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/learn': typeof LearnIndexRoute
@@ -134,6 +143,7 @@ export interface FileRoutesById {
   '/rules': typeof RulesRouteRouteWithChildren
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
+  '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
   '/rules/media': typeof RulesMediaRouteRoute
@@ -152,6 +162,7 @@ export interface FileRouteTypes {
     | '/rules'
     | '/theme'
     | '/about/charity'
+    | '/about/internationalguests'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
@@ -166,6 +177,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/theme'
     | '/about/charity'
+    | '/about/internationalguests'
     | '/about/pastevents'
     | '/rules/media'
     | '/learn'
@@ -181,6 +193,7 @@ export interface FileRouteTypes {
     | '/rules'
     | '/theme'
     | '/about/charity'
+    | '/about/internationalguests'
     | '/about/pastevents'
     | '/about/safc'
     | '/rules/media'
@@ -198,6 +211,7 @@ export interface RootRouteChildren {
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
   ThemeRouteRoute: typeof ThemeRouteRoute
   AboutCharityRouteRoute: typeof AboutCharityRouteRoute
+  AboutInternationalguestsRouteRoute: typeof AboutInternationalguestsRouteRoute
   AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
   AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
 }
@@ -288,6 +302,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutPasteventsRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about/internationalguests': {
+      id: '/about/internationalguests'
+      path: '/about/internationalguests'
+      fullPath: '/about/internationalguests'
+      preLoaderRoute: typeof AboutInternationalguestsRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about/charity': {
       id: '/about/charity'
       path: '/about/charity'
@@ -352,6 +373,7 @@ const rootRouteChildren: RootRouteChildren = {
   RulesRouteRoute: RulesRouteRouteWithChildren,
   ThemeRouteRoute: ThemeRouteRoute,
   AboutCharityRouteRoute: AboutCharityRouteRoute,
+  AboutInternationalguestsRouteRoute: AboutInternationalguestsRouteRoute,
   AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
   AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,
 }
