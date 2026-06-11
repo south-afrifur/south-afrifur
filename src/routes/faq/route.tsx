@@ -116,6 +116,34 @@ function RouteComponent() {
                 </List>
               </Accordion.Panel>
             </Accordion.Item>
+            <Accordion.Item value="whyhowmuch" bg="transparent">
+              <Accordion.Control>
+                <Title c="#ffecb3" order={4} mb="sm">
+                  I have seen the venue pricing, why are the tickets priced this way?
+                </Title>
+              </Accordion.Control>
+              <Accordion.Panel>
+                <Text>
+                  Ticket prices not only include accommodation but also venue hire, catering &
+                  overheads like basic equipment hire, fursuit lounge consumables & hosting services
+                  for our online assets. Everyone who buys a resident ticket makes it possible for
+                  the con to happen, and we are very grateful for that support!
+                </Text>
+                <Text mt="lg">
+                  Sponsors, Supersponsors & Mythics allow us to get the truly fun things that
+                  enhance the con experience for everyone. These funds are used to buy or hire
+                  movable assets like scaffolding, projectors, fursuit lounge shelves etc.
+                </Text>
+                <Text mt="lg">
+                  SAFC works on a strictly not-for-profit basis, and all funds generated are plowed
+                  back into charity or deposits to give more leverage during negotiations with
+                  venues & suppliers.
+                </Text>
+                <Text mt="lg">
+                  All SAFC staff are volunteers and receive no remuneration for their time & effort.
+                </Text>
+              </Accordion.Panel>
+            </Accordion.Item>
             <Accordion.Item value="morethanone" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
