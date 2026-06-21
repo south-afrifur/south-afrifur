@@ -46,6 +46,11 @@ const links: Links[] = [
         label: 'Media Crew',
         application: true,
       },
+      {
+        link: 'https://forms.gle/tVnRiaTYbhvfYJxF9',
+        label: 'Dance Competition',
+        application: true,
+      },
     ],
   },
   {
