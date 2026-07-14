@@ -269,6 +269,51 @@ function RouteComponent() {
             <Divider my="xl" mb="lg" w="100%" />
             <Stack>
               <Title c="#ffecb3" order={3}>
+                Fursuit Lounge
+              </Title>
+              <List type="ordered" spacing={'xs'}>
+                <List.Item>
+                  Be respectful to everyone who uses the lounge. Do not engage in behavior that is
+                  disruptive, disrespectful, or inappropriate.
+                </List.Item>
+                <List.Item>
+                  Only fursuiters and their handlers are allowed to enter the lounge. Please do not
+                  allow non-fursuiters to enter.
+                </List.Item>
+                <List.Item>
+                  Please keep the lounge clean and tidy. Once you leave the lounge, ensure that you
+                  have cleaned up after yourself and put away any items you may have used.
+                </List.Item>
+                <List.Item>
+                  Do not take or use other con-goers' personal belongings without their permission.
+                  Please be respectful of other attendees' property.
+                </List.Item>
+                <List.Item>
+                  Please do not peek into any dressing rooms or private areas of the lounge.
+                  Everyone deserves their privacy, and invading someone's personal space is not
+                  acceptable.
+                </List.Item>
+                <List.Item>
+                  Remember that you are responsible for your own items and fursuit while they are in
+                  the lounge. The convention is not liable for any lost or stolen items.
+                </List.Item>
+                <List.Item>
+                  The lounge will be locked at midnight every night and will reopen the next morning
+                  at 8AM. Please ensure that you have removed your belongings and fursuit before the
+                  lounge is locked.
+                </List.Item>
+                <List.Item>
+                  Finally, please report any suspicious or concerning behavior to a staff member
+                  immediately. Safety is our top priority, and we want everyone to feel comfortable
+                  and secure in the fursuit lounge.
+                </List.Item>
+              </List>
+            </Stack>
+
+            <Divider my="xl" mb="lg" w="100%" />
+
+            <Stack>
+              <Title c="#ffecb3" order={3}>
                 Music
               </Title>
               <List type="ordered" spacing={'xs'}>
@@ -350,49 +395,6 @@ function RouteComponent() {
                   Respectful behavior, appropriate content sharing, and adherence to
                   platform-specific guidelines are expected. Violations may result in temporary or
                   permanent removal from online spaces associated with SAFC.
-                </List.Item>
-              </List>
-            </Stack>
-            <Divider my="xl" mb="lg" w="100%" />
-            <Stack>
-              <Title c="#ffecb3" order={3}>
-                Fursuit Lounge Rules
-              </Title>
-              <List type="ordered" spacing={'xs'}>
-                <List.Item>
-                  Be respectful to everyone who uses the lounge. Do not engage in behavior that is
-                  disruptive, disrespectful, or inappropriate.
-                </List.Item>
-                <List.Item>
-                  Only fursuiters and their handlers are allowed to enter the lounge. Please do not
-                  allow non-fursuiters to enter.
-                </List.Item>
-                <List.Item>
-                  Please keep the lounge clean and tidy. Once you leave the lounge, ensure that you
-                  have cleaned up after yourself and put away any items you may have used.
-                </List.Item>
-                <List.Item>
-                  Do not take or use other con-goers' personal belongings without their permission.
-                  Please be respectful of other attendees' property.
-                </List.Item>
-                <List.Item>
-                  Please do not peek into any dressing rooms or private areas of the lounge.
-                  Everyone deserves their privacy, and invading someone's personal space is not
-                  acceptable.
-                </List.Item>
-                <List.Item>
-                  Remember that you are responsible for your own items and fursuit while they are in
-                  the lounge. The convention is not liable for any lost or stolen items.
-                </List.Item>
-                <List.Item>
-                  The lounge will be locked at midnight every night and will reopen the next morning
-                  at 8AM. Please ensure that you have removed your belongings and fursuit before the
-                  lounge is locked.
-                </List.Item>
-                <List.Item>
-                  Finally, please report any suspicious or concerning behavior to a staff member
-                  immediately. Safety is our top priority, and we want everyone to feel comfortable
-                  and secure in the fursuit lounge.
                 </List.Item>
               </List>
             </Stack>
