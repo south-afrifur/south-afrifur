@@ -258,14 +258,14 @@ function RouteComponent() {
             <Accordion.Item value="securedetails" bg="transparent">
               <Accordion.Control>
                 <Title c="#ffecb3" order={4} mb="sm">
-                  Are my private details secure?
+                  Are my details private?
                 </Title>
               </Accordion.Control>
               <Accordion.Panel>
                 <Text>
-                  SAFC, it's admin, Hotel Admin, and YOCO do not share any information, outside of
-                  that consented in writing by you, due to basic respect for our Attendees and to be
-                  in line with the POPI Act.
+                  SAFC, its admin, the venue admin, and YOCO do not share any information, outside
+                  of that consented in writing by you, due to basic respect for our Attendees and to
+                  be in line with the POPI Act.
                 </Text>
                 <Text mt="md">
                   For more information on our Privacy Policy, please visit the{' '}
@@ -287,10 +287,6 @@ function RouteComponent() {
                   It’s also important that your emergency contact knows your medical history and
                   insurance details. It is crucial to the safety of our attendees, and these details
                   will only be accessed in case of an emergency.
-                </Text>
-                <Text mt="md">
-                  For more information on our Privacy Policy, please visit the{' '}
-                  <RouterAnchor to="/privacy">Privacy Policy page</RouterAnchor>.
                 </Text>
               </Accordion.Panel>
             </Accordion.Item>
@@ -354,16 +350,17 @@ function RouteComponent() {
               <Accordion.Panel>
                 <Text>
                   Organizing custom name badges with individually submitted art proved to be a
-                  nightmare! You will receive a badge for the con with your fursona name and some
-                  important information on it, but no custom or submitted art will be printed on it.
-                  We do strongly encourage you to contact one of our local artists (even your
-                  favourite international artist!) to commission a custom badge for you.
+                  nightmare! You will receive a badge for the con with your fursona name and a QR
+                  code (so con staff can access your ticket info through our booking system), but no
+                  custom or submitted art will be printed on it. We strongly encourage you to
+                  contact one of our local artists (even your favourite international artist!) to
+                  commission a custom badge for you.
                 </Text>
                 <Text mt="lg">
                   If you have any special needs that you would like staff members or
                   convention-goers to note, consider having a badge for that as well. These could be
-                  statements like, "Please ask before hugging," "No physical contact," "I am hearing
-                  impaired," or "No photos without permission." If it will make your interactions
+                  statements like, "Please ask before hugging", "No physical contact", "I am hearing
+                  impaired", or "No photos without permission." If it will make your interactions
                   with others easier, consider making a badge for it to help us make you more
                   comfortable!
                 </Text>
