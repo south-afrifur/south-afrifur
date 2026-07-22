@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {
   Badge,
   Box,
+  Button,
   Container,
   Group,
   List,
@@ -190,6 +191,10 @@ export function ConSchedule() {
           />
         </Container>
       )}
+
+      <Button c="#ffecb3" variant="subtle" color="dark">
+        Download PDF of Schedule (coming soon)
+      </Button>
 
       <Title order={3} mt="md" mb="xs" c="#ffecb3">
         Legend
