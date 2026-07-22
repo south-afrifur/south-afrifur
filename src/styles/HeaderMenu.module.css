@@ -12,9 +12,11 @@
   }
   @media (min-width: $mantine-breakpoint-md) {
     padding: 8px 12px;
+    font-size: var(--mantine-font-size-md);
   }
   @media (min-width: $mantine-breakpoint-lg) {
     padding: 8px 24px;
+    font-size: var(--mantine-font-size-lg);
   }
 }
 

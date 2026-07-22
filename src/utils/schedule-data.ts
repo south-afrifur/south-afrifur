@@ -80,6 +80,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Entrance',
     },
   },
   {
@@ -93,6 +94,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Reception',
     },
   },
   {
@@ -106,6 +108,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Bar',
     },
   },
   {
@@ -119,6 +122,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Friday',
+      room: 'Bar',
     },
   },
   {
@@ -132,6 +136,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Restaurant',
     },
   },
   {
@@ -145,6 +150,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Pool',
     },
   },
   {
@@ -158,6 +164,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Friday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -171,6 +178,9 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Friday',
+      room: 'Tlou Hall',
+      description:
+        'Join us for the opening ceremonies, where we kick off the convention with excitement and anticipation.',
     },
   },
   {
@@ -184,19 +194,21 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Friday',
+      room: 'Tlou Hall',
     },
   },
   {
     id: 10,
     title: 'AD Games',
     start: '2026-08-07 22:00:00',
-    end: '2026-08-08 00:00:00',
+    end: '2026-08-07 23:59:59',
     resourceId: 'tlou-hall',
     color: 'blue',
     payload: {
       category: 'Panel / Activity',
       adult: true,
       day: 'Friday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -210,6 +222,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Friday',
+      room: 'Kraal',
     },
   },
   {
@@ -223,6 +236,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Friday',
+      room: 'Kraal',
     },
   },
   {
@@ -236,6 +250,7 @@ export const events: ScheduleEventData[] = [
       category: 'Dealers / Sales',
       adult: false,
       day: 'Friday',
+      room: 'Nyathi',
     },
   },
   {
@@ -249,19 +264,21 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Friday',
+      room: 'Nyathi',
     },
   },
   {
     id: 15,
     title: 'Dealers Den AD',
     start: '2026-08-07 21:00:00',
-    end: '2026-08-08 00:00:00',
+    end: '2026-08-07 23:59:59',
     resourceId: 'nyathi',
     color: 'green',
     payload: {
       category: 'Dealers / Sales',
-      adult: false,
+      adult: true,
       day: 'Friday',
+      room: 'Nyathi',
     },
   },
   {
@@ -275,6 +292,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Friday',
+      room: 'Gym',
     },
   },
   {
@@ -288,11 +306,12 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Saturday',
+      room: 'Bar',
     },
   },
   {
     id: 18,
-    title: 'Adm Brunch',
+    title: 'Admin Brunch',
     start: '2026-08-08 09:00:00',
     end: '2026-08-08 10:00:00',
     resourceId: 'resturant',
@@ -301,6 +320,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Saturday',
+      room: 'Restaurant',
     },
   },
   {
@@ -314,11 +334,12 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Saturday',
+      room: 'Restaurant',
     },
   },
   {
     id: 20,
-    title: 'Adm Linner',
+    title: 'Admin Linner',
     start: '2026-08-08 16:00:00',
     end: '2026-08-08 17:00:00',
     resourceId: 'resturant',
@@ -327,6 +348,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Saturday',
+      room: 'Restaurant',
     },
   },
   {
@@ -340,6 +362,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Saturday',
+      room: 'Restaurant',
     },
   },
   {
@@ -353,6 +376,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Saturday',
+      room: 'Pool',
     },
   },
   {
@@ -366,6 +390,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -379,6 +404,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
+      host: 'Kyuki',
     },
   },
   {
@@ -392,6 +419,7 @@ export const events: ScheduleEventData[] = [
       category: 'Featured',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -405,6 +433,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -418,6 +447,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
+      host: 'Bowie',
     },
   },
   {
@@ -431,19 +462,22 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Shumba Hall',
+      host: 'Raging Snep',
     },
   },
   {
     id: 29,
     title: 'Pup-Play Photos',
     start: '2026-08-08 23:00:00',
-    end: '2026-08-09 00:00:00',
+    end: '2026-08-08 23:59:59',
     resourceId: 'shumba-hall',
     color: 'blue',
     payload: {
       category: 'Panel / Activity',
       adult: true,
       day: 'Saturday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -457,6 +491,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Small Boardroom',
+      host: 'ARKA',
     },
   },
   {
@@ -470,24 +506,28 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Small Boardroom',
+      host: 'ARKA',
     },
   },
   {
     id: 32,
     title: 'Intro to Impact Play',
     start: '2026-08-08 23:00:00',
-    end: '2026-08-09 00:00:00',
+    end: '2026-08-08 23:59:59',
     resourceId: 'small-boardroom',
     color: 'blue',
     payload: {
       category: 'Panel / Activity',
       adult: true,
       day: 'Saturday',
+      room: 'Small Boardroom',
+      host: 'Rigel Badger',
     },
   },
   {
     id: 33,
-    title: 'The Switch Swith',
+    title: 'The Switch Switch',
     start: '2026-08-08 18:00:00',
     end: '2026-08-08 19:00:00',
     resourceId: 'small-office',
@@ -496,6 +536,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Small Office',
+      host: 'Sudan Red',
     },
   },
   {
@@ -509,6 +551,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Small Office',
     },
   },
   {
@@ -522,6 +565,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Saturday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -535,6 +579,7 @@ export const events: ScheduleEventData[] = [
       category: 'Featured',
       adult: false,
       day: 'Saturday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -548,6 +593,7 @@ export const events: ScheduleEventData[] = [
       category: 'Featured',
       adult: false,
       day: 'Saturday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -561,6 +607,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Saturday',
+      room: 'Kraal',
     },
   },
   {
@@ -574,19 +621,21 @@ export const events: ScheduleEventData[] = [
       category: 'Dealers / Sales',
       adult: false,
       day: 'Saturday',
+      room: 'Nyathi',
     },
   },
   {
     id: 40,
     title: 'Dealers Den AD',
     start: '2026-08-08 20:00:00',
-    end: '2026-08-09 00:00:00',
+    end: '2026-08-08 23:59:59',
     resourceId: 'nyathi',
     color: 'green',
     payload: {
       category: 'Dealers / Sales',
-      adult: false,
+      adult: true,
       day: 'Saturday',
+      room: 'Nyathi',
     },
   },
   {
@@ -600,11 +649,12 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Sunday',
+      room: 'Bar',
     },
   },
   {
     id: 42,
-    title: 'Adm Brunch',
+    title: 'Admin Brunch',
     start: '2026-08-09 09:00:00',
     end: '2026-08-09 10:00:00',
     resourceId: 'resturant',
@@ -613,6 +663,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Sunday',
+      room: 'Restaurant',
     },
   },
   {
@@ -626,11 +677,12 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Sunday',
+      room: 'Restaurant',
     },
   },
   {
     id: 44,
-    title: 'Adm Linner',
+    title: 'Admin Linner',
     start: '2026-08-09 16:00:00',
     end: '2026-08-09 17:00:00',
     resourceId: 'resturant',
@@ -639,6 +691,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Sunday',
+      room: 'Restaurant',
     },
   },
   {
@@ -652,6 +705,7 @@ export const events: ScheduleEventData[] = [
       category: 'Meals',
       adult: false,
       day: 'Sunday',
+      room: 'Restaurant',
     },
   },
   {
@@ -665,6 +719,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Sunday',
+      room: 'Pool',
     },
   },
   {
@@ -678,6 +733,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -691,6 +747,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Shumba Hall',
+      host: 'Kyuki',
     },
   },
   {
@@ -704,19 +762,22 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Shumba Hall',
+      host: 'Judee',
     },
   },
   {
     id: 50,
     title: 'Movies',
     start: '2026-08-09 22:00:00',
-    end: '2026-08-10 00:00:00',
+    end: '2026-08-09 23:59:59',
     resourceId: 'shumba-hall',
     color: 'blue',
     payload: {
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Shumba Hall',
     },
   },
   {
@@ -730,6 +791,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'Kiyo/Yote',
     },
   },
   {
@@ -743,6 +806,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'Blueberry',
     },
   },
   {
@@ -756,6 +821,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'CheddarByte',
     },
   },
   {
@@ -769,6 +836,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'Sefu',
     },
   },
   {
@@ -782,6 +851,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'Scratch, Jack, Kiyo/Yote',
     },
   },
   {
@@ -795,6 +866,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -808,6 +880,7 @@ export const events: ScheduleEventData[] = [
       category: 'Featured',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -821,6 +894,8 @@ export const events: ScheduleEventData[] = [
       category: 'Featured',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
+      host: 'Sudan Red',
     },
   },
   {
@@ -834,6 +909,7 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -847,6 +923,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -860,6 +937,7 @@ export const events: ScheduleEventData[] = [
       category: 'Headline',
       adult: false,
       day: 'Sunday',
+      room: 'Tlou Hall',
     },
   },
   {
@@ -873,6 +951,8 @@ export const events: ScheduleEventData[] = [
       category: 'Panel / Activity',
       adult: true,
       day: 'Sunday',
+      room: 'Tlou Hall',
+      host: 'Raging Snep',
     },
   },
   {
@@ -886,6 +966,7 @@ export const events: ScheduleEventData[] = [
       category: 'Drop-in',
       adult: false,
       day: 'Sunday',
+      room: 'Kraal',
     },
   },
   {
@@ -899,19 +980,21 @@ export const events: ScheduleEventData[] = [
       category: 'Dealers / Sales',
       adult: false,
       day: 'Sunday',
+      room: 'Nyathi',
     },
   },
   {
     id: 65,
     title: 'Dealers Den AD',
     start: '2026-08-09 22:00:00',
-    end: '2026-08-10 00:00:00',
+    end: '2026-08-09 23:59:59',
     resourceId: 'nyathi',
     color: 'green',
     payload: {
       category: 'Dealers / Sales',
-      adult: false,
+      adult: true,
       day: 'Sunday',
+      room: 'Nyathi',
     },
   },
 ];

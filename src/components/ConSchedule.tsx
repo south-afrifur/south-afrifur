@@ -1,9 +1,23 @@
 import dayjs from 'dayjs';
 import { useState } from 'react';
-import { Badge, Group, Modal, SegmentedControl, Stack, Text } from '@mantine/core';
+import {
+  Badge,
+  Box,
+  Container,
+  Group,
+  List,
+  Modal,
+  SegmentedControl,
+  Stack,
+  Text,
+  ThemeIcon,
+  Title,
+  UnstyledButton,
+} from '@mantine/core';
 import { useMediaQuery } from '@mantine/hooks';
 import { AgendaView, ResourcesDayView, type ScheduleEventData } from '@mantine/schedule';
 import { CON_DATES, events, resources } from '../utils/schedule-data';
+import classes from '../styles/ConSchedule.module.css';
 
 const DAYS = [
   { label: 'Fri 7', value: CON_DATES.friday },
@@ -11,79 +25,196 @@ const DAYS = [
   { label: 'Sun 9', value: CON_DATES.sunday },
 ];
 
-const DAY_WINDOW = { startTime: '08:00:00', endTime: '23:59:00', startScrollTime: '10:00:00' };
+const VIEWMODES = [
+  { label: 'Calendar', value: 'calendar' },
+  { label: 'Agenda', value: 'agenda' },
+];
+
+const eventRunning = (event: ScheduleEventData) => {
+  const currentTimeAndDate = dayjs();
+  const eventStart = dayjs(event.start);
+  const eventEnd = dayjs(event.end);
+
+  return currentTimeAndDate.isAfter(eventStart) && currentTimeAndDate.isBefore(eventEnd);
+};
 
 export function ConSchedule() {
-  const isPhone = useMediaQuery('(max-width: 48em)');
+  const isPhone = useMediaQuery('(max-width: 768px)');
   const [date, setDate] = useState<string>(CON_DATES.friday);
   const [selected, setSelected] = useState<ScheduleEventData | null>(null);
+  const [viewMode, setViewMode] = useState<string>('calendar');
 
   const openEvent = (event: ScheduleEventData) => setSelected(event);
 
-  return (
-    <Stack gap="sm">
-      <SegmentedControl fullWidth={isPhone} data={DAYS} value={date} onChange={setDate} />
+  const DAY_WINDOW = {
+    '2026-08-07': { startTime: '08:00:00', endTime: '23:59:00', startScrollTime: '14:00:00' },
+    '2026-08-08': { startTime: '08:00:00', endTime: '23:59:00', startScrollTime: '08:00:00' },
+    '2026-08-09': { startTime: '08:00:00', endTime: '23:59:00', startScrollTime: '08:00:00' },
+  }[date];
 
-      {isPhone ? (
+  return (
+    <Stack gap="sm" w="100%" align="center">
+      <Stack gap="sm" w={isPhone ? '100%' : 500}>
+        <SegmentedControl
+          fullWidth={isPhone}
+          data={DAYS}
+          value={date}
+          onChange={setDate}
+          mx="lg"
+          classNames={{
+            label: classes.segment,
+          }}
+        />
+        {!isPhone && (
+          <SegmentedControl
+            data={VIEWMODES}
+            value={viewMode}
+            onChange={setViewMode}
+            maw={600}
+            classNames={{
+              label: classes.segment,
+            }}
+          />
+        )}
+      </Stack>
+
+      {isPhone || viewMode === 'agenda' ? (
         <AgendaView
           rangeStart={date}
+          miw={isPhone ? '100%' : 600}
           rangeEnd={date}
           events={events}
+          styles={{
+            agendaViewHeader: {
+              display: 'none',
+            },
+          }}
           onEventClick={openEvent}
           renderEvent={(event, props) => {
-            const adult = event.payload?.adult;
-            const room = resources.find((r) => r.id === event.resourceId)?.label;
             return (
-              <div {...(props as any)}>
-                <Group justify="space-between" wrap="nowrap" gap="xs" p="xs">
-                  <div style={{ minWidth: 0 }}>
-                    <Group gap={6} wrap="nowrap">
-                      <Text size="sm" fw={600} truncate>
+              <UnstyledButton {...props}>
+                <Box
+                  style={{
+                    display: 'flex',
+                    gap: 'var(--mantine-spacing-sm)',
+                    padding: 'var(--mantine-spacing-xs) var(--mantine-spacing-sm)',
+                  }}
+                >
+                  <Box
+                    style={{
+                      width: 4,
+                      borderRadius: 2,
+                      flexShrink: 0,
+                      backgroundColor: `var(--mantine-color-${event.color}-filled)`,
+                    }}
+                  />
+                  <div style={{ flex: 1 }}>
+                    <Group justify="space-between" wrap="nowrap">
+                      <Text size="sm" fw={500}>
                         {event.title}
                       </Text>
-                      {adult && (
-                        <Badge size="xs" color="red">
-                          18+
-                        </Badge>
-                      )}
+                      <Badge size="xs" variant="light" color={event.color}>
+                        {event.payload?.category}
+                      </Badge>
                     </Group>
                     <Text size="xs" c="dimmed">
-                      {dayjs(event.start).format('HH:mm')}–{dayjs(event.end).format('HH:mm')}
-                      {room ? ` · ${room}` : ''}
+                      {dayjs(event.start).format('HH:mm')} – {dayjs(event.end).format('HH:mm')}
                     </Text>
+                    {event.payload?.room && (
+                      <Text size="xs" c="dimmed" mt={2}>
+                        📍 {event.payload.room}
+                      </Text>
+                    )}
+                    {event.payload?.adult && (
+                      <Text size="xs" c="red" mt={2}>
+                        Adults only (18+)
+                      </Text>
+                    )}
+                    {eventRunning(event) && (
+                      <Text size="xs" c="green" mt={2}>
+                        Running
+                      </Text>
+                    )}
                   </div>
-                </Group>
-              </div>
+                </Box>
+              </UnstyledButton>
             );
           }}
         />
       ) : (
-        <ResourcesDayView
-          date={date}
-          onDateChange={setDate}
-          mode="static"
-          resources={resources}
-          events={events}
-          onEventClick={openEvent}
-          {...DAY_WINDOW}
-          renderEventBody={(event) =>
-            event.payload?.adult ? (
-              <Group gap={4} wrap="nowrap">
-                <Text size="xs" fw={600} truncate>
-                  {event.title}
+        <Container miw={'80%'}>
+          <ResourcesDayView
+            date={date}
+            w="auto"
+            onDateChange={setDate}
+            resources={resources}
+            events={events}
+            slotWidth={120}
+            rowHeight={50}
+            onEventClick={openEvent}
+            withCurrentTimeIndicator
+            withCurrentTimeBubble
+            renderResourceLabel={(event) => {
+              return (
+                <Text size="sm" fw={500} style={{ textAlign: 'center' }}>
+                  {event.label}
                 </Text>
-                <Badge size="xs" color="red">
-                  18+
-                </Badge>
-              </Group>
-            ) : (
-              <Text size="xs" fw={600} truncate>
-                {event.title}
-              </Text>
-            )
-          }
-        />
+              );
+            }}
+            {...DAY_WINDOW}
+            withHeader={false}
+            renderEventBody={(event) =>
+              event.payload?.adult ? (
+                <UnstyledButton onClick={() => openEvent(event)}>
+                  <Stack gap={6}>
+                    <Text size="xs" fw={600} truncate>
+                      {event.title}
+                    </Text>
+                    <Badge size="xs" color="red">
+                      18+
+                    </Badge>
+                  </Stack>
+                </UnstyledButton>
+              ) : (
+                <UnstyledButton onClick={() => openEvent(event)}>
+                  <Stack>
+                    <Group gap={4} wrap="nowrap">
+                      <Text size="xs" fw={600} truncate>
+                        {event.title}
+                      </Text>
+                    </Group>
+                  </Stack>
+                </UnstyledButton>
+              )
+            }
+          />
+        </Container>
       )}
+
+      <Title order={3} mt="md" mb="xs" c="#ffecb3">
+        Legend
+      </Title>
+
+      <List>
+        <List.Item icon={<ThemeIcon color="grape" size={12} radius="xs"></ThemeIcon>}>
+          Headline
+        </List.Item>
+        <List.Item icon={<ThemeIcon color="orange" size={12} radius="xs"></ThemeIcon>}>
+          Featured
+        </List.Item>
+        <List.Item icon={<ThemeIcon color="blue" size={12} radius="xs"></ThemeIcon>}>
+          Panel / Activity
+        </List.Item>
+        <List.Item icon={<ThemeIcon color="teal" size={12} radius="xs"></ThemeIcon>}>
+          Drop-in
+        </List.Item>
+        <List.Item icon={<ThemeIcon color="green" size={12} radius="xs"></ThemeIcon>}>
+          Dealers / Sales
+        </List.Item>
+        <List.Item icon={<ThemeIcon color="yellow" size={12} radius="xs"></ThemeIcon>}>
+          Meals
+        </List.Item>
+      </List>
 
       <EventModal event={selected} onClose={() => setSelected(null)} />
     </Stack>
@@ -92,23 +223,33 @@ export function ConSchedule() {
 
 function EventModal({ event, onClose }: { event: ScheduleEventData | null; onClose: () => void }) {
   const room = event ? resources.find((r) => r.id === event.resourceId)?.label : undefined;
-
+  const host = event ? event.payload?.host : undefined;
   return (
-    <Modal opened={event !== null} onClose={onClose} title={event?.title} centered>
+    <Modal
+      opened={event !== null}
+      onClose={onClose}
+      title={event?.title}
+      centered
+      styles={{ title: { fontWeight: 600 } }}
+    >
       {event && (
         <Stack gap="xs">
+          {event?.payload?.description && (
+            <Text size="sm" mb="xs">
+              {event.payload.description}
+            </Text>
+          )}
           <Group gap="xs">
             <Badge color={event.color}>{event.payload?.category}</Badge>
             {event.payload?.adult && <Badge color="red">18+ · Adult content</Badge>}
           </Group>
-          <Text size="sm">
+          <Text size="sm" fw={500}>
             {dayjs(event.start).format('dddd D MMM, HH:mm')} – {dayjs(event.end).format('HH:mm')}
           </Text>
-          {room && (
-            <Text size="sm" c="dimmed">
-              Where: {room}
-            </Text>
-          )}
+          <Stack gap={0}>
+            {room && <Text size="sm">Where: {room}</Text>}
+            {host && <Text size="sm">Host: {host}</Text>}
+          </Stack>
         </Stack>
       )}
     </Modal>
