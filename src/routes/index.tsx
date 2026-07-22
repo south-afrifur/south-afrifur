@@ -43,7 +43,7 @@ function Index() {
           md: 70,
           xl: 200,
         }}
-        gutter={{
+        gap={{
           xs: 20,
           sm: 30,
           md: 50,
