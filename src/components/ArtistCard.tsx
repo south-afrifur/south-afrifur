@@ -1,6 +1,8 @@
 import {
   IconBrandBluesky,
   IconBrandDeviantart,
+  IconBrandDiscord,
+  IconBrandFacebook,
   IconBrandInstagram,
   IconBrandMastodon,
   IconBrandTelegram,
@@ -13,7 +15,7 @@ import {
 } from '@tabler/icons-react';
 import { ActionIcon, Avatar, Card, Group, Text } from '@mantine/core';
 
-type Artist = {
+export type Artist = {
   avatar?: string;
   name: string;
   role: string;
@@ -38,6 +40,8 @@ const SOCIAL_ICONS: Record<Artist['socials'][number]['platform'], typeof IconWor
   twitch: IconBrandTwitch,
   deviantart: IconBrandDeviantart,
   furaffinity: IconPaw,
+  discord: IconBrandDiscord,
+  facebook: IconBrandFacebook,
 };
 
 const ArtistCard = ({ artist }: { artist: Artist }) => {
