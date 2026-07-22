@@ -67,6 +67,7 @@ const links: Links[] = [
       { link: '/about/pastevents', label: 'Past Events' },
       { link: '/about/charity', label: 'Charity' },
       { link: '/about/internationalguests', label: 'International Guests' },
+      { link: '/credits/2026', label: 'Credits' },
     ],
   },
   {

@@ -4,7 +4,7 @@ type VolunteerCardProps = {
   person: {
     avatarSrc?: string;
     name: string;
-    role: string;
+    handle: string;
   };
 };
 
@@ -19,13 +19,13 @@ const VolunteerCard = ({ person }: VolunteerCardProps) => {
         padding: '8px 10px',
       }}
     >
-      <Avatar src={person.avatarSrc} name={person.name} color="initials" size={40} radius="xl" />
+      <Avatar src={person.avatarSrc} name={person.name} color="initials" size={60} radius="xl" />
       <div style={{ minWidth: 0 }}>
         <Text size="sm" fw={500} truncate>
           {person.name}
         </Text>
         <Text size="xs" c="dimmed" truncate>
-          {person.role}
+          {person.handle}
         </Text>
       </div>
     </Group>
