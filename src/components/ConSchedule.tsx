@@ -39,9 +39,16 @@ const eventRunning = (event: ScheduleEventData) => {
   return currentTimeAndDate.isAfter(eventStart) && currentTimeAndDate.isBefore(eventEnd);
 };
 
+const currentDate = dayjs().format('YYYY-MM-DD');
+const defaultDate = [CON_DATES.friday, CON_DATES.saturday, CON_DATES.sunday].includes(
+  currentDate as any
+)
+  ? currentDate
+  : CON_DATES.friday;
+
 export function ConSchedule() {
   const isPhone = useMediaQuery('(max-width: 768px)');
-  const [date, setDate] = useState<string>(CON_DATES.friday);
+  const [date, setDate] = useState<string>(defaultDate);
   const [selected, setSelected] = useState<ScheduleEventData | null>(null);
   const [viewMode, setViewMode] = useState<string>('calendar');
 
