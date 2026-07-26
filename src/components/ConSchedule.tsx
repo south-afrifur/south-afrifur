@@ -85,6 +85,28 @@ export function ConSchedule() {
           />
         )}
       </Stack>
+      <Group>
+        <Button
+          c="#ffecb3"
+          variant="subtle"
+          color="dark"
+          component="a"
+          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Schedule_2026.png"
+          target="_blank"
+        >
+          Download Schedule
+        </Button>
+        <Button
+          c="#ffecb3"
+          variant="subtle"
+          color="dark"
+          component="a"
+          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Map_2026.png"
+          target="_blank"
+        >
+          Download Sitemap
+        </Button>
+      </Group>
 
       {isPhone || viewMode === 'agenda' ? (
         <AgendaView
@@ -198,10 +220,6 @@ export function ConSchedule() {
           />
         </Container>
       )}
-
-      <Button c="#ffecb3" variant="subtle" color="dark">
-        Download PDF of Schedule (coming soon)
-      </Button>
 
       <Title order={3} mt="md" mb="xs" c="#ffecb3">
         Legend

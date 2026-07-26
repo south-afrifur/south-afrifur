@@ -1,13 +1,3 @@
-// safcon-schedule-data.ts
-// Auto-generated from Event_Layout_SAFCON26.xlsx (SAFCON'26 — "Claws & Order: A Noir Mystery")
-// Con dates: Fri 7 Aug – Mon 10 Aug 2026. Monday is a departure day (no sessions in the layout).
-//
-// Category colours (Mantine palette):
-//   Headline (P) = grape · Featured (S) = orange · Panel / Activity (T) = blue
-//   Drop-in (F) = teal · Dealers / Sales (M) = green · Meals (N) = yellow
-//
-// Each event's payload carries { category, adult, day }. `adult: true` = 18+ content.
-
 import type { ScheduleEventData, ScheduleResourceData } from '@mantine/schedule';
 
 export const CON_DATES = {
@@ -40,7 +30,7 @@ export const resources: ScheduleResourceData[] = [
   },
   {
     id: 'shumba-hall',
-    label: 'Shumba Hall',
+    label: 'Shumba',
   },
   {
     id: 'small-boardroom',
@@ -48,19 +38,19 @@ export const resources: ScheduleResourceData[] = [
   },
   {
     id: 'small-office',
-    label: 'Small Office',
+    label: 'Con Ops',
   },
   {
     id: 'tlou-hall',
-    label: 'Tlou Hall',
+    label: 'Main Stage',
   },
   {
     id: 'kraal',
-    label: 'Kraal',
+    label: 'Fursuit Lounge',
   },
   {
     id: 'nyathi',
-    label: 'Nyathi',
+    label: "Dealer's Den",
   },
   {
     id: 'gym',
@@ -69,6 +59,7 @@ export const resources: ScheduleResourceData[] = [
 ];
 
 export const events: ScheduleEventData[] = [
+  // ---------------------------------------------------------------- FRIDAY
   {
     id: 1,
     title: 'Registration',
@@ -81,6 +72,7 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Entrance',
+      description: 'The first steps to entering and being a part of the convention.',
     },
   },
   {
@@ -95,11 +87,12 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Reception',
+      description: 'The first steps to entering and being a part of the convention.',
     },
   },
   {
     id: 3,
-    title: 'Braai Social',
+    title: 'Icebreaker Lunch',
     start: '2026-08-07 16:00:00',
     end: '2026-08-07 19:00:00',
     resourceId: 'bar',
@@ -109,6 +102,7 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Bar',
+      description: 'Eat. Drink. Be merry, and maybe make a few new friends.',
     },
   },
   {
@@ -127,7 +121,7 @@ export const events: ScheduleEventData[] = [
   },
   {
     id: 5,
-    title: 'Braai Social',
+    title: 'Icebreaker Lunch',
     start: '2026-08-07 16:00:00',
     end: '2026-08-07 19:00:00',
     resourceId: 'resturant',
@@ -137,11 +131,12 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Restaurant',
+      description: 'Eat. Drink. Be merry, and maybe make a few new friends.',
     },
   },
   {
     id: 6,
-    title: 'Braai Social',
+    title: 'Icebreaker Lunch',
     start: '2026-08-07 16:00:00',
     end: '2026-08-07 19:00:00',
     resourceId: 'pool',
@@ -151,11 +146,12 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Pool',
+      description: 'Eat. Drink. Be merry, and maybe make a few new friends.',
     },
   },
   {
     id: 7,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-07 18:30:00',
     end: '2026-08-07 19:00:00',
     resourceId: 'tlou-hall',
@@ -165,6 +161,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Tlou Hall',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -179,8 +177,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Tlou Hall',
+      host: 'Scratch',
       description:
-        'Join us for the opening ceremonies, where we kick off the convention with excitement and anticipation.',
+        "The official announcement that SAFC 2026 has begun, and the who's who in the zoo.",
     },
   },
   {
@@ -195,6 +194,7 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Tlou Hall',
+      description: 'Sing, howl, meow, share your voice with the willing and unwilling alike.',
     },
   },
   {
@@ -209,13 +209,15 @@ export const events: ScheduleEventData[] = [
       adult: true,
       day: 'Friday',
       room: 'Tlou Hall',
+      host: 'Lyt & Romey',
+      description: 'Bring out your inner kink and join in the adult festivities.',
     },
   },
   {
     id: 11,
     title: 'Fursuiting Availability',
     start: '2026-08-07 16:00:00',
-    end: '2026-08-07 19:00:00',
+    end: '2026-08-07 23:59:59',
     resourceId: 'kraal',
     color: 'teal',
     payload: {
@@ -223,39 +225,11 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Kraal',
-    },
-  },
-  {
-    id: 12,
-    title: 'Fursuiting Availability',
-    start: '2026-08-07 20:30:00',
-    end: '2026-08-08 01:00:00',
-    resourceId: 'kraal',
-    color: 'teal',
-    payload: {
-      category: 'Drop-in',
-      adult: false,
-      day: 'Friday',
-      room: 'Kraal',
-    },
-  },
-  {
-    id: 13,
-    title: 'Dealers Den',
-    start: '2026-08-07 16:00:00',
-    end: '2026-08-07 19:00:00',
-    resourceId: 'nyathi',
-    color: 'green',
-    payload: {
-      category: 'Dealers / Sales',
-      adult: false,
-      day: 'Friday',
-      room: 'Nyathi',
     },
   },
   {
     id: 14,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-07 20:30:00',
     end: '2026-08-07 21:00:00',
     resourceId: 'nyathi',
@@ -265,22 +239,27 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Nyathi',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
     id: 15,
-    title: 'Dealers Den AD',
-    start: '2026-08-07 21:00:00',
-    end: '2026-08-07 23:59:59',
-    resourceId: 'nyathi',
-    color: 'green',
+    title: 'Fursuiting Photo Op',
+    start: '2026-08-08 20:30:00',
+    end: '2026-08-08 23:00:00',
+    resourceId: 'gym',
+    color: 'teal',
     payload: {
-      category: 'Dealers / Sales',
-      adult: true,
+      category: 'Drop-in',
+      adult: false,
       day: 'Friday',
-      room: 'Nyathi',
+      room: 'Gym',
+      host: 'Kyra',
+      description: 'Allocated, theme-friendly areas dedicated to fursuiting photos.',
     },
   },
+
   {
     id: 16,
     title: 'Fursuiting Photo Op',
@@ -293,8 +272,27 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Friday',
       room: 'Gym',
+      host: 'Kyra',
+      description: 'Allocated, theme-friendly areas dedicated to fursuiting photos.',
     },
   },
+  {
+    id: 13,
+    title: 'Fursuiting Photo Op',
+    start: '2026-08-09 20:30:00',
+    end: '2026-08-09 23:00:00',
+    resourceId: 'gym',
+    color: 'teal',
+    payload: {
+      category: 'Drop-in',
+      adult: false,
+      day: 'Friday',
+      room: 'Gym',
+      host: 'Kyra',
+      description: 'Allocated, theme-friendly areas dedicated to fursuiting photos.',
+    },
+  },
+  // -------------------------------------------------------------- SATURDAY
   {
     id: 17,
     title: 'Drinks / Socials',
@@ -381,7 +379,7 @@ export const events: ScheduleEventData[] = [
   },
   {
     id: 23,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-08 08:30:00',
     end: '2026-08-08 09:00:00',
     resourceId: 'shumba-hall',
@@ -391,6 +389,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Shumba Hall',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -406,6 +406,7 @@ export const events: ScheduleEventData[] = [
       day: 'Saturday',
       room: 'Shumba Hall',
       host: 'Kyuki',
+      description: 'A collaborative dancercise class for all ages and skill levels.',
     },
   },
   {
@@ -420,11 +421,14 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Shumba Hall',
+      host: 'Ender',
+      description:
+        "A game to see if the contestants have what it takes to be a furry. 2-4 players are chosen per game and the winner moves on to the next round, but players won't know who they'll be competing against or which game they'll play.",
     },
   },
   {
     id: 26,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-08 12:00:00',
     end: '2026-08-08 12:30:00',
     resourceId: 'shumba-hall',
@@ -434,6 +438,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Shumba Hall',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -449,6 +455,8 @@ export const events: ScheduleEventData[] = [
       day: 'Saturday',
       room: 'Shumba Hall',
       host: 'Bowie',
+      description:
+        'The journey from 3D animation student, to animation and VFX industry veteran with 14 years of experience, to furry VTuber and avatar creator.',
     },
   },
   {
@@ -464,6 +472,8 @@ export const events: ScheduleEventData[] = [
       day: 'Saturday',
       room: 'Shumba Hall',
       host: 'Raging Snep',
+      description:
+        "A light-hearted spin-off of Family Feud where participants guess the most popular furry and convention answers from audience surveys, culminating in a high-energy 'Fur the money' bonus round.",
     },
   },
   {
@@ -478,6 +488,8 @@ export const events: ScheduleEventData[] = [
       adult: true,
       day: 'Saturday',
       room: 'Shumba Hall',
+      description:
+        "Pups and owners can meet up and take photos, and be part of the dog show, even if you're a feline.",
     },
   },
   {
@@ -492,7 +504,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Small Boardroom',
-      host: 'ARKA',
+      host: 'ARKA & Farvern',
+      description:
+        'A social deduction party game, very common at American fur cons. Good players versus evil players, who shall be the ones to succeed?',
     },
   },
   {
@@ -507,22 +521,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Small Boardroom',
-      host: 'ARKA',
-    },
-  },
-  {
-    id: 32,
-    title: 'Intro to Impact Play',
-    start: '2026-08-08 23:00:00',
-    end: '2026-08-08 23:59:59',
-    resourceId: 'small-boardroom',
-    color: 'blue',
-    payload: {
-      category: 'Panel / Activity',
-      adult: true,
-      day: 'Saturday',
-      room: 'Small Boardroom',
-      host: 'Rigel Badger',
+      host: 'ARKA & Farvern',
+      description:
+        'A social deduction party game, very common at American fur cons. Good players versus evil players, who shall be the ones to succeed?',
     },
   },
   {
@@ -538,11 +539,13 @@ export const events: ScheduleEventData[] = [
       day: 'Saturday',
       room: 'Small Office',
       host: 'Sudan Red',
+      description:
+        'Connoisseurs of the highest calibre unite to trial their palettes against the sophistication that is Switch.',
     },
   },
   {
     id: 34,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-08 19:00:00',
     end: '2026-08-08 19:30:00',
     resourceId: 'small-office',
@@ -552,6 +555,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Small Office',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -566,6 +571,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Tlou Hall',
+      host: 'Kiyo',
+      description:
+        "Lessons for wearing and caring for the most expensive portable carpet you'll ever own and wear.",
     },
   },
   {
@@ -580,6 +588,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Tlou Hall',
+      host: 'Kiyo',
+      description: 'Have a fursuit? Borrowing a fursuit? Join the games, and join the FUN.',
     },
   },
   {
@@ -594,13 +604,16 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Tlou Hall',
+      host: 'DJs Coffeebuscuit, Rigel & Slushy',
+      description:
+        "Music soothes the wild beast... not this time! Join a group of wild animals dancing to their heart's content.",
     },
   },
   {
     id: 38,
     title: 'Fursuiting Availability',
     start: '2026-08-08 09:00:00',
-    end: '2026-08-09 01:00:00',
+    end: '2026-08-08 23:59:59',
     resourceId: 'kraal',
     color: 'teal',
     payload: {
@@ -622,6 +635,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Saturday',
       room: 'Nyathi',
+      description:
+        'Swag yourselves up to the nines. Buy that little something special for yourself. Go on, you deserve it.',
     },
   },
   {
@@ -636,8 +651,12 @@ export const events: ScheduleEventData[] = [
       adult: true,
       day: 'Saturday',
       room: 'Nyathi',
+      description:
+        "Santa gets you gifts for being good, so you'll have to get yourself all the naughty ones.",
     },
   },
+
+  // ---------------------------------------------------------------- SUNDAY
   {
     id: 41,
     title: 'Drinks / Socials',
@@ -724,7 +743,7 @@ export const events: ScheduleEventData[] = [
   },
   {
     id: 47,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-09 08:30:00',
     end: '2026-08-09 09:00:00',
     resourceId: 'shumba-hall',
@@ -734,6 +753,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Shumba Hall',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -749,6 +770,7 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Shumba Hall',
       host: 'Kyuki',
+      description: 'A collaborative dancercise class for all ages and skill levels.',
     },
   },
   {
@@ -763,7 +785,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Shumba Hall',
-      host: 'Judee',
+      host: 'Thabz and Judee',
+      description:
+        'An art competition to create a new hybrid character from animals we provide, in theme with the con, with a warm-up figure-drawing session.',
     },
   },
   {
@@ -778,6 +802,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Shumba Hall',
+      description:
+        'Snuggle up, make ready the snacks you snuck in, and get ready for some cinematic chill time.',
     },
   },
   {
@@ -793,6 +819,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Small Boardroom',
       host: 'Kiyo/Yote',
+      description:
+        "The business of understanding your business, and let's throw in some tax for fun's sake.",
     },
   },
   {
@@ -808,6 +836,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Small Boardroom',
       host: 'Blueberry',
+      description:
+        'How to run a business in the furry fandom: good practices and things to consider when owning furry-oriented businesses.',
     },
   },
   {
@@ -823,6 +853,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Small Boardroom',
       host: 'CheddarByte',
+      description:
+        'An overview of the I.T. landscape in South Africa, with guidance and advice for new jobseekers and students, plus the different fields available under the I.T. umbrella.',
     },
   },
   {
@@ -838,6 +870,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Small Boardroom',
       host: 'Sefu',
+      description:
+        'Content creation, streaming, YouTube and more, and how to go about being an online furry.',
     },
   },
   {
@@ -852,12 +886,32 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Small Boardroom',
-      host: 'Scratch, Jack, Kiyo/Yote',
+      host: 'Kiyo, Scarlet Jack & Scratch',
+      description:
+        'Discussions around the administrative, financial and management challenges that come with running events in the local furry scene.',
+    },
+  },
+  {
+    // Relocated from Saturday: the timescape places Intro to Impact Play on SUNDAY, Small Boardroom.
+    id: 32,
+    title: 'Intro to Impact Play',
+    start: '2026-08-09 23:00:00',
+    end: '2026-08-09 23:59:59',
+    resourceId: 'small-boardroom',
+    color: 'blue',
+    payload: {
+      category: 'Panel / Activity',
+      adult: true,
+      day: 'Sunday',
+      room: 'Small Boardroom',
+      host: 'Rigel Badger',
+      description:
+        'Impact play in BDSM: what the draws are, what gear to use, and how to do it safely.',
     },
   },
   {
     id: 56,
-    title: 'Mystery Game',
+    title: 'Mystery Game: Bull Pen',
     start: '2026-08-09 12:30:00',
     end: '2026-08-09 13:00:00',
     resourceId: 'tlou-hall',
@@ -867,6 +921,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Tlou Hall',
+      host: 'Badgacat',
+      description: 'The clues to the mystery are waiting to be found.',
     },
   },
   {
@@ -881,11 +937,13 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Tlou Hall',
+      host: 'Kiyo',
+      description: 'Have a fursuit? Borrowing a fursuit? Join the games, and join the FUN.',
     },
   },
   {
     id: 58,
-    title: 'Sudan Death (Quizz)',
+    title: 'Sudan Quiz',
     start: '2026-08-09 15:00:00',
     end: '2026-08-09 17:00:00',
     resourceId: 'tlou-hall',
@@ -896,6 +954,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Tlou Hall',
       host: 'Sudan Red',
+      description:
+        "A quiz that is both fun and challenging. Test your mettle against Sudan's iron will and keen questions.",
     },
   },
   {
@@ -910,6 +970,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Tlou Hall',
+      description:
+        'Contestants dance like no one is watching, but we all shall be, judges and audience alike. Who has the moves? May the top dancer win!',
     },
   },
   {
@@ -924,6 +986,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Tlou Hall',
+      host: 'Scratch',
+      description:
+        "The drawing of the donated items, all for charity. Alms and succour for this year's charity, Fallen Angels Pet Rescue.",
     },
   },
   {
@@ -938,6 +1003,9 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Tlou Hall',
+      host: 'Scratch',
+      description:
+        'The official announcement that SAFC 2026 has come to an end, with thanks and notices, including the Mystery Game winner.',
     },
   },
   {
@@ -953,6 +1021,8 @@ export const events: ScheduleEventData[] = [
       day: 'Sunday',
       room: 'Tlou Hall',
       host: 'Raging Snep',
+      description:
+        'A spin-off of The Price Is Right with a spicy twist: contestants guess numbers closest to metrics from the site e621, across rounds such as tag count, score count, closest without going over, and A vs B.',
     },
   },
   {
@@ -981,6 +1051,8 @@ export const events: ScheduleEventData[] = [
       adult: false,
       day: 'Sunday',
       room: 'Nyathi',
+      description:
+        'Swag yourselves up to the nines. Buy that little something special for yourself. Go on, you deserve it.',
     },
   },
   {
@@ -995,6 +1067,8 @@ export const events: ScheduleEventData[] = [
       adult: true,
       day: 'Sunday',
       room: 'Nyathi',
+      description:
+        "Santa gets you gifts for being good, so you'll have to get yourself all the naughty ones.",
     },
   },
 ];

@@ -148,7 +148,11 @@ function RouteComponent() {
               closest stops to the convention venue.
             </List.Item>
             <List.Item>
-              <Anchor href="/TravellersGuide.pdf" target="_blank" download>
+              <Anchor
+                href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/TravellersGuide.pdf"
+                target="_blank"
+                download
+              >
                 Download SARS Traveller's Guide (PDF)
               </Anchor>
             </List.Item>
