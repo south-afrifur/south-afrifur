@@ -91,7 +91,7 @@ export function ConSchedule() {
           variant="subtle"
           color="dark"
           component="a"
-          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Schedule_2026.png"
+          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Schedule_2026.png?download=1"
           target="_blank"
         >
           Download Schedule
@@ -101,7 +101,7 @@ export function ConSchedule() {
           variant="subtle"
           color="dark"
           component="a"
-          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Map_2026.png"
+          href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC_Map_2026.png?download=1"
           target="_blank"
         >
           Download Sitemap

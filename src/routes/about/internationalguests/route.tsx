@@ -149,7 +149,7 @@ function RouteComponent() {
             </List.Item>
             <List.Item>
               <Anchor
-                href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/TravellersGuide.pdf"
+                href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/TravellersGuide.pdf?download=1"
                 target="_blank"
                 download
               >
