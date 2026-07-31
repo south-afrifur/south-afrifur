@@ -181,6 +181,9 @@ export function ConSchedule() {
       ) : (
         <Container miw={'80%'}>
           <ResourcesDayView
+            classNames={{
+              resourcesDayViewTimeLabel: classes.timeLabel,
+            }}
             date={date}
             w="auto"
             onDateChange={setDate}

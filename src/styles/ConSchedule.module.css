@@ -28,3 +28,8 @@
     color: #ffecb3;
   }
 }
+
+.timeLabel {
+  justify-content: start;
+  padding-left: calc(var(--mantine-spacing-xs) / 2);
+}
