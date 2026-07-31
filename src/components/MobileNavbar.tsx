@@ -78,7 +78,7 @@ const MobileNavbar = () => {
             {links && <IconChevronDown size={16} color="#ffecb3" />}
           </Center>
         </UnstyledButton>
-        {links && <Collapse in={linksOpened}>{LinkComponents}</Collapse>}
+        {links && <Collapse expanded={linksOpened}>{LinkComponents}</Collapse>}
       </>
     );
   };

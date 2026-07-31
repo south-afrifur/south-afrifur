@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Box, Center, Grid, Stack, Text, Title } from '@mantine/core';
+import { Box, Button, Center, Grid, Group, Stack, Text, Title } from '@mantine/core';
 import { InfoCard } from '../components/InfoCard';
 import classes from '../styles/Hero.module.css';
 
@@ -28,12 +28,36 @@ function Index() {
           gap={40}
         >
           <Title c="#ffecb3">Welcome to SAFC!</Title>
+
           <Text size="lg" ta="center" c="gray.3" fw={500}>
             A celebration of creativity, self-expression and community. Bringing together artists,
             makers and fans who share a love for anthropomorphic characters in all their forms.
             Whether you're here to showcase your art, suit up, dance, or simply connect with your
             friends, you'll find a place where everyone belongs and every story has a heartbeat.
           </Text>
+          <Group>
+            <Button
+              c="#ffecb3"
+              variant="subtle"
+              color="dark"
+              size="lg"
+              component="a"
+              href="/schedule"
+            >
+              View Schedule
+            </Button>
+            <Button
+              c="#ffecb3"
+              variant="subtle"
+              color="dark"
+              size="lg"
+              component="a"
+              href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC2026_THE%20GREAT%20LIST%20OF%20PACKING.pdf?download=1"
+              target="_blank"
+            >
+              Download Packing List
+            </Button>
+          </Group>
         </Stack>
       </Center>
       <Grid
@@ -43,7 +67,7 @@ function Index() {
           md: 70,
           xl: 200,
         }}
-        gutter={{
+        gap={{
           xs: 20,
           sm: 30,
           md: 50,

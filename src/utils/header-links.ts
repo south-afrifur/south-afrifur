@@ -15,6 +15,11 @@ type Links = {
 };
 
 const links: Links[] = [
+  {
+    link: '/schedule',
+    label: 'Schedule',
+    icon: IconClipboardCheckFilled,
+  },
   { link: '/registration', label: 'Registration', registration: true },
   {
     link: '#1',
@@ -62,6 +67,7 @@ const links: Links[] = [
       { link: '/about/pastevents', label: 'Past Events' },
       { link: '/about/charity', label: 'Charity' },
       { link: '/about/internationalguests', label: 'International Guests' },
+      { link: '/credits/2026', label: 'Credits' },
     ],
   },
   {

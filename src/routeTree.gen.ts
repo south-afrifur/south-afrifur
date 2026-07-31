@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ThemeRouteRouteImport } from './routes/theme/route'
+import { Route as ScheduleRouteRouteImport } from './routes/schedule/route'
 import { Route as RulesRouteRouteImport } from './routes/rules/route'
 import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
 import { Route as LearnRouteRouteImport } from './routes/learn/route'
@@ -19,6 +20,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
 import { Route as LearnIndexRouteImport } from './routes/learn/index'
 import { Route as RulesMediaRouteRouteImport } from './routes/rules/media/route'
+import { Route as Credits2026RouteRouteImport } from './routes/credits/2026/route'
 import { Route as AboutSafcRouteRouteImport } from './routes/about/safc/route'
 import { Route as AboutPasteventsRouteRouteImport } from './routes/about/pastevents/route'
 import { Route as AboutInternationalguestsRouteRouteImport } from './routes/about/internationalguests/route'
@@ -28,6 +30,11 @@ import { Route as AboutSafcIndexRouteImport } from './routes/about/safc/index'
 const ThemeRouteRoute = ThemeRouteRouteImport.update({
   id: '/theme',
   path: '/theme',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRouteRoute = ScheduleRouteRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RulesRouteRoute = RulesRouteRouteImport.update({
@@ -75,6 +82,11 @@ const RulesMediaRouteRoute = RulesMediaRouteRouteImport.update({
   path: '/media',
   getParentRoute: () => RulesRouteRoute,
 } as any)
+const Credits2026RouteRoute = Credits2026RouteRouteImport.update({
+  id: '/credits/2026',
+  path: '/credits/2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutSafcRouteRoute = AboutSafcRouteRouteImport.update({
   id: '/about/safc',
   path: '/about/safc',
@@ -109,11 +121,13 @@ export interface FileRoutesByFullPath {
   '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/schedule': typeof ScheduleRouteRoute
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
+  '/credits/2026': typeof Credits2026RouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
@@ -124,10 +138,12 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
+  '/schedule': typeof ScheduleRouteRoute
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
+  '/credits/2026': typeof Credits2026RouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/learn': typeof LearnIndexRoute
   '/rules': typeof RulesIndexRoute
@@ -141,11 +157,13 @@ export interface FileRoutesById {
   '/learn': typeof LearnRouteRouteWithChildren
   '/privacy': typeof PrivacyRouteRoute
   '/rules': typeof RulesRouteRouteWithChildren
+  '/schedule': typeof ScheduleRouteRoute
   '/theme': typeof ThemeRouteRoute
   '/about/charity': typeof AboutCharityRouteRoute
   '/about/internationalguests': typeof AboutInternationalguestsRouteRoute
   '/about/pastevents': typeof AboutPasteventsRouteRoute
   '/about/safc': typeof AboutSafcRouteRouteWithChildren
+  '/credits/2026': typeof Credits2026RouteRoute
   '/rules/media': typeof RulesMediaRouteRoute
   '/learn/': typeof LearnIndexRoute
   '/rules/': typeof RulesIndexRoute
@@ -160,11 +178,13 @@ export interface FileRouteTypes {
     | '/learn'
     | '/privacy'
     | '/rules'
+    | '/schedule'
     | '/theme'
     | '/about/charity'
     | '/about/internationalguests'
     | '/about/pastevents'
     | '/about/safc'
+    | '/credits/2026'
     | '/rules/media'
     | '/learn/'
     | '/rules/'
@@ -175,10 +195,12 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faq'
     | '/privacy'
+    | '/schedule'
     | '/theme'
     | '/about/charity'
     | '/about/internationalguests'
     | '/about/pastevents'
+    | '/credits/2026'
     | '/rules/media'
     | '/learn'
     | '/rules'
@@ -191,11 +213,13 @@ export interface FileRouteTypes {
     | '/learn'
     | '/privacy'
     | '/rules'
+    | '/schedule'
     | '/theme'
     | '/about/charity'
     | '/about/internationalguests'
     | '/about/pastevents'
     | '/about/safc'
+    | '/credits/2026'
     | '/rules/media'
     | '/learn/'
     | '/rules/'
@@ -209,11 +233,13 @@ export interface RootRouteChildren {
   LearnRouteRoute: typeof LearnRouteRouteWithChildren
   PrivacyRouteRoute: typeof PrivacyRouteRoute
   RulesRouteRoute: typeof RulesRouteRouteWithChildren
+  ScheduleRouteRoute: typeof ScheduleRouteRoute
   ThemeRouteRoute: typeof ThemeRouteRoute
   AboutCharityRouteRoute: typeof AboutCharityRouteRoute
   AboutInternationalguestsRouteRoute: typeof AboutInternationalguestsRouteRoute
   AboutPasteventsRouteRoute: typeof AboutPasteventsRouteRoute
   AboutSafcRouteRoute: typeof AboutSafcRouteRouteWithChildren
+  Credits2026RouteRoute: typeof Credits2026RouteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -223,6 +249,13 @@ declare module '@tanstack/react-router' {
       path: '/theme'
       fullPath: '/theme'
       preLoaderRoute: typeof ThemeRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/rules': {
@@ -287,6 +320,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/rules/media'
       preLoaderRoute: typeof RulesMediaRouteRouteImport
       parentRoute: typeof RulesRouteRoute
+    }
+    '/credits/2026': {
+      id: '/credits/2026'
+      path: '/credits/2026'
+      fullPath: '/credits/2026'
+      preLoaderRoute: typeof Credits2026RouteRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/about/safc': {
       id: '/about/safc'
@@ -371,11 +411,13 @@ const rootRouteChildren: RootRouteChildren = {
   LearnRouteRoute: LearnRouteRouteWithChildren,
   PrivacyRouteRoute: PrivacyRouteRoute,
   RulesRouteRoute: RulesRouteRouteWithChildren,
+  ScheduleRouteRoute: ScheduleRouteRoute,
   ThemeRouteRoute: ThemeRouteRoute,
   AboutCharityRouteRoute: AboutCharityRouteRoute,
   AboutInternationalguestsRouteRoute: AboutInternationalguestsRouteRoute,
   AboutPasteventsRouteRoute: AboutPasteventsRouteRoute,
   AboutSafcRouteRoute: AboutSafcRouteRouteWithChildren,
+  Credits2026RouteRoute: Credits2026RouteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

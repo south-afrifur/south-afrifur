@@ -20,7 +20,7 @@ function RouteComponent() {
         </Text>
         <Container size="xl" w={'100%'}>
           <Grid
-            gutter={{
+            gap={{
               xs: 20,
               sm: 30,
               md: 50,

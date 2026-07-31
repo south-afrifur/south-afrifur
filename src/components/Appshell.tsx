@@ -24,7 +24,12 @@ const LogoLink = createLink(
   forwardRef((props: LinkProps & AnchorProps & { logoProps?: ImageProps }, ref) => {
     return (
       <Anchor {...props} ref={ref as any}>
-        <Image src="/safc-white.png" alt="Logo" w={200} {...props.logoProps} />
+        <Image
+          src="/safc-white.png"
+          alt="Logo"
+          w={{ md: 150, sm: 100, xl: 200 }}
+          {...props.logoProps}
+        />
       </Anchor>
     );
   })
@@ -58,7 +63,8 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
       header={{
         height: {
           base: 90,
-          md: 120,
+          md: 100,
+          lg: 120,
         },
       }}
       footer={{ height: 60, collapsed: footerCollapsed }}
@@ -80,7 +86,8 @@ const Appshell = ({ children }: { children: React.ReactNode }) => {
           visibleFrom="md"
           mx={{
             md: 50,
-            lg: 100,
+            lg: 50,
+            xl: 100,
           }}
         >
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Container, Group, List, Stack, Text, Title } from '@mantine/core';
+import { Button, Center, Container, Group, List, Stack, Text, Title } from '@mantine/core';
 
 export const Route = createFileRoute('/learn/')({
   component: RouteComponent,
@@ -166,6 +166,22 @@ function RouteComponent() {
                   <Title c="#ffecb3" order={2} style={{ alignSelf: 'center' }} mb="md">
                     Things To Pack
                   </Title>
+                  <Text c="#ffecb3" size="md">
+                    We now have a downloadable packing list available for attendees to use when
+                    preparing for the event. You can find it on the home page, or click the button
+                    below to download it directly.
+                  </Text>
+                  <Button
+                    c="#ffecb3"
+                    variant="subtle"
+                    color="dark"
+                    size="md"
+                    component="a"
+                    href="https://ywd9khef0yddiioq.public.blob.vercel-storage.com/Documents/SAFC2026_THE%20GREAT%20LIST%20OF%20PACKING.pdf?download=1"
+                    target="_blank"
+                  >
+                    Download Packing List
+                  </Button>
                   <Title c="gray.3" size="md">
                     Packing for a furry convention is not much different than packing for any other
                     getaway. Here is a list of recommended things to bring:

@@ -7,6 +7,7 @@ import { routeTree } from './routeTree.gen';
 
 import '@mantine/core/styles.layer.css';
 import '@mantine/notifications/styles.layer.css';
+import '@mantine/schedule/styles.layer.css';
 
 import { Notifications } from '@mantine/notifications';
 import { NotFound } from './components/NotFound';
