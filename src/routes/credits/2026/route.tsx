@@ -80,6 +80,122 @@ const artistData: Artist[] = [
   },
 ];
 
+const awooCrewData = [
+  {
+    name: 'Crash',
+    handle: '@Crash28',
+    avatar: '/Crash.webp',
+  },
+  {
+    name: 'Luriga',
+    handle: '@Lurigo',
+    avatar: '/Luriga.webp',
+  },
+  {
+    name: 'Kyra',
+    handle: '@KyraTheDonkey',
+    avatar: '/Kyra.webp',
+  },
+  {
+    name: 'Krow',
+    handle: '@KrowKaws',
+    avatar: '/Krow.webp',
+  },
+  {
+    name: 'Vlad',
+    handle: '@vladzight',
+    avatar: '/Vlad.webp',
+  },
+  {
+    name: 'Arjuna',
+    handle: '@Arjuna_Echo',
+    avatar: '/Arjuna.webp',
+  },
+  {
+    name: 'Alex',
+    handle: '@Alex_boyy_ZA',
+    avatar: '/Alex.webp',
+  },
+  {
+    name: 'Blueberry',
+    handle: '@ShysAlley',
+    avatar: '/Blueberry.webp',
+  },
+  {
+    name: 'Thabz',
+    handle: '@Man_Of_Talent',
+    avatar: '/Thabz.webp',
+  },
+  {
+    name: 'Romey',
+    handle: '@VanenGrace',
+    avatar: '/Romey.webp',
+  },
+  {
+    name: 'Robbie',
+    handle: '@Mysterious_RSA',
+    avatar: '/Robbie.webp',
+  },
+];
+
+const adminData = [
+  {
+    name: 'Scratch',
+    role: 'Con Daddy',
+    avatar: '/Scratch.webp',
+    wide: true,
+  },
+  {
+    name: 'Sudan Red',
+    role: 'The Red Queen',
+    avatar: '/Sudan.webp',
+    wide: true,
+  },
+  {
+    name: 'Badgacat',
+    role: 'Scrungly',
+    avatar: '/Badge.webp',
+  },
+  {
+    name: 'Lyt',
+    role: 'Cat Herder',
+    avatar: '/Lyt.webp',
+  },
+  {
+    name: 'Jack',
+    role: 'Cripple 07',
+    avatar: '/Jack.webp',
+  },
+];
+
+const digiWooData = [
+  {
+    name: 'Angel',
+    handle: '@AngelFoxMod',
+    avatar: '/Angel.webp',
+  },
+  {
+    name: 'Blueberry',
+    handle: '@ShysAlley',
+    avatar: '/Blueberry.webp',
+  },
+  {
+    name: 'Ember',
+    handle: '@CattoEmber',
+    avatar: '/Ember.webp',
+  },
+  {
+    name: 'Kakkers',
+    handle: 'kakkersfloof',
+    avatar: '/Kakkers.webp',
+  },
+  {
+    name: 'Newt',
+    handle: '@Frosty_wolfy',
+    avatar: '/Newt.webp',
+  },
+];
+
 function RouteComponent() {
   return (
     <Stack w="100%" gap={70}>
@@ -97,167 +213,48 @@ function RouteComponent() {
         >
           <Title c="#ffecb3">SAFC 2026 Team</Title>
           <Grid w="100%">
-            <Grid.Col
-              span={{
-                sm: 6,
-                xs: 12,
-              }}
-            >
-              <AdminCard
-                person={{
-                  name: 'Scratch',
-                  role: 'Con Daddy',
-                  avatarSrc: '/Scratch.webp',
+            {adminData.map((admin) => (
+              <Grid.Col
+                span={{
+                  sm: admin.wide ? 6 : 4,
+                  xs: 6,
+                  base: 6,
                 }}
-              />
-            </Grid.Col>
-            <Grid.Col
-              span={{
-                sm: 6,
-                xs: 12,
-              }}
-            >
-              <AdminCard
-                person={{
-                  name: 'Sudan Red',
-                  role: 'The Red Queen',
-                  avatarSrc: '/Sudan.webp',
-                }}
-              />
-            </Grid.Col>
-            <Grid.Col
-              span={{
-                sm: 4,
-                xs: 12,
-              }}
-            >
-              <AdminCard
-                person={{
-                  name: 'Badgacat',
-                  role: 'Scrungly',
-                  avatarSrc: '/Badge.webp',
-                }}
-              />
-            </Grid.Col>
-            <Grid.Col
-              span={{
-                sm: 4,
-                xs: 12,
-              }}
-            >
-              <AdminCard
-                person={{
-                  name: 'Lyt',
-                  role: 'Cat Herder',
-                  avatarSrc: '/Lyt.webp',
-                }}
-              />
-            </Grid.Col>
-            <Grid.Col
-              span={{
-                sm: 4,
-                xs: 12,
-              }}
-            >
-              <AdminCard
-                person={{
-                  name: 'Jack',
-                  role: 'Cripple 07',
-                  avatarSrc: '/Jack.webp',
-                }}
-              />
-            </Grid.Col>
+                key={admin.name}
+              >
+                <AdminCard person={admin} />
+              </Grid.Col>
+            ))}
           </Grid>
           <Stack w="100%">
             <Grid w="100%">
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Crash',
-                    handle: '@Crash28',
-                    avatarSrc: '/Crash.webp',
+              {awooCrewData.map((awoo) => (
+                <Grid.Col
+                  span={{
+                    sm: 6,
+                    xs: 12,
                   }}
-                />
-              </Grid.Col>
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Kyra',
-                    handle: '@KyraTheDonkey',
-                    avatarSrc: '/Kyra.webp',
+                  key={awoo.name}
+                >
+                  <VolunteerCard person={awoo} />
+                </Grid.Col>
+              ))}
+            </Grid>
+          </Stack>
+
+          <Stack w="100%">
+            <Grid w="100%">
+              {digiWooData.map((digi) => (
+                <Grid.Col
+                  span={{
+                    sm: 6,
+                    xs: 12,
                   }}
-                />
-              </Grid.Col>
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Luriga',
-                    handle: '@Lurigo',
-                    avatarSrc: '/Luriga.webp',
-                  }}
-                />
-              </Grid.Col>
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Vlad',
-                    handle: '@Vladzight',
-                    avatarSrc: '/Vlad.webp',
-                  }}
-                />
-              </Grid.Col>
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Jack',
-                    handle: 'IT',
-                  }}
-                />
-              </Grid.Col>
-              <Grid.Col
-                span={{
-                  sm: 4,
-                  xs: 6,
-                  base: 6,
-                }}
-              >
-                <VolunteerCard
-                  person={{
-                    name: 'Jack',
-                    handle: 'IT',
-                  }}
-                />
-              </Grid.Col>
+                  key={digi.name}
+                >
+                  <VolunteerCard person={digi} />
+                </Grid.Col>
+              ))}
             </Grid>
           </Stack>
 
