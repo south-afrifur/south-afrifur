@@ -31,6 +31,13 @@ const VIEWMODES = [
   { label: 'Agenda', value: 'agenda' },
 ];
 
+const formatEndofDay = (date: string | Date) => {
+  if (dayjs(date).format('HH:mm') === '23:59') {
+    return '00:00';
+  }
+  return dayjs(date).format('HH:mm');
+};
+
 const eventRunning = (event: ScheduleEventData) => {
   const currentTimeAndDate = dayjs();
   const eventStart = dayjs(event.start);
@@ -148,7 +155,7 @@ export function ConSchedule() {
                       </Badge>
                     </Group>
                     <Text size="xs" c="dimmed">
-                      {dayjs(event.start).format('HH:mm')} – {dayjs(event.end).format('HH:mm')}
+                      {dayjs(event.start).format('HH:mm')} – {formatEndofDay(event.end)}
                     </Text>
                     {event.payload?.room && (
                       <Text size="xs" c="dimmed" mt={2}>
@@ -274,7 +281,7 @@ function EventModal({ event, onClose }: { event: ScheduleEventData | null; onClo
             {event.payload?.adult && <Badge color="red">18+ · Adult content</Badge>}
           </Group>
           <Text size="sm" fw={500}>
-            {dayjs(event.start).format('dddd D MMM, HH:mm')} – {dayjs(event.end).format('HH:mm')}
+            {dayjs(event.start).format('dddd D MMM, HH:mm')} – {formatEndofDay(event.end)}
           </Text>
           <Stack gap={0}>
             {room && <Text size="sm">Where: {room}</Text>}
