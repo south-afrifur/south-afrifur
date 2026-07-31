@@ -1022,7 +1022,7 @@ export const events: ScheduleEventData[] = [
       room: 'Tlou Hall',
       host: 'Raging Snep',
       description:
-        'A spin-off of The Price Is Right with a spicy twist: contestants guess numbers closest to metrics from the site e621, across rounds such as tag count, score count, closest without going over, and A vs B.',
+        'A spin-off of The Price Is Right with a spicy twist: contestants guess numbers closest to metrics from a famous furry art aggregation site, across rounds such as tag count, score count, closest without going over, and A vs B.',
     },
   },
   {
