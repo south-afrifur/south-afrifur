@@ -175,7 +175,7 @@ const adminData = [
 
 const digiWooData = [
   {
-    name: 'Angel',
+    name: 'Angel Fox',
     handle: '@AngelFoxMod',
     avatar: '/Angel.webp',
   },
@@ -185,7 +185,7 @@ const digiWooData = [
     avatar: '/ShysAlley.webp',
   },
   {
-    name: 'Ember',
+    name: 'Catto Ember',
     handle: '@CattoEmber',
     avatar: '/Ember.webp',
   },
