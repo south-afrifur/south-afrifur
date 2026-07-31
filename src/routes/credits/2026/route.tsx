@@ -178,6 +178,7 @@ const digiWooData = [
     name: 'Angel Fox',
     handle: '@AngelFoxMod',
     avatar: '/Angel.webp',
+    role: 'Team Lead',
   },
   {
     name: 'Blueberry',
