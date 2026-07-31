@@ -13,7 +13,7 @@ import {
   IconPaw,
   IconWorld,
 } from '@tabler/icons-react';
-import { ActionIcon, Avatar, Card, Group, Text } from '@mantine/core';
+import { ActionIcon, Avatar, Card, Center, Group, Text } from '@mantine/core';
 
 export type Artist = {
   avatar?: string;
@@ -47,14 +47,14 @@ const SOCIAL_ICONS: Record<Artist['socials'][number]['platform'], typeof IconWor
 const ArtistCard = ({ artist }: { artist: Artist }) => {
   return (
     <Card withBorder radius="md" padding="md">
-      <Group gap="sm" wrap="nowrap" align="flex-start">
-        <Avatar src={artist.avatar} name={artist.name} color="initials" size={52} radius="xl" />
-        <div style={{ minWidth: 0 }}>
+      <Group gap="sm" wrap="nowrap" align="center">
+        <Avatar src={artist.avatar} name={artist.name} color="initials" size={70} radius="xl" />
+        <Center style={{ minWidth: 0 }} h="100%">
           <Text fw={500}>{artist.name}</Text>
-          <Text size="sm" c="dimmed">
+          {/* <Text size="sm" c="dimmed">
             {artist.role}
-          </Text>
-          {artist.attribution && (
+          </Text> */}
+          {/* {artist.attribution && (
             <Text size="xs" c="dimmed" mt={6}>
               {artist.attribution}
             </Text>
@@ -63,8 +63,8 @@ const ArtistCard = ({ artist }: { artist: Artist }) => {
             <Text size="xs" c="dimmed" fs="italic" mt={2}>
               {artist.credit}
             </Text>
-          )}
-        </div>
+          )} */}
+        </Center>
       </Group>
 
       {artist.socials.length > 0 && (

@@ -2,7 +2,7 @@ import { Avatar, Group, Text } from '@mantine/core';
 
 type VolunteerCardProps = {
   person: {
-    avatarSrc?: string;
+    avatar?: string;
     name: string;
     handle: string;
   };
@@ -19,7 +19,7 @@ const VolunteerCard = ({ person }: VolunteerCardProps) => {
         padding: '8px 10px',
       }}
     >
-      <Avatar src={person.avatarSrc} name={person.name} color="initials" size={60} radius="xl" />
+      <Avatar src={person.avatar} name={person.name} color="initials" size={60} radius="xl" />
       <div style={{ minWidth: 0 }}>
         <Text size="sm" fw={500} truncate>
           {person.name}

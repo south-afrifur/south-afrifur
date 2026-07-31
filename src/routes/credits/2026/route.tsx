@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Center, Grid, Stack, Title } from '@mantine/core';
+import { Center, Grid, Stack, Text, Title } from '@mantine/core';
 import { AdminCard } from '../../../components/AdminCard';
 import { ArtistCard, type Artist } from '../../../components/ArtistCard';
 import { VolunteerCard } from '../../../components/VolunteerCard';
@@ -12,6 +12,7 @@ const artistData: Artist[] = [
   {
     name: 'Ness Onca',
     role: 'Artist',
+    avatar: '/Ness.webp',
     socials: [
       {
         platform: 'telegram',
@@ -30,6 +31,7 @@ const artistData: Artist[] = [
   {
     name: 'Blueberry',
     role: 'Artist',
+    avatar: '/ShysAlley.webp',
     socials: [
       { platform: 'telegram', url: 'https://t.me/ShysAlley' },
       { platform: 'instagram', url: 'https://www.instagram.com/ShysAlley' },
@@ -53,6 +55,7 @@ const artistData: Artist[] = [
   {
     name: 'Krowkaws',
     role: 'Artist',
+    avatar: '/Krow.webp',
     socials: [
       { platform: 'telegram', url: 'https://t.me/KrowKaws' },
       { platform: 'bluesky', url: 'https://bsky.app/profile/krowkaws.bsky.social' },
@@ -62,6 +65,7 @@ const artistData: Artist[] = [
   {
     name: 'Ash',
     role: 'Artist',
+    avatar: '/Ash.webp',
     socials: [
       { platform: 'telegram', url: 'https://t.me/JustAshleyTheSharkHehe' },
       { platform: 'instagram', url: 'https://www.instagram.com/raythesharky/' },
@@ -73,6 +77,7 @@ const artistData: Artist[] = [
   {
     name: 'Aven',
     role: 'Artist',
+    avatar: '/Aven.webp',
     socials: [
       { platform: 'telegram', url: 'https://t.me/Witchy_Kitty' },
       { platform: 'x', url: 'https://twitter.com/@WitchyKitty__' },
@@ -97,11 +102,6 @@ const awooCrewData = [
     avatar: '/Kyra.webp',
   },
   {
-    name: 'Krow',
-    handle: '@KrowKaws',
-    avatar: '/Krow.webp',
-  },
-  {
     name: 'Vlad',
     handle: '@vladzight',
     avatar: '/Vlad.webp',
@@ -119,7 +119,7 @@ const awooCrewData = [
   {
     name: 'Blueberry',
     handle: '@ShysAlley',
-    avatar: '/Blueberry.webp',
+    avatar: '/ShysAlley.webp',
   },
   {
     name: 'Thabz',
@@ -141,13 +141,13 @@ const awooCrewData = [
 const adminData = [
   {
     name: 'Scratch',
-    role: 'Con Daddy',
+    role: "Chairman, treasurer, Dealer's Den coordinator",
     avatar: '/Scratch.webp',
     wide: true,
   },
   {
     name: 'Sudan Red',
-    role: 'The Red Queen',
+    role: 'Art liaison, merchandising, accommodation & general health/safety/wellbeing',
     avatar: '/Sudan.webp',
     wide: true,
   },
@@ -163,7 +163,7 @@ const adminData = [
   },
   {
     name: 'Jack',
-    role: 'Cripple 07',
+    role: 'IT, website, decor construction, and general tech support',
     avatar: '/Jack.webp',
   },
 ];
@@ -177,7 +177,7 @@ const digiWooData = [
   {
     name: 'Blueberry',
     handle: '@ShysAlley',
-    avatar: '/Blueberry.webp',
+    avatar: '/ShysAlley.webp',
   },
   {
     name: 'Ember',
@@ -212,6 +212,20 @@ function RouteComponent() {
           gap={40}
         >
           <Title c="#ffecb3">SAFC 2026 Team</Title>
+          <Text size="lg" ta="center" c="gray.3" fw={500}>
+            A huge thank you to all the artists, volunteers, and staff who have contributed their
+            time, energy, and creativity to make SAFC 2026 a reality. Your dedication and passion
+            are what make this event possible, and we are grateful for each and every one of you.
+          </Text>
+          <Title c="#ffecb3" order={2}>
+            Admins
+          </Title>
+          <Text size="md" ta="center" c="gray.5" fw={500}>
+            The Admins are the core team responsible for organizing and managing the event. They
+            oversee all aspects of the convention, from planning and logistics to marketing and
+            communication. Their hard work and dedication ensure that SAFC runs smoothly and
+            successfully.
+          </Text>
           <Grid w="100%">
             {adminData.map((admin) => (
               <Grid.Col
@@ -225,6 +239,13 @@ function RouteComponent() {
               </Grid.Col>
             ))}
           </Grid>
+          <Title c="#ffecb3" order={2}>
+            Awoo Crew
+          </Title>
+          <Text size="md" ta="center" c="gray.5" fw={500}>
+            Our volunteers who help run the convention. They assist with a variety of tasks,
+            including setup and general event support.
+          </Text>
           <Stack w="100%">
             <Grid w="100%" grow>
               {awooCrewData.map((awoo) => (
@@ -241,6 +262,13 @@ function RouteComponent() {
             </Grid>
           </Stack>
 
+          <Title c="#ffecb3" order={2}>
+            Digiwoo Crew
+          </Title>
+          <Text size="md" ta="center" c="gray.5" fw={500}>
+            Our digital volunteers who help run the online aspects of the convention. From
+            communications support to digital event management.
+          </Text>
           <Stack w="100%">
             <Grid w="100%" grow>
               {digiWooData.map((digi) => (
@@ -256,7 +284,13 @@ function RouteComponent() {
               ))}
             </Grid>
           </Stack>
-
+          <Title c="#ffecb3" order={2}>
+            Artists
+          </Title>
+          <Text size="md" ta="center" c="gray.5" fw={500}>
+            The artists who have contributed their work to SAFC 2026. Their creativity and talent
+            help to make the convention a vibrant and exciting event for all attendees.
+          </Text>
           <Grid w="100%" grow>
             {artistData.map((artist) => (
               <Grid.Col
