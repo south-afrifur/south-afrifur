@@ -122,6 +122,11 @@ const awooCrewData = [
     avatar: '/ShysAlley.webp',
   },
   {
+    name: 'Nova Kast',
+    handle: '@Novakast',
+    avatar: '/Novakast.webp',
+  },
+  {
     name: 'Thabz',
     handle: '@Man_Of_Talent',
     avatar: '/Thabz.webp',
