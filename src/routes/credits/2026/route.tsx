@@ -153,12 +153,12 @@ const adminData = [
   },
   {
     name: 'Badgacat',
-    role: 'Scrungly',
+    role: 'Awoo Crew wrangler/coordinator, decoration management, game design',
     avatar: '/Badge.webp',
   },
   {
     name: 'Lyt',
-    role: 'Cat Herder',
+    role: 'Event scheduling and coordination, First aid',
     avatar: '/Lyt.webp',
   },
   {
