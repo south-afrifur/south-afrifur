@@ -21,9 +21,9 @@ import { CON_DATES, events, resources } from '../utils/schedule-data';
 import classes from '../styles/ConSchedule.module.css';
 
 const DAYS = [
-  { label: 'Fri 7', value: CON_DATES.friday },
-  { label: 'Sat 8', value: CON_DATES.saturday },
-  { label: 'Sun 9', value: CON_DATES.sunday },
+  { label: 'Fri 7 Aug', value: CON_DATES.friday },
+  { label: 'Sat 8 Aug', value: CON_DATES.saturday },
+  { label: 'Sun 9 Aug', value: CON_DATES.sunday },
 ];
 
 const VIEWMODES = [
