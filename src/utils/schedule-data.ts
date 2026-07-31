@@ -1010,7 +1010,7 @@ export const events: ScheduleEventData[] = [
   },
   {
     id: 62,
-    title: 'Spice Is Right Game',
+    title: 'The Spice Is Right',
     start: '2026-08-09 22:00:00',
     end: '2026-08-09 23:00:00',
     resourceId: 'tlou-hall',
