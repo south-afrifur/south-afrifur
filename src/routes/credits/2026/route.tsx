@@ -217,8 +217,7 @@ function RouteComponent() {
               <Grid.Col
                 span={{
                   sm: admin.wide ? 6 : 4,
-                  xs: 6,
-                  base: 6,
+                  xs: 12,
                 }}
                 key={admin.name}
               >
@@ -227,7 +226,7 @@ function RouteComponent() {
             ))}
           </Grid>
           <Stack w="100%">
-            <Grid w="100%">
+            <Grid w="100%" grow>
               {awooCrewData.map((awoo) => (
                 <Grid.Col
                   span={{
@@ -243,7 +242,7 @@ function RouteComponent() {
           </Stack>
 
           <Stack w="100%">
-            <Grid w="100%">
+            <Grid w="100%" grow>
               {digiWooData.map((digi) => (
                 <Grid.Col
                   span={{
@@ -258,7 +257,7 @@ function RouteComponent() {
             </Grid>
           </Stack>
 
-          <Grid w="100%">
+          <Grid w="100%" grow>
             {artistData.map((artist) => (
               <Grid.Col
                 span={{
