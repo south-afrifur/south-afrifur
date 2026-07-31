@@ -186,7 +186,7 @@ const digiWooData = [
   },
   {
     name: 'Kakkers',
-    handle: 'kakkersfloof',
+    handle: '@kakkersfloof',
     avatar: '/Kakkers.webp',
   },
   {
