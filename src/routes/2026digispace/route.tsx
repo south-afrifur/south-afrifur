@@ -78,7 +78,7 @@ function RouteComponent() {
           <Title order={3}>Ambulance Assistance</Title>
           <List>
             <List.Item>Netcare 911: 082 911</List.Item>
-            <List.Item>ER 24: 082 124</List.Item>
+            <List.Item>ER 24: 084 124</List.Item>
           </List>
         </Stack>
       </Center>
