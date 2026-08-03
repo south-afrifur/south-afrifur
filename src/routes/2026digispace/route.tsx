@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Button, Center, Image, List, Stack, Text, Title } from '@mantine/core';
+import { Anchor, Button, Center, Image, List, Stack, Text, Title } from '@mantine/core';
 import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/2026digispace')({
@@ -31,6 +31,9 @@ function RouteComponent() {
           </Title>
           <List>
             <List.Item>
+              <Anchor href="#emergency-contacts">View Emergency Contacts</Anchor>
+            </List.Item>
+            <List.Item>
               <RouterAnchor to="/schedule">View Schedule</RouterAnchor>
             </List.Item>
             <List.Item>
@@ -59,7 +62,7 @@ function RouteComponent() {
             Download High Resolution Sitemap
           </Button>
           <Image src="/sitemap.webp" />
-          <Title c="#ffecb3" order={2}>
+          <Title c="#ffecb3" order={2} id="emergency-contacts">
             Emergency Contacts
           </Title>
           <Title order={3}>Police Assistance</Title>
