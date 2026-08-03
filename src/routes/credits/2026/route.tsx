@@ -122,6 +122,11 @@ const awooCrewData = [
     avatar: '/ShysAlley.webp',
   },
   {
+    name: 'Nova Kast',
+    handle: '@Novakast',
+    avatar: '/Novakast.webp',
+  },
+  {
     name: 'Thabz',
     handle: '@Man_Of_Talent',
     avatar: '/Thabz.webp',
@@ -170,9 +175,10 @@ const adminData = [
 
 const digiWooData = [
   {
-    name: 'Angel',
+    name: 'Angel Fox',
     handle: '@AngelFoxMod',
     avatar: '/Angel.webp',
+    role: 'Team Lead',
   },
   {
     name: 'Blueberry',
@@ -180,7 +186,7 @@ const digiWooData = [
     avatar: '/ShysAlley.webp',
   },
   {
-    name: 'Ember',
+    name: 'Catto Ember',
     handle: '@CattoEmber',
     avatar: '/Ember.webp',
   },

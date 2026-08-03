@@ -5,6 +5,7 @@ type VolunteerCardProps = {
     avatar?: string;
     name: string;
     handle: string;
+    role?: string;
   };
 };
 
@@ -28,6 +29,16 @@ const VolunteerCard = ({ person }: VolunteerCardProps) => {
           {person.handle}
         </Text>
       </div>
+      <Text
+        size="sm"
+        c="#ffecb3"
+        fw="bold"
+        truncate
+        style={{ flex: 1, textAlign: 'right' }}
+        pr="xs"
+      >
+        {person.role}
+      </Text>
     </Group>
   );
 };
