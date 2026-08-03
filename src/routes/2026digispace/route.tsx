@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Button, Center, Container, Divider, Image, List, Stack, Text, Title } from '@mantine/core';
+import { Button, Center, Image, List, Stack, Text, Title } from '@mantine/core';
 import { RouterAnchor } from '../../components/RouterAnchor';
 
 export const Route = createFileRoute('/2026digispace')({
