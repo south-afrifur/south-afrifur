@@ -16,6 +16,8 @@ import { Route as PrivacyRouteRouteImport } from './routes/privacy/route'
 import { Route as LearnRouteRouteImport } from './routes/learn/route'
 import { Route as FaqRouteRouteImport } from './routes/faq/route'
 import { Route as ContactRouteRouteImport } from './routes/contact/route'
+import { Route as R2026feedbackRouteRouteImport } from './routes/2026feedback/route'
+import { Route as R2026digispaceRouteRouteImport } from './routes/2026digispace/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as RulesIndexRouteImport } from './routes/rules/index'
 import { Route as LearnIndexRouteImport } from './routes/learn/index'
@@ -60,6 +62,16 @@ const FaqRouteRoute = FaqRouteRouteImport.update({
 const ContactRouteRoute = ContactRouteRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R2026feedbackRouteRoute = R2026feedbackRouteRouteImport.update({
+  id: '/2026feedback',
+  path: '/2026feedback',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const R2026digispaceRouteRoute = R2026digispaceRouteRouteImport.update({
+  id: '/2026digispace',
+  path: '/2026digispace',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -116,6 +128,8 @@ const AboutSafcIndexRoute = AboutSafcIndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/2026digispace': typeof R2026digispaceRouteRoute
+  '/2026feedback': typeof R2026feedbackRouteRoute
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/learn': typeof LearnRouteRouteWithChildren
@@ -135,6 +149,8 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/2026digispace': typeof R2026digispaceRouteRoute
+  '/2026feedback': typeof R2026feedbackRouteRoute
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/privacy': typeof PrivacyRouteRoute
@@ -152,6 +168,8 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/2026digispace': typeof R2026digispaceRouteRoute
+  '/2026feedback': typeof R2026feedbackRouteRoute
   '/contact': typeof ContactRouteRoute
   '/faq': typeof FaqRouteRoute
   '/learn': typeof LearnRouteRouteWithChildren
@@ -173,6 +191,8 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/2026digispace'
+    | '/2026feedback'
     | '/contact'
     | '/faq'
     | '/learn'
@@ -192,6 +212,8 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/2026digispace'
+    | '/2026feedback'
     | '/contact'
     | '/faq'
     | '/privacy'
@@ -208,6 +230,8 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/2026digispace'
+    | '/2026feedback'
     | '/contact'
     | '/faq'
     | '/learn'
@@ -228,6 +252,8 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  R2026digispaceRouteRoute: typeof R2026digispaceRouteRoute
+  R2026feedbackRouteRoute: typeof R2026feedbackRouteRoute
   ContactRouteRoute: typeof ContactRouteRoute
   FaqRouteRoute: typeof FaqRouteRoute
   LearnRouteRoute: typeof LearnRouteRouteWithChildren
@@ -291,6 +317,20 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/2026feedback': {
+      id: '/2026feedback'
+      path: '/2026feedback'
+      fullPath: '/2026feedback'
+      preLoaderRoute: typeof R2026feedbackRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/2026digispace': {
+      id: '/2026digispace'
+      path: '/2026digispace'
+      fullPath: '/2026digispace'
+      preLoaderRoute: typeof R2026digispaceRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -406,6 +446,8 @@ const AboutSafcRouteRouteWithChildren = AboutSafcRouteRoute._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  R2026digispaceRouteRoute: R2026digispaceRouteRoute,
+  R2026feedbackRouteRoute: R2026feedbackRouteRoute,
   ContactRouteRoute: ContactRouteRoute,
   FaqRouteRoute: FaqRouteRoute,
   LearnRouteRoute: LearnRouteRouteWithChildren,
