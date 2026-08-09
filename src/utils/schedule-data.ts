@@ -858,23 +858,6 @@ export const events: ScheduleEventData[] = [
     },
   },
   {
-    id: 54,
-    title: 'Content Creation',
-    start: '2026-08-09 14:00:00',
-    end: '2026-08-09 14:30:00',
-    resourceId: 'small-boardroom',
-    color: 'blue',
-    payload: {
-      category: 'Panel / Activity',
-      adult: false,
-      day: 'Sunday',
-      room: 'Small Boardroom',
-      host: 'Sefu',
-      description:
-        'Content creation, streaming, YouTube and more, and how to go about being an online furry.',
-    },
-  },
-  {
     id: 55,
     title: 'So You Want To Run A Furry Con',
     start: '2026-08-09 14:30:00',
