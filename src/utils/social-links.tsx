@@ -4,7 +4,6 @@ import {
   IconBrandFacebook,
   IconBrandInstagram,
   IconBrandTelegram,
-  IconBrandTiktok,
   IconBrandX,
 } from '@tabler/icons-react';
 
@@ -12,13 +11,19 @@ export const socialLinks = [
   {
     icon: <IconBrandTelegram size={18} />,
     link: 'https://t.me/+p9JMDIwXZ_8wMmQ0',
-    color: 'blue',
+    color: '#63aaf7',
     disabled: false,
   },
   {
     icon: <IconBrandDiscord size={18} />,
     link: 'https://discord.gg/sgzdu5T',
     color: 'white',
+    disabled: false,
+  },
+  {
+    icon: <IconBrandBluesky size={18} />,
+    link: 'https://bsky.app/profile/southafrifurcon.bsky.social',
+    color: '#1185FE',
     disabled: false,
   },
   {
@@ -29,26 +34,14 @@ export const socialLinks = [
   },
   {
     icon: <IconBrandInstagram size={18} />,
-    link: 'https://www.instagram.com/southafrifur/',
+    link: 'https://www.instagram.com/southafrifurcon/',
     color: '#E4405F',
-    disabled: true,
+    disabled: false,
   },
   {
     icon: <IconBrandFacebook size={18} />,
-    link: 'https://www.facebook.com/southafrifur',
+    link: 'https://www.facebook.com/profile.php?id=61593447637735#',
     color: '#1877F2',
-    disabled: true,
-  },
-  {
-    icon: <IconBrandTiktok size={18} />,
-    link: 'https://www.tiktok.com/@southafrifur',
-    color: '#69C9D0',
-    disabled: true,
-  },
-  {
-    icon: <IconBrandBluesky size={18} />,
-    link: 'https://bsky.app/profile/southafrifur.bsky.social',
-    color: '#1185FE',
-    disabled: true,
+    disabled: false,
   },
 ];
