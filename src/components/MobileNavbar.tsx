@@ -70,6 +70,8 @@ const MobileNavbar = () => {
                 }
           }
           className={classes.link}
+          disabled={!!link.disabled}
+          data-disabled={!!link.disabled}
         >
           <Center inline>
             <Box component="span" mr={5}>

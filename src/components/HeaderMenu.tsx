@@ -9,6 +9,7 @@ export function HeaderMenu(props: GroupProps) {
     const menuItems = link.links?.map((item) => (
       <Menu.Item
         disabled={!!item.disabled}
+        data-disabled={!!item.disabled}
         onClick={(e) => {
           if (!!item.disabled) {
             e.preventDefault();
@@ -63,6 +64,7 @@ export function HeaderMenu(props: GroupProps) {
         className={classes.link}
         data-registration={link.registration ? 'true' : undefined}
         to={link.link}
+        data-disabled={!!link.disabled}
         onClick={(e) => {
           if (link.registration === true) {
             window.open('https://portal.south-afrifur.co.za', '_blank');
