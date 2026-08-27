@@ -16,8 +16,8 @@ type Links = {
 
 const links: Links[] = [
   {
-    link: '/schedule',
-    label: 'Schedule',
+    link: '/2026feedback',
+    label: 'Feedback',
     icon: IconClipboardCheckFilled,
   },
   { link: '/registration', label: 'Registration', registration: true },
