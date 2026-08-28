@@ -50,6 +50,11 @@
   }
 }
 
+.link[data-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .linkLabel {
   margin-right: 5px;
 }
@@ -60,4 +65,9 @@
     color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0)) !important;
     background-color: var(--mantine-color-gray-9);
   }
+}
+
+.menuItem[data-disabled='true'] {
+  pointer-events: none;
+  opacity: 0.5;
 }

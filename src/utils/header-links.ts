@@ -16,11 +16,11 @@ type Links = {
 
 const links: Links[] = [
   {
-    link: '/schedule',
-    label: 'Schedule',
+    link: '/2026feedback',
+    label: 'Feedback',
     icon: IconClipboardCheckFilled,
   },
-  { link: '/registration', label: 'Registration', registration: true },
+  { link: '/registration', label: 'Registration', registration: true, disabled: 'Coming Soon' },
   {
     link: '#1',
     label: 'Applications',
@@ -30,11 +30,13 @@ const links: Links[] = [
         link: 'https://forms.gle/aHnVzEjyEbzms4wV7',
         label: 'Panelists',
         application: true,
+        disabled: 'Coming Soon',
       },
       {
         link: 'https://forms.gle/hCpd4nMBhmjn2785A',
         label: "Dealers' Den",
         application: true,
+        disabled: 'Coming Soon',
       },
       {
         link: 'https://forms.gle/LUxsGac764tnDKvS7',
@@ -54,6 +56,7 @@ const links: Links[] = [
       {
         link: 'https://forms.gle/tVnRiaTYbhvfYJxF9',
         label: 'Dance Competition',
+        disabled: 'Coming Soon',
         application: true,
       },
     ],
